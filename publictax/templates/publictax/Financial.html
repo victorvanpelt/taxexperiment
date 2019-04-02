@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Financial
+{% endblock %}
+
+{% block content %}
+<div class="instructions" style="height: 212px;">
+    {% if player.treat == 'gaap' %}
+    gaap
+    {% elif player.treat == 'country' %}
+    country
+    {% else %}
+    full
+    {% endif %}
+</div>
+
+{% next_button %}
+{% endblock %}

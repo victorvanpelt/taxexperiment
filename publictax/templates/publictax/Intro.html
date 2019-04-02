@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Important information
+{% endblock %}
+
+{% block content %}
+<div class="instructions" style="height: 212px;">
+Your main task is to ...
+    <ul>
+        <li>
+            Please read all information carefully and be aware that you cannot go back to previous screens.
+        </li>
+        <li>
+            This study is anonymous and data will only be used for research.
+        </li>
+        <li>
+            There is no psychological discomfort, physical discomfort, deception in this study.
+        </li>
+        <li>
+            Participation is completely voluntary and you can stop at any time.
+        </li>
+    </ul>
+
+By accepting this HIT you agree to participate in this study.
+
+Have feedback or suggestions? Feel free to put them into the feedback box at the end.
+
+Thank you,
+
+Christian Peters and Victor van Pelt
+Tilburg University
+</div>
+
+
+{% formfield player.accept_conditions label="I have read and accept the conditions above." %}
+<br>
+{% next_button %}
+{% endblock %}

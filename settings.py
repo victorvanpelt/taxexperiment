@@ -18,7 +18,14 @@ SESSION_CONFIGS = [
     #    'num_demo_participants': 3,
     #    'app_sequence': ['public_goods', 'payment_info'],
     #},
+    {
+        'name': 'publictax',
+        'display_name': "Public Tax Experiment",
+        'num_demo_participants': 1,
+        'app_sequence': ['publictax'],
+    },
 ]
+
 
 
 # ISO-639 code
