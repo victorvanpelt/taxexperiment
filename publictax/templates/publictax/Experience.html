@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+
+    <div class="instructions" style="text-align:center">
+    <b>
+        Please answer the following questions to the best of your ability.
+    </b>
+    </div>
+
+{% for field in form %}
+{{field.label}}
+<p></p>
+{{ field }}
+<p></p>
+{% endfor %}
+<p></p>
+{% next_button %}
+
+{% endblock %}

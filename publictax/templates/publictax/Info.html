@@ -8,15 +8,65 @@
 {% block content %}
 <div class="instructions" style="height: 212px;">
 
-    {% if player.treat == "gaap" %}
-    gaap
-    {% elif player.treat == "country" %}
-    country
+    {% if player.treat == "control" %}
+    control group text
     {% else %}
-    full
+    australia text
     {% endif %}
 
 </div>
 
+<input type="hidden" name="inspectinfo" value="" id="id_inspectinfo"/>
+<input type="hidden" name="opinfo_timer" value="0" id="opinfo_timer"/>
+<input type="hidden" name="clinfo_timer" value="0" id="clinfo_timer"/>
+<input type="hidden" name="info_timer" value="0" id="info_timer"/>
+<input type="hidden" name="subda_timer" value="0" id="subda_timer"/>
+
+<div class="container">
+  <button style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-info" data-toggle="collapse" id="buttoni" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Click here for money</button>
+  <div id="collapseExample" class="collapse">
+    <p>
+        JUST KIDDING!
+    </p>
+  </div>
+</div>
+
 {% next_button %}
+
+{% endblock %}
+
+ {% block scripts %}
+    <script>
+        $('#buttoni').click(function() {
+            $('#id_inspectinfo').val(1);
+        });
+    </script>
+
+	 <script>
+    document.getElementById('buttoni').onclick = function() {
+        var subda_timeDown = new Date().getTime();
+        document.getElementById('subda_timer').value = String(subda_timeDown);
+       };
+    </script>
+
+    <script>
+    var info_timeShown1 = 0;
+        var info_timeDown1;
+
+    $(document).ready(function(){
+        $('#collapseExample').on("show.bs.collapse", function(){
+            info_timeDown1 = $.now();
+            $('#opinfo_timer').val(info_timeDown1);
+        });
+        $("#collapseExample").on("hide.bs.collapse", function(){
+            $('#clinfo_timer').val($.now());
+            if (info_timeDown1) {
+                info_timeShown1 += $.now() - info_timeDown1;
+                $('#info_timer').val(info_timeShown1);
+                }
+            info_timeDown1 = null;
+        });
+    });
+    </script>
+
 {% endblock %}
