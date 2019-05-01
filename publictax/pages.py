@@ -13,17 +13,17 @@ class Intro(Page):
     #def after_all_players_arrive(self):
         #pass
 
-class Info(Page):
+class Info_1(Page):
+    form_model = 'player'
+    form_fields = ['accept_continue']
+
+class Info_2(Page):
     form_model = 'player'
     form_fields = ['inspectinfo', 'opinfo_timer', 'clinfo_timer', 'info_timer', 'subda_timer']
 
 class Judgment(Page):
     form_model = 'player'
-    form_fields = ['islider', 'iinvest', 'consultother', 'inspectinfo', 'opinfo_timer', 'clinfo_timer', 'info_timer', 'subda_timer']
-
-class Judgment_2(Page):
-    form_model = 'player'
-    form_fields = ['islider2', 'iinvest2', 'consultother2', 'inspectinfo2', 'opinfo_timer2', 'clinfo_timer2', 'info_timer2', 'subda_timer2']
+    form_fields = ['islider', 'iinvest', 'consultother', 'islider2', 'iinvest2', 'consultother2']
 
 class Financial(Page):
     form_model = 'player'
@@ -91,9 +91,9 @@ class Thank(Page):
 
 page_sequence = [
     Intro,
-    Info,
+    Info_1,
+    Info_2,
     Judgment,
-    Judgment_2,
     Financial,
     Experience,
     PEQ,

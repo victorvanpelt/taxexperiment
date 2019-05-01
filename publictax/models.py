@@ -41,6 +41,7 @@ class Subsession(BaseSubsession):
         # randomize to treatments
         for player in self.get_players():
             player.treat = random.choice(['control', 'australia'])
+            player.judgorder = random.choice(['A', 'B'])
             #print('set player.color to', player.color)
 
 
@@ -50,7 +51,9 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     treat = models.StringField()
+    judgorder = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
+    accept_continue = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
     inspectinfo = models.IntegerField(blank=True, initial=0)
     opinfo_timer = models.StringField(blank=True)
     clinfo_timer = models.StringField(blank=True)
@@ -259,7 +262,7 @@ class Player(BasePlayer):
         ]
     )
 
-    age = models.IntegerField(label="Please enter your age.", min=14, max=90, blank=False)
+    age = models.IntegerField(label="Please enter your age.", min=16, max=90, blank=False)
 
     nationality = models.IntegerField(
         label="Please select your region of residence.",
@@ -277,32 +280,32 @@ class Player(BasePlayer):
     employment = models.IntegerField(
         label = "Please select what best describes your current employment status",
         choices = [
-            'Working a full-time job for pay or profit (i.e., 35 hours a week or more)',
-            "Working a part-time job for pay or profit (i.e., 1-34 hours a week)",
-            "Working two or more part-time jobs for pay (totaling 35 hours or more per week)",
-            "Unemployed and looking for work",
-            "Unemployed and not looking for work",
-            "With a job, but not temporary at work",
-            "Retired",
-            "Student",
-            "Volunteer work",
-            "I prefer not to say"
+            [1, "Working a full-time job for pay or profit (i.e., 35 hours a week or more)"],
+            [2, "Working a part-time job for pay or profit (i.e., 1-34 hours a week)"],
+            [3, "Working two or more part-time jobs for pay (totaling 35 hours or more per week)"],
+            [4, "Unemployed and looking for work"],
+            [5, "Unemployed and not looking for work"],
+            [6, "With a job, but not temporary at work"],
+            [7, "Retired"],
+            [8, "Student"],
+            [9, "Volunteer work"],
+            [10, "I prefer not to say"]
         ]
     )
 
     education = models.IntegerField(
         label = "What is the highest level of education that you have completed?",
         choices = [
-            'Less than High school (0-8 years)',
-            'Some High school (9-12 years, but did not graduate)',
-            'GED or High school equivalency',
-            'High school graduate',
-            'Vocational or trade school',
-            '2-year College',
-            '4-year College (BS, BA, or similar)',
-            'Some postgraduate (no degree)',
-            'Some postgraduate (MS, MA, PhD, MBA, MD, etc.)'
-            'I prefer not to say'
+            [1, 'Less than High school (0-8 years)'],
+            [2, 'Some High school (9-12 years, but did not graduate)'],
+            [3, 'GED or High school equivalency'],
+            [4, 'High school graduate'],
+            [5, 'Vocational or trade school'],
+            [6, '2-year College'],
+            [7, '4-year College (BS, BA, or similar)'],
+            [8, 'Some postgraduate (no degree)'],
+            [9, 'Some postgraduate (MS, MA, PhD, MBA, MD, etc.)'],
+            [10, 'I prefer not to say']
         ]
     )
 
@@ -351,34 +354,34 @@ class Player(BasePlayer):
 
     islider = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=True),
-        min=0,
+        min=-100,
         initial=None,
         max=100,
         )
 
     iinvest = models.IntegerField(
-        label="Based on the information you just read, would you consider investing in company A?",
+        label="Based on the information you just read, would you consider investing in Alophonica?",
         choices=Constants.DefinitelyChoices
         )
 
     consultother = models.IntegerField(
-        label="Given the information you just read, would you still consult other sources of information before you decide about investing in company A?",
+        label="Given the information you just read, would you still consult other sources of information before you decide about investing in Alophonica?",
         choices=Constants.DefinitelyChoices
         )
 
     islider2 = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=True),
-        min=0,
+        min=-100,
         initial=None,
         max=100,
         )
 
     iinvest2 = models.IntegerField(
-        label="Based on the information you just read, would you consider investing in company A?",
+        label="Based on the information you just read, would you consider investing in Bellico?",
         choices=Constants.DefinitelyChoices
         )
 
     consultother2 = models.IntegerField(
-        label="Given the information you just read, would you still consult other sources of information before you decide about investing in company A?",
+        label="Given the information you just read, would you still consult other sources of information before you decide about investing in Bellico?",
         choices=Constants.DefinitelyChoices
         )

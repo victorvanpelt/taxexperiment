@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Alophonica and Bellico
+{% endblock %}
+
+{% block content %}
+<div class="instructions" style="height: 250px;">
+
+    <p>In this study, we ask you to evaluate the ethicality of tax practices of two publically-listed firms in the U.S.</p>
+    <ul>
+        <li>
+            Alophonica and Bellico are two large, multinational telecommunications firms headquartered in the country Olmeos.
+        </li>
+        <li>
+            Both firms have extensive broadband and TV distribution operations in three countries: Olmeos, Hingland, and Beland.
+        </li>
+        <li>
+            The statutory tax rates in each country is as follows:
+        </li>
+            <ul>
+                <li>
+                    Olmeos: has a statutory tax rate of <b style="color: rgb(0,123,255);">24%</b>
+                </li>
+                <li>
+                    Hingland has a statutory tax rate of <b style="color: rgb(0,123,255);">11%</b>
+                </li>
+                <li>
+                    Beland has a statutory tax rate of <b style="color: rgb(0,123,255);">40%</b>.
+                </li>
+            </ul>
+        <li>
+            Firms receive a 100% extra tax deduction on Research & Development (R&D) activities.
+        </li>
+        <!--<li>-->
+            <!--Before tax planning operations started, both firms had an effective tax rate of 15.94% and paid corporate taxes amounting to §4,047,000.-->
+        <!--</li>-->
+    </ul>
+
+    <!--<p> Alophonica and Bellico are two multinational telecommunications companies headquartered in the country Olmeos. Both firms are among the world's largest mobile telecommunications companies with operations in three countries: Olmeos, Hingland, and Beland. Alophonica and Bellico have extensive broadband and TV distribution operations in three countries.</p>-->
+
+    <!--<p>Both firms operate in three countries. Olmeos has a statutory tax rate of 24%, Hingland has a statutory tax rate of 11%, and Beland has a statutory tax rate of 40%. Firms receive 100% extra deduction on Research & Development (R&D) activities. Before tax planning operations started, both firms had an effective tax rate of 15.94% and paid corporate taxes amounting to $4,047,000. Below you can find an excerpt of the financial statements of Alophonica and Bellico.</p>-->
+
+</div>
+{% formfield player.accept_continue label="I understand, and I would like to start." %}
+<br>
+{% next_button %}
+
+{% endblock %}

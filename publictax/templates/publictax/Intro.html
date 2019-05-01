@@ -2,15 +2,15 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Important information
+    Before you begin ...
 {% endblock %}
 
 {% block content %}
-<div class="instructions" style="height: 212px;">
-Your main task is to ...
+<div class="instructions" style="height: 325px;">
+Please take note of the following information:
     <ul>
         <li>
-            Please read all information carefully and be aware that you cannot go back to previous screens.
+            Please read information carefully and be aware that you cannot go back to previous screens.
         </li>
         <li>
             This study is anonymous and data will only be used for research.
@@ -23,15 +23,14 @@ Your main task is to ...
         </li>
     </ul>
 
-By accepting this HIT you agree to participate in this study.
+    <p>By accepting this HIT you agree to participate in this study.<br>
+    Have feedback or suggestions? Feel free to put them into the feedback box at the end.</p>
 
-Have feedback or suggestions? Feel free to put them into the feedback box at the end.
+    <p>Thank you,</p>
 
-Thank you,
-
-Christian Peters and Victor van Pelt
-Tilburg University
-</div>
+    <p>Bart Dierynck, Martin Jacob, Christian Peters, Maximilian M&#252ller, and Victor van Pelt<br>
+    Tilburg University</p>
+    </div>
 
 
 {% formfield player.accept_conditions label="I have read and accept the conditions above." %}
