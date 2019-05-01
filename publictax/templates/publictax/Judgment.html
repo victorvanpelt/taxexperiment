@@ -14,7 +14,7 @@
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
 
-    {% formfield player.islider label=None %}
+    {% formfield player.islider label=None %}<span style="color: rgb(0,123,255);" id="demo1">0%</span>
 
     <p></p>
 
@@ -29,7 +29,7 @@
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
 
-    {% formfield player.islider2 label=None %}
+    {% formfield player.islider2 label=None %}<span style="color: rgb(0,123,255);" id="demo2">0%</span>
 
     <p></p>
 
@@ -47,7 +47,7 @@
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
 
-    {% formfield player.islider2 label=None %}
+    {% formfield player.islider2 label=None %}<span style="color: rgb(0,123,255);" id="demo2">0%</span>
 
     <p></p>
 
@@ -62,7 +62,7 @@
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
 
-    {% formfield player.islider label=None %}
+    {% formfield player.islider label=None %}<span style="color: rgb(0,123,255);" id="demo1">0%</span>
 
     <p></p>
 
@@ -80,5 +80,17 @@
 {% endblock %}
 
  {% block scripts %}
+
+    <script>
+        $('input[name=islider]').on('input', function() {
+            document.getElementById("demo1").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span>';
+        });
+    </script>
+
+    <script>
+        $('input[name=islider2]').on('input', function() {
+            document.getElementById("demo2").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span>';
+        });
+    </script>
 
 {% endblock %}

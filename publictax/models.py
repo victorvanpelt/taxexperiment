@@ -59,12 +59,6 @@ class Player(BasePlayer):
     clinfo_timer = models.StringField(blank=True)
     info_timer = models.StringField(blank=True)
     subda_timer = models.StringField(blank=True)
-    inspectinfo2 = models.IntegerField(blank=True, initial=0)
-    opinfo_timer2 = models.StringField(blank=True)
-    clinfo_timer2 = models.StringField(blank=True)
-    info_timer2 = models.StringField(blank=True)
-    subda_timer2 = models.StringField(blank=True)
-
 
 # Financial Literacy
     FL1 = models.IntegerField(
@@ -129,7 +123,8 @@ class Player(BasePlayer):
             [2, 'Individual shares and stocks'],
             [3, 'Debt securities and bonds'],
             [4, "I don't know"]
-        ]
+        ],
+        widget=widgets.RadioSelect
     )
 
     FL7 = models.IntegerField(
@@ -343,19 +338,21 @@ class Player(BasePlayer):
             [5, 'Slightly difficult'],
             [6, 'Moderately difficult'],
             [7, 'Extremely difficult']
-        ]
+        ],
+        blank=True
     )
 
     mturk_feedback = models.StringField(
-        label = "Any comments or feedback for this HIT?"
+        label = "Any comments or feedback for this HIT?",
+        blank=True
     )
 
 # Investor Judgments
 
     islider = models.FloatField(
-        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=True),
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
         min=-100,
-        initial=None,
+        initial=0,
         max=100,
         )
 
@@ -370,9 +367,9 @@ class Player(BasePlayer):
         )
 
     islider2 = models.FloatField(
-        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=True),
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
         min=-100,
-        initial=None,
+        initial=0,
         max=100,
         )
 
@@ -384,4 +381,20 @@ class Player(BasePlayer):
     consultother2 = models.IntegerField(
         label="Given the information you just read, would you still consult other sources of information before you decide about investing in Bellico?",
         choices=Constants.DefinitelyChoices
+        )
+
+    # Tax Ethicality
+
+    alotax = models.FloatField(
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
+        min=0,
+        initial=None,
+        max=100,
+        )
+
+    beltax = models.FloatField(
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
+        min=0,
+        initial=None,
+        max=100,
         )

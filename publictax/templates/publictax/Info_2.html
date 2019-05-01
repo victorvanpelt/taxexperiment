@@ -8,18 +8,25 @@
 {% block content %}
 
 {% if player.treat == "control" %}
-<div class="instructions" style="height: 65px;">
+<div class="instructions" style="height: 250px;">
 
     <p>Below you can find an excerpt of the financial statements of Alophonica and Bellico.</p>
+
+    <p>Please rate the ethicality of Alophonica and Bellico tax practices from competely unethical (0%) to completely ethical (100%).</p>
+
+    <b>Alophonica: </b><b style="color: rgb(0,123,255);" id="demo1">0%</b>
+    {% formfield player.alotax label=None %}
+
+    <b>Bellico: </b><b style="color: rgb(0,123,255);" id="demo2">0%</b>
+    {% formfield player.beltax label=None %}
 
 </div>
 
 
 {% else %}
-<div class="instructions" style="height: 240px;">
+<div class="instructions" style="height: 425px;">
     <p>Below you can find an excerpt of the financial statements of Alophonica and Bellico.</p>
     <p>The tax authorities also publish the following information about Alophonica and Bellico:</p>
-
     <table border="1" align="left">
     <thead>
         <tr>
@@ -45,7 +52,15 @@
             <td><b>Taxes Paid:</b></td>
             <td>$4,047,000</td>
         </tr>
-    </table>
+    </table><br clear="all">
+    <br>
+    <p>Please rate the ethicality of Alophonica and Bellico tax practices from competely unethical (0%) to completely ethical (100%).</p>
+
+    <b>Alophonica: </b><b style="color: rgb(0,123,255);" id="demo1">0%</b>
+    {% formfield player.alotax label=None %}
+
+    <b>Bellico: </b><b style="color: rgb(0,123,255);" id="demo2">0%</b>
+    {% formfield player.beltax label=None %}
 
 </div>
 {% endif %}
@@ -100,6 +115,18 @@
             info_timeDown1 = null;
         });
     });
+    </script>
+
+    <script>
+        $('input[name=alotax]').on('input', function() {
+            document.getElementById("demo1").innerHTML = $(this).val()+'<b style="color: rgb(0,123,255);">%</b>';
+        });
+    </script>
+
+    <script>
+        $('input[name=beltax]').on('input', function() {
+            document.getElementById("demo2").innerHTML = $(this).val()+'<b style="color: rgb(0,123,255);">%</b>';
+        });
     </script>
 
 {% endblock %}

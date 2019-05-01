@@ -19,7 +19,7 @@ class Info_1(Page):
 
 class Info_2(Page):
     form_model = 'player'
-    form_fields = ['inspectinfo', 'opinfo_timer', 'clinfo_timer', 'info_timer', 'subda_timer']
+    form_fields = ['inspectinfo', 'opinfo_timer', 'clinfo_timer', 'info_timer', 'subda_timer', 'alotax', 'beltax']
 
 class Judgment(Page):
     form_model = 'player'
@@ -85,10 +85,6 @@ class Turk(Page):
         'mturk_feedback'
     ]
 
-class Thank(Page):
-    pass
-
-
 page_sequence = [
     Intro,
     Info_1,
@@ -97,6 +93,5 @@ page_sequence = [
     Financial,
     Experience,
     PEQ,
-    Turk,
-    Thank
+    Turk
 ]
