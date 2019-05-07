@@ -5,10 +5,23 @@ from os import environ
 # the session config can be accessed from methods in your apps as self.session.config,
 # e.g. self.session.config['participation_fee']
 
+mturk_hit_settings = {
+    'keywords': ['bonus', 'study'],
+    'title': 'A Study about Corporate Taxation',
+    'description': 'During this study you will be asked to assess corporate tax strategies',
+    'frame_height': 500,
+    'preview_template': 'global/MTurkPreview.html',
+    'minutes_allotted_per_assignment': 20,
+    'expiration_hours': 7*24, # 7 days
+    #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
+    'qualification_requirements': []
+}
+
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 1.00,
-    'participation_fee': 0.00,
+    'participation_fee': 1.00,
     'doc': "",
+    'mturk_hit_settings': mturk_hit_settings,
 }
 
 SESSION_CONFIGS = [
@@ -26,7 +39,8 @@ SESSION_CONFIGS = [
     },
 ]
 
-
+AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
