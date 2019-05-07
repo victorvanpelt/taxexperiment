@@ -10,6 +10,9 @@
 {% if player.judgorder == "A" %}
 <div class="instructions" style="height: 750px;">
     <p>
+    You judged the corporate tax strategy of Alophonica as {{ player.alotax }}% ethical and Bellico as {{ player.beltax }}% ethical.
+    </p>
+    <p>
         Suppose you have $10,000 invested in Alophonica. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
@@ -44,6 +47,10 @@
 
 {% else %}
 <div class="instructions" style="height: 750px;">
+
+    <p>
+    You judged the corporate tax strategy of Alophonica as {{ player.alotax }}% ethical and Bellico as {{ player.beltax }}% ethical.
+    </p>
     <p>
         Suppose you have $10,000 invested in Bellico. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
