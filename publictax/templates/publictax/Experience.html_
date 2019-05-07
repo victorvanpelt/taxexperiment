@@ -2,14 +2,14 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Questionnaire
 {% endblock %}
 
 {% block content %}
 
     <div class="instructions" style="text-align:center">
     <b>
-        Please answer the following questions to the best of your ability.
+        This section presents you some questions about your experience in the financial markets, please select the
+        answer(s) that best applies to you.
     </b>
     </div>
 

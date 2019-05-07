@@ -53,12 +53,18 @@ class Player(BasePlayer):
     treat = models.StringField()
     judgorder = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
-    accept_continue = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
-    inspectinfo = models.IntegerField(blank=True, initial=0)
-    opinfo_timer = models.StringField(blank=True)
-    clinfo_timer = models.StringField(blank=True)
-    info_timer = models.StringField(blank=True)
-    subda_timer = models.StringField(blank=True)
+    # accept_continue1 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
+    # accept_continue2 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
+
+    # Instruction1 checks
+    Instr1a = models.IntegerField(blank=False, choices=[[1, 'True'], [2, 'False']], widget=widgets.RadioSelect)
+    Instr1b = models.IntegerField(blank=False, choices=[[1, 'True'], [2, 'False']], widget=widgets.RadioSelect)
+
+    # Instruction2 checks
+    Instr2a = models.IntegerField(blank=False, choices=[[1, 'True'], [2, 'False']], widget=widgets.RadioSelect)
+    Instr2b = models.IntegerField(blank=False, choices=[[1, 'True'], [2, 'False']], widget=widgets.RadioSelect)
+
+    timer_id = models.StringField(blank=True)
 
 # Financial Literacy
     FL1 = models.IntegerField(
@@ -176,73 +182,73 @@ class Player(BasePlayer):
 
 # Financial Experience
 
-    FE1 = models.StringField(
-        blank=True,
-        label="Please indicate whether you have directly or indirectly (e.g., through a pension or formal retirement) conducted trades and transactions in the following financial assets in the past:",
-        widget=forms.CheckboxSelectMultiple(
-            choices=[
-                ['1', 'Debt securities and bonds'],
-                ['2', 'Individual shares and stocks'],
-                ['3', 'Mutual Funds'],
-                ['4', 'Pension Funds'],
-                ['5', 'Derivatives and options'],
-                ['6', 'Other financial assets'],
-            ],
-        )
-    )
-
-    FE2 = models.StringField(
-        blank=True,
-        label="Please indicate whether you plan to own directly or indirectly (e.g., through a pension or formal retirement) one or more of the following financial assets in the future:",
-        widget=forms.CheckboxSelectMultiple(
-            choices=[
-                ['1', 'Debt securities and bonds'],
-                ['2', 'Individual shares and stocks'],
-                ['3', 'Mutual Funds'],
-                ['4', 'Pension Funds'],
-                ['5', 'Derivatives and options'],
-                ['6', 'Other financial assets'],
-            ],
-        )
-    )
-
-    FE3 = models.StringField(
-        blank=True,
-        label="Please indicate whether you have consulted the following sources for financial information in the past:",
-        widget=forms.CheckboxSelectMultiple(
-            choices=[
-                ['1', 'Investment advisors and professionals'],
-                ['2', 'Company and regulator website'],
-                ['3', 'Blogs, forums, and social media'],
-                ['4', 'Friends, family, and acquaintances'],
-                ['5', 'Television, magazines, and newspapers'],
-                ['6', 'Other sources'],
-            ],
-        )
-    )
-
-    FE4 = models.IntegerField(
-        label = "Please provide an estimate of the number of days during an average week that you consult companies’ financial statements for financial information in an average week, for instance, through the company website or the SEC filing:"
-    )
-
-    FE5 = models.IntegerField(
-        label = "Please provide an estimate of the number of days during an average week that you consume and consult economic and financial news (e.g., financial media, specialized online media, etc.):"
-    )
-
-    FE6 = models.StringField(
-        blank=True,
-        label="Please indicate whether you plan to consult the following sources for financial information in the future:",
-        widget=forms.CheckboxSelectMultiple(
-            choices=[
-                ['1', 'Investment advisors and professionals'],
-                ['2', 'Company and regulator website'],
-                ['3', 'Blogs, forums, and social media'],
-                ['4', 'Friends, family, and acquaintances'],
-                ['5', 'Television, magazines, and newspapers'],
-                ['6', 'Other sources'],
-            ],
-        )
-    )
+    # FE1 = models.StringField(
+    #     blank=True,
+    #     label="Please indicate whether you have directly or indirectly (e.g., through a pension or formal retirement) conducted trades and transactions in the following financial assets in the past:",
+    #     widget=forms.CheckboxSelectMultiple(
+    #         choices=[
+    #             ['1', 'Debt securities and bonds'],
+    #             ['2', 'Individual shares and stocks'],
+    #             ['3', 'Mutual Funds'],
+    #             ['4', 'Pension Funds'],
+    #             ['5', 'Derivatives and options'],
+    #             ['6', 'Other financial assets'],
+    #         ],
+    #     )
+    # )
+    #
+    # FE2 = models.StringField(
+    #     blank=True,
+    #     label="Please indicate whether you plan to own directly or indirectly (e.g., through a pension or formal retirement) one or more of the following financial assets in the future:",
+    #     widget=forms.CheckboxSelectMultiple(
+    #         choices=[
+    #             ['1', 'Debt securities and bonds'],
+    #             ['2', 'Individual shares and stocks'],
+    #             ['3', 'Mutual Funds'],
+    #             ['4', 'Pension Funds'],
+    #             ['5', 'Derivatives and options'],
+    #             ['6', 'Other financial assets'],
+    #         ],
+    #     )
+    # )
+    #
+    # FE3 = models.StringField(
+    #     blank=True,
+    #     label="Please indicate whether you have consulted the following sources for financial information in the past:",
+    #     widget=forms.CheckboxSelectMultiple(
+    #         choices=[
+    #             ['1', 'Investment advisors and professionals'],
+    #             ['2', 'Company and regulator website'],
+    #             ['3', 'Blogs, forums, and social media'],
+    #             ['4', 'Friends, family, and acquaintances'],
+    #             ['5', 'Television, magazines, and newspapers'],
+    #             ['6', 'Other sources'],
+    #         ],
+    #     )
+    # )
+    #
+    # FE4 = models.IntegerField(
+    #     label = "Please provide an estimate of the number of days during an average week that you consult companies’ financial statements for financial information in an average week, for instance, through the company website or the SEC filing:"
+    # )
+    #
+    # FE5 = models.IntegerField(
+    #     label = "Please provide an estimate of the number of days during an average week that you consume and consult economic and financial news (e.g., financial media, specialized online media, etc.):"
+    # )
+    #
+    # FE6 = models.StringField(
+    #     blank=True,
+    #     label="Please indicate whether you plan to consult the following sources for financial information in the future:",
+    #     widget=forms.CheckboxSelectMultiple(
+    #         choices=[
+    #             ['1', 'Investment advisors and professionals'],
+    #             ['2', 'Company and regulator website'],
+    #             ['3', 'Blogs, forums, and social media'],
+    #             ['4', 'Friends, family, and acquaintances'],
+    #             ['5', 'Television, magazines, and newspapers'],
+    #             ['6', 'Other sources'],
+    #         ],
+    #     )
+    # )
 
 # Demographic Information
 
@@ -257,7 +263,7 @@ class Player(BasePlayer):
         ]
     )
 
-    age = models.IntegerField(label="Please enter your age.", min=16, max=90, blank=False)
+    age = models.IntegerField(label="Please enter your age.", min=18, max=90, blank=False)
 
     nationality = models.IntegerField(
         label="Please select your region of residence.",
@@ -356,6 +362,8 @@ class Player(BasePlayer):
         max=100,
         )
 
+    check_islider = models.FloatField(blank=True, initial=None)
+
     iinvest = models.IntegerField(
         label="Based on the information you just read, would you consider investing in Alophonica?",
         choices=Constants.DefinitelyChoices
@@ -372,6 +380,8 @@ class Player(BasePlayer):
         initial=0,
         max=100,
         )
+
+    check_islider2 = models.FloatField(blank=True, initial=None)
 
     iinvest2 = models.IntegerField(
         label="Based on the information you just read, would you consider investing in Bellico?",
@@ -392,9 +402,13 @@ class Player(BasePlayer):
         max=100,
         )
 
+    check_alotax = models.FloatField(blank=True, initial=None)
+
     beltax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
         min=0,
         initial=None,
         max=100,
         )
+
+    check_beltax = models.FloatField(blank=True, initial=None)

@@ -16,6 +16,7 @@
 
     {% formfield player.islider label=None %}<span style="color: rgb(0,123,255);" id="demo1">0%</span>
 
+    <input type="hidden" name="check_islider" value="" id="check_islider"/>
     <p></p>
 
     {% formfield player.iinvest %}
@@ -31,6 +32,7 @@
 
     {% formfield player.islider2 label=None %}<span style="color: rgb(0,123,255);" id="demo2">0%</span>
 
+    <input type="hidden" name="check_islider2" value="" id="check_islider2"/>
     <p></p>
 
     {% formfield player.iinvest2 %}
@@ -49,6 +51,7 @@
 
     {% formfield player.islider2 label=None %}<span style="color: rgb(0,123,255);" id="demo2">0%</span>
 
+    <input type="hidden" name="check_islider2" value="" id="check_islider2"/>
     <p></p>
 
     {% formfield player.iinvest2 %}
@@ -64,6 +67,7 @@
 
     {% formfield player.islider label=None %}<span style="color: rgb(0,123,255);" id="demo1">0%</span>
 
+    <input type="hidden" name="check_islider" value="" id="check_islider"/>
     <p></p>
 
     {% formfield player.iinvest %}
@@ -83,13 +87,17 @@
 
     <script>
         $('input[name=islider]').on('input', function() {
-            document.getElementById("demo1").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span>';
+            x = 10000 + $(this).val()/100 * 10000;
+            document.getElementById("demo1").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
+            $('#check_islider').val(1);
         });
     </script>
 
     <script>
         $('input[name=islider2]').on('input', function() {
-            document.getElementById("demo2").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span>';
+            x = 10000 + $(this).val()/100 * 10000;
+            document.getElementById("demo2").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
+            $('#check_islider2').val(1);
         });
     </script>
 

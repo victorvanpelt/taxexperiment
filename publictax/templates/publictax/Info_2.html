@@ -6,127 +6,34 @@
 {% endblock %}
 
 {% block content %}
-
-{% if player.treat == "control" %}
-<div class="instructions" style="height: 250px;">
-
-    <p>Below you can find an excerpt of the financial statements of Alophonica and Bellico.</p>
-
-    <p>Please rate the ethicality of Alophonica and Bellico tax practices from competely unethical (0%) to completely ethical (100%).</p>
-
-    <b>Alophonica: </b><b style="color: rgb(0,123,255);" id="demo1">0%</b>
-    {% formfield player.alotax label=None %}
-
-    <b>Bellico: </b><b style="color: rgb(0,123,255);" id="demo2">0%</b>
-    {% formfield player.beltax label=None %}
-
+<div class="instructions" style="height: 160px;">
+        <li>
+            Alophonica and Bellico are two large, multinational telecommunications firms headquartered in the country Olmeos.
+        </li>
+        <li>
+            Both firms have extensive broadband and TV distribution operations in three countries: Olmeos, Hingland, and Beland.
+        </li>
+        <li>
+            Olmeos has a statutory tax rate of <b style="color: rgb(0,123,255);">24%</b>.
+        </li>
+        <li>
+            Next to Olmeos, there are other countries with lower and higher statutory tax rates.
+        </li>
+        <li>
+            Firms receive a <b style="color: rgb(0,123,255);">100%</b> extra tax deduction on Research & Development (R&D) activities.
+        </li>
 </div>
-
-
-{% else %}
-<div class="instructions" style="height: 425px;">
-    <p>Below you can find an excerpt of the financial statements of Alophonica and Bellico.</p>
-    <p>The tax authorities also publish the following information about Alophonica and Bellico:</p>
-    <table border="1" align="left">
-    <thead>
-        <tr>
-            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
-            <td align="center" colspan="2"><h6><b>Bellico</b></h6></td>
-        </tr>
-    </thead>
-        <tr>
-            <td><b>Total Income:</b></td>
-            <td>$85,589,000</td>
-            <td><b>Total Income:</b></td>
-            <td>$85,589,000</td>
-        </tr>
-        <tr>
-            <td><b>Taxable Income:</b></td>
-            <td>$25,374,000</td>
-            <td><b>Taxable Income:</b></td>
-            <td>$25,374,000</td>
-        </tr>
-        <tr>
-            <td><b>Taxes Paid:</b></td>
-            <td>$4,047,000</td>
-            <td><b>Taxes Paid:</b></td>
-            <td>$4,047,000</td>
-        </tr>
-    </table><br clear="all">
-    <br>
-    <p>Please rate the ethicality of Alophonica and Bellico tax practices from competely unethical (0%) to completely ethical (100%).</p>
-
-    <b>Alophonica: </b><b style="color: rgb(0,123,255);" id="demo1">0%</b>
-    {% formfield player.alotax label=None %}
-
-    <b>Bellico: </b><b style="color: rgb(0,123,255);" id="demo2">0%</b>
-    {% formfield player.beltax label=None %}
-
-</div>
-{% endif %}
-
-<input type="hidden" name="inspectinfo" value="" id="id_inspectinfo"/>
-<input type="hidden" name="opinfo_timer" value="0" id="opinfo_timer"/>
-<input type="hidden" name="clinfo_timer" value="0" id="clinfo_timer"/>
-<input type="hidden" name="info_timer" value="0" id="info_timer"/>
-<input type="hidden" name="subda_timer" value="0" id="subda_timer"/>
-
-<div class="container">
-  <button style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-info" data-toggle="collapse" id="buttoni" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Financial Information</button>
-  <div id="collapseExample" class="collapse">
-      <br>
-      <img align="center" width="75%" src="{% static 'Screenshot_Alophonica_Bellico.png' %}"/>
-  </div>
-</div>
-<br>
+    <p>
+        <b>Please evaluate the following statements.</b>
+    </p>
+    <p>
+        Both firms are headquartered in Olmeos and exclusively operate there.
+        {% formfield player.Instr2a label=None %}
+    </p>
+    <p>
+        Next to business tax credits on R&D, effective tax payments may also be different because they have operations in multiple countries.
+        {% formfield player.Instr2b label=None %}
+    </p>
 {% next_button %}
-
-{% endblock %}
-
- {% block scripts %}
-    <script>
-        $('#buttoni').click(function() {
-            $('#id_inspectinfo').val(1);
-        });
-    </script>
-
-	 <script>
-    document.getElementById('buttoni').onclick = function() {
-        var subda_timeDown = new Date().getTime();
-        document.getElementById('subda_timer').value = String(subda_timeDown);
-       };
-    </script>
-
-    <script>
-    var info_timeShown1 = 0;
-        var info_timeDown1;
-
-    $(document).ready(function(){
-        $('#collapseExample').on("show.bs.collapse", function(){
-            info_timeDown1 = $.now();
-            $('#opinfo_timer').val(info_timeDown1);
-        });
-        $("#collapseExample").on("hide.bs.collapse", function(){
-            $('#clinfo_timer').val($.now());
-            if (info_timeDown1) {
-                info_timeShown1 += $.now() - info_timeDown1;
-                $('#info_timer').val(info_timeShown1);
-                }
-            info_timeDown1 = null;
-        });
-    });
-    </script>
-
-    <script>
-        $('input[name=alotax]').on('input', function() {
-            document.getElementById("demo1").innerHTML = $(this).val()+'<b style="color: rgb(0,123,255);">%</b>';
-        });
-    </script>
-
-    <script>
-        $('input[name=beltax]').on('input', function() {
-            document.getElementById("demo2").innerHTML = $(this).val()+'<b style="color: rgb(0,123,255);">%</b>';
-        });
-    </script>
 
 {% endblock %}
