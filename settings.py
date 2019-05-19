@@ -14,12 +14,22 @@ mturk_hit_settings = {
     'minutes_allotted_per_assignment': 20,
     'expiration_hours': 7*24, # 7 days
     #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
-    'qualification_requirements': []
+    'qualification_requirements': [
+        {
+            'QualificationTypeId': "2F1QJWKUDD8XADTFD2Q0G6UTO95ALH",
+            'Comparator': "Exists",
+        },
+        {
+        'QualificationTypeId': "00000000000000000071",
+        'Comparator': "EqualTo",
+        'LocaleValues': [{'Country': "US"}]
+        },
+        ]
 }
 
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 1.00,
-    'participation_fee': 1.00,
+    'participation_fee': 2.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
