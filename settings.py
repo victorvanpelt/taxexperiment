@@ -44,7 +44,7 @@ SESSION_CONFIGS = [
     {
         'name': 'publictax',
         'display_name': "Public Tax Experiment",
-        'num_demo_participants': 1,
+        'num_demo_participants': 5,
         'app_sequence': ['publictax'],
     },
 ]
