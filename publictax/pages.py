@@ -100,7 +100,9 @@ class PEQ(Page):
         'employment',
         'education',
         'workexperience',
-        'english'
+        'english',
+        'politics',
+        'tax_advisor'
     ]
 
     def get_form_fields(self):

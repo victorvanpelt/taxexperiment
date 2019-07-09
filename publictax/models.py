@@ -332,6 +332,29 @@ class Player(BasePlayer):
         initial=None
     )
 
+    politics = models.IntegerField(
+        label = "Please indicate which political party best describes your political orientation.",
+        choices = [
+            [1, 'Democrats'],
+            [2, 'Republicans'],
+            [3, 'Other'],
+            [4, 'Prefer not to say']
+        ]
+    )
+
+    tax_advisor = models.IntegerField(
+        label = "How often do you consult a tax advisor?",
+        choices = [
+            [1, 'Never'],
+            [2, 'Very rarely'],
+            [3, 'Rarely'],
+            [4, 'Sometimes'],
+            [5, 'Occasionally'],
+            [6, 'Frequently'],
+            [7, 'Very frequently']
+        ]
+    )
+
 # End of HIT MTurk
 
     mturk = models.IntegerField(
@@ -369,9 +392,20 @@ class Player(BasePlayer):
         choices=Constants.DefinitelyChoices
         )
 
-    consultother = models.IntegerField(
+    consultother = models.StringField(
+        blank=True,
         label="Given the information you just read, would you still consult other sources of information before you decide about investing in Alophonica?",
-        choices=Constants.DefinitelyChoices
+        widget = forms.CheckboxSelectMultiple(
+            choices=[
+                [1, 'Investment advisors and professionals'],
+                [2, 'Company and regulator websites'],
+                [3, 'Blogs, forums, and social media'],
+                [4, 'Friends, family, and acquaintances'],
+                [5, 'Television, magazines, and newspapers'],
+                [6, 'Annual reports and other financial disclosures'],
+                [7, 'Other sources']
+            ],
+            )
         )
 
     islider2 = models.FloatField(
@@ -392,6 +426,13 @@ class Player(BasePlayer):
         label="Given the information you just read, would you still consult other sources of information before you decide about investing in Bellico?",
         choices=Constants.DefinitelyChoices
         )
+
+    imarketslider = models.FloatField(
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
+        min=-10000,
+        initial=0,
+        max=10000,
+    )
 
     # Tax Ethicality
 

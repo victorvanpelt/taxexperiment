@@ -45,6 +45,13 @@
     {% formfield player.consultother2 %}
 </div>
 
+    <p>
+        Suppose you have $10,000 invested in the stock market. Would you change your overall stock market investment on the information you just read?
+        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
+    </p>
+
+    {% formfield player.imarketslider label=None %}<span style="color: rgb(0,123,255);" id="demo3">0%</span>
+
 {% else %}
 <div class="instructions" style="height: 775px;">
 
@@ -82,6 +89,14 @@
     <p></p>
 
     {% formfield player.consultother %}
+
+    <p>
+        Suppose you have $10,000 invested in the stock market. Would you change your overall stock market investment on the information you just read?
+        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
+    </p>
+
+    {% formfield player.imarketslider label=None %}<span style="color: rgb(0,123,255);" id="demo3">0%</span>
+
 </div>
 
 {% endif %}
@@ -105,6 +120,14 @@
             x = 10000 + $(this).val()/100 * 10000;
             document.getElementById("demo2").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
             $('#check_islider2').val(1);
+        });
+    </script>
+
+    <script>
+        $('input[name=imarketslider]').on('input', function() {
+            x = 10000 + $(this).val()/100 * 10000;
+            document.getElementById("demo3").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
+            $('#check_imarketslider').val(1);
         });
     </script>
 
