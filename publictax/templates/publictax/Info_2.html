@@ -6,32 +6,35 @@
 {% endblock %}
 
 {% block content %}
-<div class="instructions" style="height: 160px;">
+
+<div align="center">
+    <img width="75%" src="{% static "publictax/image2.jpg" %}"/>
+    <br/>
+</div>
+
+<div class="instructions" style="height: 130px;">
         <li>
-            Alophonica and Bellico are two large, multinational telecommunications firms headquartered in the country Olmeos.
+            <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> both have their headquarters in the country <b>Olmeos</b>.
         </li>
         <li>
-            Both firms have extensive broadband and TV distribution operations in three countries: Olmeos, Hingland, and Beland.
+            Both firms have extensive broadband and TV distribution operations in two countries: <b>Olmeos</b> and <b>Hingland</b>.
         </li>
         <li>
-            Olmeos has a statutory tax rate of <b style="color: rgb(0,123,255);">24%</b>.
+            <b>Olmeos</b> has a statutory tax rate of <b>24%</b>, and Hingland has a lower statutory tax rate.
         </li>
         <li>
-            Next to Olmeos, there are other countries with lower and higher statutory tax rates.
-        </li>
-        <li>
-            Firms receive a <b style="color: rgb(0,123,255);">100%</b> tax deduction on Research & Development (R&D) activities.
+            Firms receive a <b>100%</b> tax deduction on Research & Development (R&D) activities in <b>Olmeos</b>.
         </li>
 </div>
     <p>
         <b>Please evaluate the following statements.</b>
     </p>
     <p>
-        Both firms are headquartered in Olmeos and exclusively operate there.
+        Since both firms are headquartered in <b>Olmeos</b>, they exclusively operate there.
         {% formfield player.Instr2a label=None %}
     </p>
     <p>
-        Next to business tax credits on R&D, effective tax payments may also be different from statutory tax rates because firms may have operations in multiple countries.
+        Next to business tax credits on R&D in <b>Olmeos</b>, effective tax payments may also be different from statutory tax rates because firms may have operations in other countries.
         {% formfield player.Instr2b label=None %}
     </p>
 {% next_button %}

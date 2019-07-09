@@ -46,14 +46,16 @@ class Info_3(Page):
 
 class Judgment(Page):
     form_model = 'player'
-    form_fields = ['islider', 'iinvest', 'consultother', 'islider2', 'iinvest2', 'consultother2', 'check_islider', 'check_islider2']
+    form_fields = ['islider', 'iinvest', 'consultother', 'islider2', 'iinvest2', 'consultother2', 'check_islider', 'check_islider2', 'imarketslider', 'check_imarketslider']
 
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_islider"] == None:
-                return 'Please drag both sliders to make your decisions'
+                return 'Please drag all sliders to make your decisions'
             if value["check_islider2"] == None:
-                return 'Please drag both sliders to make your decisions'
+                return 'Please drag all sliders to make your decisions'
+            if value["check_imarketslider"] == None:
+                return 'Please drag x sliders to make your decisions'
 
 class Financial(Page):
     form_model = 'player'
@@ -114,7 +116,8 @@ class Turk(Page):
     form_model = 'player'
     form_fields = [
         'mturk',
-        'mturk_feedback'
+        'mturk_feedback',
+        'mturk_motivation'
     ]
 
 page_sequence = [

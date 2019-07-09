@@ -6,24 +6,28 @@
 {% endblock %}
 
 {% block content %}
-<div class="instructions" style="height: 185px;">
 
+<div align="center">
+    <img width="75%" src="{% static "publictax/image1.jpg" %}"/>
+</div>
+
+<div class="instructions" style="height: 185px;">
     <li>
-        In this study, we ask you to evaluate the ethicality of tax practices of two publically-listed firms in the country Olmeos.
+        Your task is to evaluate the ethicality of tax practices of two listed firms (<b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b>) in the country <b>Olmeos</b>.
     </li>
     <li>
-        Although Olmeos has a statutory tax rate, the tax that firms effectively pay may be different.
+        Although <b>Olmeos</b> has a statutory tax rate of <b>24%</b>, the tax that firms effectively pay may be different.
     </li>
     <li>
-        There are a range of ways that firms' effective tax rates may be different than the statutory tax rate in Olmeos:
+        There are a range of ways that firms' effective tax rates may be different than the statutory tax rate of <b>Olmeos</b>:
     </li>
         <ul>
             <li>
-                Firms may use business tax credits offered by the government of Olmeos.
+                Firms may use business tax credits offered by the government of <b>Olmeos</b>.
             </li>
-            <li>
-                They may offset their taxes using losses in prior years.
-            </li>
+<!--            <li>-->
+<!--                They may offset their taxes using losses in prior years.-->
+<!--            </li>-->
             <li>
                 Firms may have operations in countries that have other statutory tax rates.
             </li>
@@ -33,11 +37,11 @@
         <b>Please evaluate the following statements.</b>
     </p>
     <p>
-        My task is to evaluate the ethicality of tax practices by firms in Olmeos.
+        My task is to evaluate the ethicality of tax practices by firms in <b>Olmeos</b>.
         {% formfield player.Instr1a label=None %}
     </p>
     <p>
-        All firms in Olmeos pay effectively the statutory tax rate.
+        All firms in <b>Olmeos</b> effectively pay a tax rate of <b>24%</b>.
         {% formfield player.Instr1b label=None %}
     </p>
 

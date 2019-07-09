@@ -2,100 +2,115 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Alophonica and Bellico
+    A few more questions about Alophonica and Bellico
 {% endblock %}
 
 {% block content %}
 
 {% if player.judgorder == "A" %}
-<div class="instructions" style="height: 775px;">
+<div align="center" class="instructions" style="height: 65px;">
     <p>
-    You judged the corporate tax strategy of Alophonica as {{ player.alotax }}% ethical and Bellico as {{ player.beltax }}% ethical.
+        You judged the corporate tax practices of <b style="color: rgb(68,114,196);">Alophonica</b> as <b>{{ player.alotax | floatformat:0 }}%</b> ethical and <b style="color: rgb(237,125,49);">Bellico</b> as <b>{{ player.beltax | floatformat:0 }}%</b> ethical.
     </p>
-    <p>
-        Suppose you have $10,000 invested in Alophonica. Would you change your investment based on the information you just read?
-        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
-    </p>
-
-    {% formfield player.islider label=None %}<span style="color: rgb(0,123,255);" id="demo1">0%</span>
-
-    <input type="hidden" name="check_islider" value="" id="check_islider"/>
-    <p></p>
-
-    {% formfield player.iinvest %}
-
-    <p></p>
-
-    {% formfield player.consultother %}
-
-    <p>
-        Suppose you have $10,000 invested in Bellico. Would you change your investment based on the information you just read?
-        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
-    </p>
-
-    {% formfield player.islider2 label=None %}<span style="color: rgb(0,123,255);" id="demo2">0%</span>
-
-    <input type="hidden" name="check_islider2" value="" id="check_islider2"/>
-    <p></p>
-
-    {% formfield player.iinvest2 %}
-
-    <p></p>
-
-    {% formfield player.consultother2 %}
 </div>
-
+<div class="instructions" style="height: 575px;">
     <p>
-        Suppose you have $10,000 invested in the stock market. Would you change your overall stock market investment on the information you just read?
+        Suppose you have $10,000 invested in <b style="color: rgb(68,114,196);">Alophonica</b>. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
 
-    {% formfield player.imarketslider label=None %}<span style="color: rgb(0,123,255);" id="demo3">0%</span>
-
-{% else %}
-<div class="instructions" style="height: 775px;">
-
-    <p>
-    You judged the corporate tax strategy of Alophonica as {{ player.alotax }}% ethical and Bellico as {{ player.beltax }}% ethical.
-    </p>
-    <p>
-        Suppose you have $10,000 invested in Bellico. Would you change your investment based on the information you just read?
-        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
-    </p>
-
-    {% formfield player.islider2 label=None %}<span style="color: rgb(0,123,255);" id="demo2">0%</span>
-
-    <input type="hidden" name="check_islider2" value="" id="check_islider2"/>
-    <p></p>
-
-    {% formfield player.iinvest2 %}
-
-    <p></p>
-
-    {% formfield player.consultother2 %}
-
-    <p>
-        Suppose you have $10,000 invested in Alophonica. Would you change your investment based on the information you just read?
-        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
-    </p>
-
-    {% formfield player.islider label=None %}<span style="color: rgb(0,123,255);" id="demo1">0%</span>
+    {% formfield player.islider label=None %}<b id="demo1">0%</b>
 
     <input type="hidden" name="check_islider" value="" id="check_islider"/>
     <p></p>
 
-    {% formfield player.iinvest %}
+    <p>Based on the information you just read, would you consider investing in <b style="color: rgb(237,125,49);">Alophonica</b>?</p>
+    {% formfield player.iinvest label=None %}
 
     <p></p>
-
-    {% formfield player.consultother %}
+    <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b style="color: rgb(237,125,49);">Alophonica</b>?</p>
+    {% formfield player.consultother label="" %}
 
     <p>
-        Suppose you have $10,000 invested in the stock market. Would you change your overall stock market investment on the information you just read?
+</div>
+<div  class="instructions" style="height: 575px;">
+    <p>    Suppose you have $10,000 invested in <b style="color: rgb(237,125,49);">Bellico</b>. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
 
-    {% formfield player.imarketslider label=None %}<span style="color: rgb(0,123,255);" id="demo3">0%</span>
+    {% formfield player.islider2 label=None %}<b id="demo2">0%</b>
+
+    <input type="hidden" name="check_islider2" value="" id="check_islider2"/>
+    <p></p>
+
+    <p>Based on the information you just read, would you consider investing in <b style="color: rgb(237,125,49);">Bellico</b>?</p>
+    {% formfield player.iinvest2 label=None %}
+
+    <p></p>
+    <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b style="color: rgb(237,125,49);">Bellico</b>?</p>
+    {% formfield player.consultother2 label="" %}
+</div>
+    <div class="instructions" style="height: 175px;">
+    <p>
+        Suppose you have <b>$10,000</b> invested in the stock market. Would you change your overall stock market investment on the information you just read?
+        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
+    </p>
+
+    {% formfield player.imarketslider label=None %}<b id="demo3">0%</b>
+    <input type="hidden" name="check_imarketslider" value="" id="check_imarketslider"/>
+
+</div>
+{% else %}
+    <div align="center" class="instructions" style="height: 65px;">
+    <p>
+    You judged the corporate tax practices of <b style="color: rgb(68,114,196);">Alophonica</b> as <b>{{ player.alotax | floatformat:0 }}%</b> ethical and <b style="color: rgb(237,125,49);">Bellico</b> as <b>{{ player.beltax | floatformat:0 }}%</b> ethical.
+    </p>
+    </div>
+<div class="instructions" style="height: 575px;">
+    <p>
+        Suppose you have <b>$10,000</b> invested in <b style="color: rgb(237,125,49);">Bellico</b>. Would you change your investment based on the information you just read?
+        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
+    </p>
+
+    {% formfield player.islider2 label=None %}<b id="demo2">0%</b>
+
+    <input type="hidden" name="check_islider2" value="" id="check_islider2"/>
+    <p></p>
+
+    <p>Based on the information you just read, would you consider investing in <b style="color: rgb(237,125,49);">Bellico</b>?</p>
+    {% formfield player.iinvest2 label=None %}
+
+    <p></p>
+    <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b style="color: rgb(237,125,49);">Bellico</b>?</p>
+    {% formfield player.consultother2 label="" %}
+</div>
+<div class="instructions" style="height: 575px;">
+    <p>
+        Suppose you have <b>$10,000</b> invested in <b style="color: rgb(68,114,196);">Alophonica</b>. Would you change your investment based on the information you just read?
+        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
+    </p>
+
+    {% formfield player.islider label=None %}<b id="demo1">0%</b>
+
+    <input type="hidden" name="check_islider" value="" id="check_islider"/>
+    <p></p>
+
+    <p>Based on the information you just read, would you consider investing in <b style="color: rgb(68,114,196);">Alophonica</b>?</p>
+    {% formfield player.iinvest label=None %}
+
+    <p></p>
+    <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b style="color: rgb(68,114,196);">Alophonica</b>?</p>
+    {% formfield player.consultother label="" %}
+</div>
+    <div class="instructions" style="height: 175px;">
+    <p>
+        Suppose you have <b>$10,000</b> invested in the stock market. Would you change your overall stock market investment on the information you just read?
+        Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
+    </p>
+
+    {% formfield player.imarketslider label=None %}<b id="demo3">0%</b>
+
+    <input type="hidden" name="check_imarketslider" value="" id="check_imarketslider"/>
 
 </div>
 
@@ -110,7 +125,7 @@
     <script>
         $('input[name=islider]').on('input', function() {
             x = 10000 + $(this).val()/100 * 10000;
-            document.getElementById("demo1").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
+            document.getElementById("demo1").innerHTML = $(this).val()+'<span>%</span>'+'<span> ($</span>'+x+'<span>)</span>';
             $('#check_islider').val(1);
         });
     </script>
@@ -118,7 +133,7 @@
     <script>
         $('input[name=islider2]').on('input', function() {
             x = 10000 + $(this).val()/100 * 10000;
-            document.getElementById("demo2").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
+            document.getElementById("demo2").innerHTML = $(this).val()+'<span>%</span>'+'<span> ($</span>'+x+'<span>)</span>';
             $('#check_islider2').val(1);
         });
     </script>
@@ -126,7 +141,7 @@
     <script>
         $('input[name=imarketslider]').on('input', function() {
             x = 10000 + $(this).val()/100 * 10000;
-            document.getElementById("demo3").innerHTML = $(this).val()+'<span style="color: rgb(0,123,255);">%</span style="color: rgb(0,123,255);">'+'<span> ($</span>'+x+'<span style="color: rgb(0,123,255);">)</span>';
+            document.getElementById("demo3").innerHTML = $(this).val()+'<span>%</span>'+'<span> ($</span>'+x+'<span>)</span>';
             $('#check_imarketslider').val(1);
         });
     </script>

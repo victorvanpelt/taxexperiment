@@ -40,7 +40,7 @@ class Subsession(BaseSubsession):
     def creating_session(self):
         # randomize to treatments
         for player in self.get_players():
-            player.treat = random.choice(['control', 'australia'])
+            player.treat = random.choice(['control', 'australia', 'punish', 'full'])
             player.judgorder = random.choice(['A', 'B'])
             #print('set player.color to', player.color)
 
@@ -376,6 +376,19 @@ class Player(BasePlayer):
         blank=True
     )
 
+    mturk_motivation = models.IntegerField(
+        label = "How motivated were you during this HIT?",
+        choices = [
+            [1, 'Extremely unmotivated'],
+            [2, 'Very unmotivated'],
+            [3, 'Unmotivated'],
+            [4, 'Neutral'],
+            [5, 'Motivated'],
+            [6, 'Very motivated'],
+            [7, 'Extremely motivated']
+        ]
+    )
+
 # Investor Judgments
 
     islider = models.FloatField(
@@ -394,7 +407,7 @@ class Player(BasePlayer):
 
     consultother = models.StringField(
         blank=True,
-        label="Given the information you just read, would you still consult other sources of information before you decide about investing in Alophonica?",
+        # label="Given the information you just read, would you still consult other sources of information before you decide about investing in Alophonica?",
         widget = forms.CheckboxSelectMultiple(
             choices=[
                 [1, 'Investment advisors and professionals'],
@@ -422,17 +435,29 @@ class Player(BasePlayer):
         choices=Constants.DefinitelyChoices
         )
 
-    consultother2 = models.IntegerField(
+    consultother2 = models.StringField(
+        blank=True,
         label="Given the information you just read, would you still consult other sources of information before you decide about investing in Bellico?",
-        choices=Constants.DefinitelyChoices
+        widget=forms.CheckboxSelectMultiple(
+            choices=[
+                [1, 'Investment advisors and professionals'],
+                [2, 'Company and regulator websites'],
+                [3, 'Blogs, forums, and social media'],
+                [4, 'Friends, family, and acquaintances'],
+                [5, 'Television, magazines, and newspapers'],
+                [6, 'Annual reports and other financial disclosures'],
+                [7, 'Other sources']
+            ],
+        )
         )
 
     imarketslider = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
-        min=-10000,
+        min=-100,
         initial=0,
-        max=10000,
+        max=100,
     )
+    check_imarketslider= models.FloatField(blank=True, initial=None)
 
     # Tax Ethicality
 
