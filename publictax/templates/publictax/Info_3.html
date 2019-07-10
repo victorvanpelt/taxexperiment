@@ -8,29 +8,31 @@
 {% block content %}
 
 {% if player.treat == "control" %}
-<div class="instructions" style="height: 275px;">
+<div class="instructions" style="height: 65px;">
+    <p align="center">Below you can access an excerpt of the financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+</div>
+<div class="instructions" style="height: 210px;">
+    <p>Please rate the ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
 
-    <p>Below you can access an excerpt of the financial statements of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> by holding the button.</p>
-
-    <p>Please rate the ethicality of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> tax practices from competely unethical (<b>0%</b>) to completely ethical (<b>100%</b>).</p>
-
-    <b style="color: rgb(68,114,196);">Alophonica</b>: <b id="demo1">0%</b>
+    <b>Alophonica</b>: <b id="demo1">0%</b>
     {% formfield player.alotax label=None %}
 
-    <b style="color: rgb(237,125,49);">Bellico</b>: <b id="demo2">0%</b>
+    <b>Bellico</b>: <b id="demo2">0%</b>
     {% formfield player.beltax label=None %}
 
 </div>
 
 {% elif player.treat == "australia" %}
-<div class="instructions" style="height: 450px;">
-    <p>Below you can access an excerpt of the financial statements of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> by holding the button.</p>
-    <p>The tax authorities also publish the following information about <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b>:</p>
+<div align="center" class="instructions" style="height: 65px;">
+    <p>Below you can access an excerpt of the financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+</div>
+<div class="instructions" style="height: 225px;">
+    <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b>:</p>
     <table border="1" align="left">
     <thead>
         <tr>
-            <td align="center" colspan="2"><h6><b style="color: rgb(68,114,196);">Alophonica</b></h6></td>
-            <td align="center" colspan="2"><h6><b style="color: rgb(237,125,49);">Bellico</b></h6></td>
+            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
+            <td align="center" colspan="2"><h6><b>Bellico</b></h6></td>
         </tr>
     </thead>
         <tr>
@@ -58,56 +60,62 @@
             <td>16%</td>
         </tr>
     </table><br clear="all">
-    <br>
-    <p>Please rate the ethicality of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> tax practices from competely unethical (<b>0%</b>) to completely ethical (<b>100%</b>).</p>
+</div>
+<div class="instructions" style="height: 210px;">
+    <p>Please rate the ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
 
-    <b style="color: rgb(68,114,196);">Alophonica</b>: <b id="demo1"></b>
+    <b>Alophonica</b>: <b id="demo1"></b>
     {% formfield player.alotax label=None %}
 
-    <b style="color: rgb(237,125,49);">Bellico</b>: <b id="demo2"></b>
+    <b>Bellico</b>: <b id="demo2"></b>
     {% formfield player.beltax label=None %}
 
 </div>
 {% elif player.treat == "punish" %}
-<div class="instructions" style="height: 450px;">
-
-    <p>Below you can access an excerpt of the financial statements of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> by holding the button.</p>
-    <p>The tax authorities also publish the following information about <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b>:</p>
+<div align="center" class="instructions" style="height: 65px;">
+    <p>Below you can access an excerpt of the financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+</div>
+<div class="instructions" style="height: 205px;">
+    <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b>:</p>
 <ul>
     <li>
-        <b style="color: rgb(68,114,196);">Alophonica</b> has been audited by the tax authorities. The tax authorities have not found any evidence that <b style="color: rgb(68,114,196);">Alophonica</b> is engaged in tax malpractices.
+        <b>Alophonica</b> has been audited by the tax authorities. The tax authorities have not found any evidence that <b>Alophonica</b> is engaged in tax malpractices.
     </li>
     <li>
-        <b style="color: rgb(237,125,49);">Bellico</b> has been audited by the tax authorities. The company engages in ongoing discussions with tax authorities regarding the resolution of tax matters in the various jurisdictions. Both the outcome of these tax matters and the timing of resolution and/or closure of the tax audits are highly uncertain.
+        <b>Bellico</b> has been audited by the tax authorities. The company engages in ongoing discussions with tax authorities regarding the resolution of tax matters in the various jurisdictions. Both the outcome of these tax matters and the timing of resolution and/or closure of the tax audits are highly uncertain.
     </li>
 </ul>
-    <p>Please rate the ethicality of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> tax practices from competely unethical (<b>0%</b>) to completely ethical (<b>100%</b>).</p>
+</div>
+<div class="instructions" style="height: 210px;">
+    <p>Please rate the ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
 
-    <b style="color: rgb(68,114,196);">Alophonica</b>: <b id="demo1">0%</b>
+    <b>Alophonica</b>: <b id="demo1">0%</b>
     {% formfield player.alotax label=None %}
 
-    <b style="color: rgb(237,125,49);">Bellico</b>: <b id="demo2">0%</b>
+    <b>Bellico</b>: <b id="demo2">0%</b>
     {% formfield player.beltax label=None %}
 
 </div>
 
 {% else %}
-<div class="instructions" style="height: 585px;">
-    <p>Below you can access an excerpt of the financial statements of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> by holding the button.</p>
-    <p>The tax authorities also publish the following information about <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b>:</p>
+<div align="center" class="instructions" style="height: 65px;">
+    <p>Below you can access an excerpt of the financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+</div>
+<div class="instructions" style="height: 355px;">
+    <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b>:</p>
 <ul>
     <li>
-        <b style="color: rgb(68,114,196);">Alophonica</b> has been audited by the tax authorities. The tax authorities have not found any evidence that <b style="color: rgb(68,114,196);">Alophonica</b> is engaged in tax malpractices.
+        <b>Alophonica</b> has been audited by the tax authorities. The tax authorities have not found any evidence that <b>Alophonica</b> is engaged in tax malpractices.
     </li>
     <li>
-        <b style="color: rgb(237,125,49);">Bellico</b> has been audited by the tax authorities. The company engages in ongoing discussions with tax authorities regarding the resolution of tax matters in the various jurisdictions. Both the outcome of these tax matters and the timing of resolution and/or closure of the tax audits are highly uncertain.
+        <b>Bellico</b> has been audited by the tax authorities. The company engages in ongoing discussions with tax authorities regarding the resolution of tax matters in the various jurisdictions. Both the outcome of these tax matters and the timing of resolution and/or closure of the tax audits are highly uncertain.
     </li>
 </ul>
-    <table border="1" align="left">
+    <table border="1" align="center">
     <thead>
         <tr>
-            <td align="center" colspan="2"><h6><b style="color: rgb(68,114,196);">Alophonica</b></h6></td>
-            <td align="center" colspan="2"><h6><b style="color: rgb(237,125,49);">Bellico</b></h6></td>
+            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
+            <td align="center" colspan="2"><h6><b>Bellico</b></h6></td>
         </tr>
     </thead>
         <tr>
@@ -135,13 +143,14 @@
             <td>16%</td>
         </tr>
     </table><br clear="all">
-    <br>
-    <p>Please rate the ethicality of <b style="color: rgb(68,114,196);">Alophonica</b> and <b style="color: rgb(237,125,49);">Bellico</b> tax practices from competely unethical (<b>0%</b>) to completely ethical (<b>100%</b>).</p>
+</div>
+<div class="instructions" style="height: 210px;">
+    <p>Please rate the ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
 
-    <b style="color: rgb(68,114,196);">Alophonica</b>: <b id="demo1"></b>
+    <b>Alophonica</b>: <b id="demo1"></b>
     {% formfield player.alotax label=None %}
 
-    <b style="color: rgb(237,125,49);">Bellico</b>: <b id="demo2"></b>
+    <b>Bellico</b>: <b id="demo2"></b>
     {% formfield player.beltax label=None %}
 
 </div>
