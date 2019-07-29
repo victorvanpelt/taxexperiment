@@ -42,6 +42,7 @@ class Subsession(BaseSubsession):
         for player in self.get_players():
             player.treat = random.choice(['control', 'australia', 'punish', 'full'])
             player.judgorder = random.choice(['A', 'B'])
+            player.higher = random.choice(['A', 'B'])
             #print('set player.color to', player.color)
 
 
@@ -51,6 +52,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     treat = models.StringField()
+    higher = models.StringField()
     judgorder = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
     # accept_continue1 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
