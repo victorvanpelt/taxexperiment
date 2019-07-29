@@ -184,73 +184,73 @@ class Player(BasePlayer):
 
 # Financial Experience
 
-    # FE1 = models.StringField(
-    #     blank=True,
-    #     label="Please indicate whether you have directly or indirectly (e.g., through a pension or formal retirement) conducted trades and transactions in the following financial assets in the past:",
-    #     widget=forms.CheckboxSelectMultiple(
-    #         choices=[
-    #             ['1', 'Debt securities and bonds'],
-    #             ['2', 'Individual shares and stocks'],
-    #             ['3', 'Mutual Funds'],
-    #             ['4', 'Pension Funds'],
-    #             ['5', 'Derivatives and options'],
-    #             ['6', 'Other financial assets'],
-    #         ],
-    #     )
-    # )
-    #
-    # FE2 = models.StringField(
-    #     blank=True,
-    #     label="Please indicate whether you plan to own directly or indirectly (e.g., through a pension or formal retirement) one or more of the following financial assets in the future:",
-    #     widget=forms.CheckboxSelectMultiple(
-    #         choices=[
-    #             ['1', 'Debt securities and bonds'],
-    #             ['2', 'Individual shares and stocks'],
-    #             ['3', 'Mutual Funds'],
-    #             ['4', 'Pension Funds'],
-    #             ['5', 'Derivatives and options'],
-    #             ['6', 'Other financial assets'],
-    #         ],
-    #     )
-    # )
-    #
-    # FE3 = models.StringField(
-    #     blank=True,
-    #     label="Please indicate whether you have consulted the following sources for financial information in the past:",
-    #     widget=forms.CheckboxSelectMultiple(
-    #         choices=[
-    #             ['1', 'Investment advisors and professionals'],
-    #             ['2', 'Company and regulator website'],
-    #             ['3', 'Blogs, forums, and social media'],
-    #             ['4', 'Friends, family, and acquaintances'],
-    #             ['5', 'Television, magazines, and newspapers'],
-    #             ['6', 'Other sources'],
-    #         ],
-    #     )
-    # )
-    #
-    # FE4 = models.IntegerField(
-    #     label = "Please provide an estimate of the number of days during an average week that you consult companies’ financial statements for financial information in an average week, for instance, through the company website or the SEC filing:"
-    # )
-    #
-    # FE5 = models.IntegerField(
-    #     label = "Please provide an estimate of the number of days during an average week that you consume and consult economic and financial news (e.g., financial media, specialized online media, etc.):"
-    # )
-    #
-    # FE6 = models.StringField(
-    #     blank=True,
-    #     label="Please indicate whether you plan to consult the following sources for financial information in the future:",
-    #     widget=forms.CheckboxSelectMultiple(
-    #         choices=[
-    #             ['1', 'Investment advisors and professionals'],
-    #             ['2', 'Company and regulator website'],
-    #             ['3', 'Blogs, forums, and social media'],
-    #             ['4', 'Friends, family, and acquaintances'],
-    #             ['5', 'Television, magazines, and newspapers'],
-    #             ['6', 'Other sources'],
-    #         ],
-    #     )
-    # )
+    FE1 = models.StringField(
+        blank=True,
+        label="Please indicate whether you have directly or indirectly (e.g., through a pension or formal retirement) conducted trades and transactions in the following financial assets in the past:",
+        widget=forms.CheckboxSelectMultiple(
+            choices=[
+                ['1', 'Debt securities and bonds'],
+                ['2', 'Individual shares and stocks'],
+                ['3', 'Mutual Funds'],
+                ['4', 'Pension Funds'],
+                ['5', 'Derivatives and options'],
+                ['6', 'Other financial assets'],
+            ],
+        )
+    )
+
+    FE2 = models.StringField(
+        blank=True,
+        label="Please indicate whether you plan to own directly or indirectly (e.g., through a pension or formal retirement) one or more of the following financial assets in the future:",
+        widget=forms.CheckboxSelectMultiple(
+            choices=[
+                ['1', 'Debt securities and bonds'],
+                ['2', 'Individual shares and stocks'],
+                ['3', 'Mutual Funds'],
+                ['4', 'Pension Funds'],
+                ['5', 'Derivatives and options'],
+                ['6', 'Other financial assets'],
+            ],
+        )
+    )
+
+    FE3 = models.StringField(
+        blank=True,
+        label="Please indicate whether you have consulted the following sources for financial information in the past:",
+        widget=forms.CheckboxSelectMultiple(
+            choices=[
+                ['1', 'Investment advisors and professionals'],
+                ['2', 'Company and regulator website'],
+                ['3', 'Blogs, forums, and social media'],
+                ['4', 'Friends, family, and acquaintances'],
+                ['5', 'Television, magazines, and newspapers'],
+                ['6', 'Other sources'],
+            ],
+        )
+    )
+
+    FE4 = models.IntegerField(
+        label = "Please provide an estimate of the number of days during an average week that you consult companies’ financial statements for financial information in an average week, for instance, through the company website or the SEC filing:"
+    )
+
+    FE5 = models.IntegerField(
+        label = "Please provide an estimate of the number of days during an average week that you consume and consult economic and financial news (e.g., financial media, specialized online media, etc.):"
+    )
+
+    FE6 = models.StringField(
+        blank=True,
+        label="Please indicate whether you plan to consult the following sources for financial information in the future:",
+        widget=forms.CheckboxSelectMultiple(
+            choices=[
+                ['1', 'Investment advisors and professionals'],
+                ['2', 'Company and regulator website'],
+                ['3', 'Blogs, forums, and social media'],
+                ['4', 'Friends, family, and acquaintances'],
+                ['5', 'Television, magazines, and newspapers'],
+                ['6', 'Other sources'],
+            ],
+        )
+    )
 
 # Demographic Information
 
@@ -332,6 +332,13 @@ class Player(BasePlayer):
         max=100,
         blank=False,
         initial=None
+    )
+
+# Process Variables
+
+    rd = models.IntegerField(
+        label="To what extent was your decision to invest in the firms influenced by the amount of Research and Development (R&D) the firm did?",
+        choices=Constants.DefinitelyChoices
     )
 
     politics = models.IntegerField(
