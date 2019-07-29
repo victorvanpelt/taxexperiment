@@ -104,6 +104,9 @@ class PEQ(Page):
         'workexperience',
         'english',
         'rd',
+        'purple',
+        'ethical_rd',
+        'ethical_ps',
         'politics',
         'tax_advisor'
     ]

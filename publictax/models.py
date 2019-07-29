@@ -337,8 +337,29 @@ class Player(BasePlayer):
 # Process Variables
 
     rd = models.IntegerField(
-        label="To what extent was your decision to invest in the firms influenced by the amount of Research and Development (R&D) the firm did?",
+        label="To what extent was your decision to invest in the firms influenced by the amount of Research and Development (R&D) the firms did?",
         choices=Constants.DefinitelyChoices
+    )
+
+    purple = models.IntegerField(
+        label = "To make sure you are paying attention, please select purple.",
+        choices = [
+            [1, 'Blue'],
+            [2, 'Red'],
+            [3, 'Purple'],
+            [4, 'Yellow'],
+            [5, 'Green']
+        ]
+    )
+
+    ethical_rd = models.IntegerField(
+        label = "I consider it unethical to manage taxes using R&D tax credits.",
+        choices = Constants.AgreeChoices
+    )
+
+    ethical_ps = models.IntegerField(
+        label = "I consider it unethical to manage taxes by shifting profits to other countries.",
+        choices = Constants.AgreeChoices
     )
 
     politics = models.IntegerField(
