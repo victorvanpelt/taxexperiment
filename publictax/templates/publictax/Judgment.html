@@ -8,12 +8,12 @@
 {% block content %}
 
 {% if player.judgorder == "A" %}
-<div align="center" class="instructions" style="height: 65px;">
+<div align="center" class="instructions">
     <p>
         You judged the corporate tax practices of <b>Alophonica</b> as <b>{{ player.alotax | floatformat:0 }}%</b> ethical and <b>Bellico</b> as <b>{{ player.beltax | floatformat:0 }}%</b> ethical.
     </p>
 </div>
-<div class="instructions" style="height: 575px;">
+<div class="instructions">
     <p>
         Suppose you have <b>$10,000</b> invested in <b>Alophonica</b>. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
@@ -33,7 +33,7 @@
 
     <p>
 </div>
-<div  class="instructions" style="height: 575px;">
+<div  class="instructions">
     <p>    Suppose you have <b>$10,000</b> invested in <b>Bellico</b>. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
     </p>
@@ -50,7 +50,7 @@
     <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b>Bellico</b>?</p>
     {% formfield player.consultother2 label="" %}
 </div>
-    <div class="instructions" style="height: 175px;">
+    <div class="instructions">
     <p>
         Suppose you have <b>$10,000</b> invested in the stock market. Would you change your overall stock market investment on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
@@ -61,12 +61,12 @@
 
 </div>
 {% else %}
-    <div align="center" class="instructions" style="height: 65px;">
+    <div align="center" class="instructions">
     <p>
     You judged the corporate tax practices of <b>Alophonica</b> as <b>{{ player.alotax | floatformat:0 }}%</b> ethical and <b>Bellico</b> as <b>{{ player.beltax | floatformat:0 }}%</b> ethical.
     </p>
     </div>
-<div class="instructions" style="height: 575px;">
+<div class="instructions">
     <p>
         Suppose you have <b>$10,000</b> invested in <b>Bellico</b>. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
@@ -84,7 +84,7 @@
     <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b>Bellico</b>?</p>
     {% formfield player.consultother2 label="" %}
 </div>
-<div class="instructions" style="height: 575px;">
+<div class="instructions">
     <p>
         Suppose you have <b>$10,000</b> invested in <b>Alophonica</b>. Would you change your investment based on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
@@ -102,7 +102,7 @@
     <p>Given the information you just read, would you still consult other sources of information before you decide about investing in <b>Alophonica</b>?</p>
     {% formfield player.consultother label="" %}
 </div>
-    <div class="instructions" style="height: 175px;">
+    <div class="instructions">
     <p>
         Suppose you have <b>$10,000</b> invested in the stock market. Would you change your overall stock market investment on the information you just read?
         Please drag the slider (or use the left and right arrow keys) to make your choice in percentages.
