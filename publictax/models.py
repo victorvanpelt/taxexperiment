@@ -353,12 +353,17 @@ class Player(BasePlayer):
     )
 
     ethical_rd = models.IntegerField(
-        label = "I consider it unethical to manage taxes using R&D tax credits.",
+        label = "I consider it unethical to manage taxes using Research & Development tax credits.",
         choices = Constants.AgreeChoices
     )
 
     ethical_ps = models.IntegerField(
         label = "I consider it unethical to manage taxes by shifting profits to other countries.",
+        choices = Constants.AgreeChoices
+    )
+
+    ethical_more = models.IntegerField(
+        label = "I consider it more unethical to manage taxes by shifting profit than to manage taxes using Research & Development tax credits.",
         choices = Constants.AgreeChoices
     )
 
