@@ -46,7 +46,7 @@ class Info_3(Page):
 
 class Judgment(Page):
     form_model = 'player'
-    form_fields = ['islider', 'iinvest', 'consultother', 'islider2', 'iinvest2', 'consultother2', 'check_islider', 'check_islider2', 'imarketslider', 'check_imarketslider']
+    form_fields = ['islider', 'iinvest', 'islider2', 'iinvest2', 'check_islider', 'check_islider2', 'imarketslider', 'check_imarketslider',]
 
     def error_message(self, value):
         #if self.group.r == None:
@@ -56,6 +56,7 @@ class Judgment(Page):
                 return 'Please drag all sliders to make your decisions'
             if value["check_imarketslider"] == None:
                 return 'Please drag x sliders to make your decisions'
+
 
 class Financial(Page):
     form_model = 'player'

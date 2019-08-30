@@ -337,7 +337,7 @@ class Player(BasePlayer):
 # Process Variables
 
     rd = models.IntegerField(
-        label="To what extent was your decision to invest in the firms influenced by the amount of Research and Development (R&D) the firms did?",
+        label="To what extent were your decisions influenced by the amount of Research and Development (R&D) the firms did?",
         choices=Constants.DefinitelyChoices
     )
 
@@ -440,22 +440,6 @@ class Player(BasePlayer):
         choices=Constants.DefinitelyChoices
         )
 
-    consultother = models.StringField(
-        blank=True,
-        # label="Given the information you just read, would you still consult other sources of information before you decide about investing in Alophonica?",
-        widget = forms.CheckboxSelectMultiple(
-            choices=[
-                [1, 'Investment advisors and professionals'],
-                [2, 'Company and regulator websites'],
-                [3, 'Blogs, forums, and social media'],
-                [4, 'Friends, family, and acquaintances'],
-                [5, 'Television, magazines, and newspapers'],
-                [6, 'Annual reports and other financial disclosures'],
-                [7, 'Other sources']
-            ],
-            )
-        )
-
     islider2 = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
         min=-100,
@@ -468,22 +452,6 @@ class Player(BasePlayer):
     iinvest2 = models.IntegerField(
         label="Based on the information you just read, would you consider investing in Bellico?",
         choices=Constants.DefinitelyChoices
-        )
-
-    consultother2 = models.StringField(
-        blank=True,
-        label="Given the information you just read, would you still consult other sources of information before you decide about investing in Bellico?",
-        widget=forms.CheckboxSelectMultiple(
-            choices=[
-                [1, 'Investment advisors and professionals'],
-                [2, 'Company and regulator websites'],
-                [3, 'Blogs, forums, and social media'],
-                [4, 'Friends, family, and acquaintances'],
-                [5, 'Television, magazines, and newspapers'],
-                [6, 'Annual reports and other financial disclosures'],
-                [7, 'Other sources']
-            ],
-        )
         )
 
     imarketslider = models.FloatField(
