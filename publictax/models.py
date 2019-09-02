@@ -466,7 +466,7 @@ class Player(BasePlayer):
 
     alotax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
-        min=-100,
+        min=0,
         initial=None,
         max=100,
         )
@@ -475,7 +475,7 @@ class Player(BasePlayer):
 
     beltax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
-        min=-100,
+        min=0,
         initial=None,
         max=100,
         )
