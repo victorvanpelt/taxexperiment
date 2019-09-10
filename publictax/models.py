@@ -342,14 +342,8 @@ class Player(BasePlayer):
     )
 
     purple = models.IntegerField(
-        label = "To make sure you are paying attention, please select purple.",
-        choices = [
-            [1, 'Blue'],
-            [2, 'Red'],
-            [3, 'Purple'],
-            [4, 'Yellow'],
-            [5, 'Green']
-        ]
+        label = "To make sure you are paying attention, please select 'disagree a little'.",
+        choices = Constants.AgreeChoices
     )
 
     ethical_rd = models.IntegerField(
