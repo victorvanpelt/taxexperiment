@@ -337,7 +337,12 @@ class Player(BasePlayer):
 # Process Variables
 
     rd = models.IntegerField(
-        label="To what extent were your decisions influenced by the amount of Research and Development (R&D) the firms did?",
+        label="To what extent were your investment decisions influenced by how innovative the firms are?",
+        choices=Constants.DefinitelyChoices
+    )
+
+    rev = models.IntegerField(
+        label="To what extent were your decisions about the firm's ethicality influenced by the amount of revenues that the firm made?",
         choices=Constants.DefinitelyChoices
     )
 

@@ -105,6 +105,7 @@ class PEQ(Page):
         'workexperience',
         'english',
         'rd',
+        'rev',
         'purple',
         'ethical_rd',
         'ethical_ps',
