@@ -107,9 +107,9 @@ class PEQ(Page):
         'rd',
         'rev',
         'purple',
-        'ethical_rd',
-        'ethical_ps',
-        'ethical_more',
+        'fair_rd',
+        'fair_ps',
+        'fair_more',
         'politics',
         'tax_advisor'
     ]
