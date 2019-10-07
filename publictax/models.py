@@ -171,12 +171,12 @@ class Player(BasePlayer):
     )
 
     FL10 = models.IntegerField(
-        label = "Please indicate which of the following you think best captures the operating performance of a firm.",
+        label = "Which of the following statements is correct? If somebody buys a bond of firm B:",
         choices = [
-            [1, "The return of a company's stock"],
-            [2, "The value of sales performance of a firm"],
-            [3, "The difference between total sales and cost of sales"],
-            [4, "The net income generated relative to the value of a firm's total assets"],
+            [1, "He owns a part of firm B"],
+            [2, "He has lent money to firm B"],
+            [3, "He is liable for firm B's debts"],
+            [4, "None of the above"],
             [5, "I don't know"]
         ],
         widget=widgets.RadioSelect
