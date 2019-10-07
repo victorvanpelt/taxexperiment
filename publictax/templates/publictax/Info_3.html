@@ -8,17 +8,7 @@
 {% block content %}
 
 {% if player.treat == "control" %}
-<div class="instructions">
-    <p>Please rate the tax ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
-
-    <b>Alophonica</b>: <b id="demo1">0%</b>
-    {% formfield player.alotax label=None %}
-
-    <b>Bellico</b>: <b id="demo2">0%</b>
-    {% formfield player.beltax label=None %}
-
-</div>
-
+<br/>
 {% elif player.treat == "australia" %}
 <div class="instructions">
     <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b>:</p>
@@ -31,55 +21,23 @@
     </thead>
         <tr>
             <td><b>Revenues:</b></td>
-            <td>$111,265,700</td>
+            <td>$12,000</td>
             <td><b>Revenues:</b></td>
-            <td>$85,589,000</td>
+            <td>$10,200</td>
         </tr>
         <tr>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$22,326,200</td>
+            <td>$2,619</td>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$23,224,000</td>
+            <td>$2,653</td>
         </tr>
         <tr>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$2,274,688</td>
+            <td>$267</td>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$2,364,760</td>
+            <td>$270</td>
         </tr>
     </table><br clear="all">
-</div>
-<div class="instructions">
-    <p>Please rate the ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
-
-    <b>Alophonica</b>: <b id="demo1"></b>
-    {% formfield player.alotax label=None %}
-
-    <b>Bellico</b>: <b id="demo2"></b>
-    {% formfield player.beltax label=None %}
-
-</div>
-{% elif player.treat == "punish" %}
-<div class="instructions">
-    <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b>:</p>
-<ul>
-    <li>
-        <b>Alophonica</b> has been audited by the tax authorities. The tax authorities have not found any evidence that <b>Alophonica</b> engages in tax malpractices.
-    </li>
-    <li>
-        <b>Bellico</b> has been audited by the tax authorities. The company engages in ongoing discussions with tax authorities regarding the resolution of tax matters in various jurisdictions. Both the outcome of these tax matters and the timing of resolution and/or closure of the tax audits are highly uncertain.
-    </li>
-</ul>
-</div>
-<div class="instructions">
-    <p>Please rate the ethicality of both firms' tax practices from completely unethical (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
-
-    <b>Alophonica</b>: <b id="demo1">0%</b>
-    {% formfield player.alotax label=None %}
-
-    <b>Bellico</b>: <b id="demo2">0%</b>
-    {% formfield player.beltax label=None %}
-
 </div>
 
 {% else %}
@@ -102,42 +60,28 @@
     </thead>
         <tr>
             <td><b>Revenues:</b></td>
-            <td>$111,265,700</td>
+            <td>$12,000</td>
             <td><b>Revenues:</b></td>
-            <td>$85,589,000</td>
+            <td>$10,200</td>
         </tr>
         <tr>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$22,326,200</td>
+            <td>$2,619</td>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$23,224,000</td>
+            <td>$2,653</td>
         </tr>
         <tr>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$2,274,688</td>
+            <td>$267</td>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$2,364,760</td>
+            <td>$270</td>
         </tr>
     </table><br clear="all">
 </div>
 
-<div class="instructions">
-    <p>Please rate the ethicality of both firms' tax practices from completely unethicality (<b>-100%</b>) to completely ethical (<b>100%</b>).</p>
-
-    <b>Alophonica</b>: <b id="demo1"></b>
-    {% formfield player.alotax label=None %}
-
-    <b>Bellico</b>: <b id="demo2"></b>
-    {% formfield player.beltax label=None %}
-
-</div>
-
 {% endif %}
 
-<input type="hidden" name="timer_id" value="" id="timer_id"/>
-<input type="hidden" name="check_alotax" value="" id="check_alotax"/>
-<input type="hidden" name="check_beltax" value="" id="check_beltax"/>
-
+<!-- Financial Statements US GAAP / IFRS-->
 <div class="instructions">
     <p>Below you can access an excerpt of the financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
     <div class="container">
@@ -146,8 +90,24 @@
     <div align="center">
         <img id="matrix" style="display:none;" align="center" width="90%" src="{% static 'publictax/alohigher.jpg' %}"/>
     </div>
+    </div>
 </div>
+
+<div class="instructions">
+    <p>Please assess whether both firms are paying their fair share. Please rate from completely unfair (<b>-100%</b>) to completely fair (<b>100%</b>).</p>
+
+    <b>Alophonica</b>: <b id="demo1">0%</b>
+    {% formfield player.alotax label=None %}
+
+    <b>Bellico</b>: <b id="demo2">0%</b>
+    {% formfield player.beltax label=None %}
+
 </div>
+
+<input type="hidden" name="timer_id" value="" id="timer_id"/>
+<input type="hidden" name="check_alotax" value="" id="check_alotax"/>
+<input type="hidden" name="check_beltax" value="" id="check_beltax"/>
+
 <br>
 {% next_button %}
 

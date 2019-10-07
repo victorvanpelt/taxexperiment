@@ -40,7 +40,7 @@ class Subsession(BaseSubsession):
     def creating_session(self):
         # randomize to treatments
         for player in self.get_players():
-            player.treat = random.choice(['control', 'australia', 'punish', 'full'])
+            player.treat = random.choice(['control', 'australia', 'full'])
             player.judgorder = random.choice(['A', 'B'])
             player.higher = random.choice(['A', 'B'])
             #print('set player.color to', player.color)
@@ -342,7 +342,7 @@ class Player(BasePlayer):
     )
 
     rev = models.IntegerField(
-        label="To what extent were your decisions about the firm's ethicality influenced by the amount of revenues that the firm made?",
+        label="To what extent were your decisions about the firm's paying their fair share influenced by the amount of revenues that the firm made?",
         choices=Constants.DefinitelyChoices
     )
 
@@ -351,19 +351,19 @@ class Player(BasePlayer):
         choices = Constants.AgreeChoices
     )
 
-    ethical_rd = models.IntegerField(
-        label = "I consider it unethical to manage taxes using Research & Development tax credits.",
-        choices = Constants.AgreeChoices
+    fair_rd = models.IntegerField(
+        label = "I consider it fair to manage taxes using Research & Development tax credits.",
+        choices = Constants.DefinitelyChoices
     )
 
-    ethical_ps = models.IntegerField(
-        label = "I consider it unethical to manage taxes by shifting profits to other countries.",
-        choices = Constants.AgreeChoices
+    fair_ps = models.IntegerField(
+        label = "I consider it fair to manage taxes by shifting profits to other countries.",
+        choices = Constants.DefinitelyChoices
     )
 
-    ethical_more = models.IntegerField(
-        label = "I consider it more unethical to manage taxes by shifting profit than to manage taxes using Research & Development tax credits.",
-        choices = Constants.AgreeChoices
+    fair_more = models.IntegerField(
+        label = "I consider it more fair to manage taxes by shifting profit than to manage taxes using Research & Development tax credits.",
+        choices = Constants.DefinitelyChoices
     )
 
     politics = models.IntegerField(
@@ -461,7 +461,7 @@ class Player(BasePlayer):
     )
     check_imarketslider= models.FloatField(blank=True, initial=None)
 
-    # Tax Ethicality
+    # Fair Share
 
     alotax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
