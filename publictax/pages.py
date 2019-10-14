@@ -17,21 +17,21 @@ class Info_1(Page):
     form_model = 'player'
     form_fields = ['Instr1a', 'Instr1b']
 
-    def error_message(self, values):
-        if values["Instr1a"] != 1:
-            return 'Your first answer is incorrect. Check the instructions to understand what the task of this HIT is.'
-        if values["Instr1b"] != 2:
-            return 'Your second answer is incorrect. Check the instructions to understand the difference between statutory and effective tax rates.'
+    # def error_message(self, values):
+    #     if values["Instr1a"] != 1:
+    #         return 'Your first answer is incorrect. Check the instructions to understand what the task of this HIT is.'
+    #     if values["Instr1b"] != 2:
+    #         return 'Your second answer is incorrect. Check the instructions to understand the difference between statutory and effective tax rates.'
 
 class Info_2(Page):
     form_model = 'player'
     form_fields = ['Instr2a', 'Instr2b']
 
-    def error_message(self, values):
-        if values["Instr2a"] != 2:
-            return 'Your first answer is incorrect. Check the instructions to understand where both countries are headquartered and where they operate.'
-        if values["Instr2b"] != 1:
-            return 'Your second answer is incorrect. Check the instructions to understand how statutory and effective tax rates can differ.'
+    # def error_message(self, values):
+    #     if values["Instr2a"] != 2:
+    #         return 'Your first answer is incorrect. Check the instructions to understand where both countries are headquartered and where they operate.'
+    #     if values["Instr2b"] != 1:
+    #         return 'Your second answer is incorrect. Check the instructions to understand how statutory and effective tax rates can differ.'
 
 class Info_3(Page):
     form_model = 'player'
@@ -103,12 +103,8 @@ class PEQ_1(Page):
         'fair_rd',
         'fair_ps',
         'fair_more',
-        'politics',
-        'tax_advisor',
-        'fin_exp',
-        'fin_own',
-        'tax_exp',
-        'tax_an'
+        'australia_check',
+        'cbc_check'
     ]
 
     def get_form_fields(self):
@@ -122,11 +118,17 @@ class PEQ_2(Page):
         'gender',
         'age',
         'green',
+        'politics',
         'nationality',
         'employment',
         'education',
         'workexperience',
-        'english'
+        'english',
+        'tax_advisor',
+        'fin_exp',
+        'fin_own',
+        'tax_exp',
+        'tax_an'
     ]
 
     def get_form_fields(self):
@@ -148,8 +150,8 @@ page_sequence = [
     Info_2,
     Info_3,
     Judgment,
-    Financial,
     PEQ_1,
+    Financial,
     PEQ_2,
     Turk
 ]

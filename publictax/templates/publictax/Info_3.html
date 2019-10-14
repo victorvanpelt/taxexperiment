@@ -9,34 +9,34 @@
 
 {% if player.treat == "control" %}
 <!-- Financial Statements US GAAP / IFRS-->
-<div class="instructions">
-    <p>Below you can access an excerpt of the IFRS financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+<div class="instructions" style="text-align: center;">
+    <p>Holding the button reveals excerpts of <b>Alophonica's</b> and <b>Bellico's</b> financial reports,<br> which report financial indicators on an <b>aggregated</b> basis.</p>
+<!--    <p>Holding the button reveals financial report excerpts of <b>Alophonica</b> and <b>Bellico</b> which report financial indicators on an <b>aggregated</b> basis.</p>-->
     <div class="container">
-    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial information</button>
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial report excerpts</button>
     <p>   </p>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="72.5%" src="{% static 'publictax/alohigher.jpg' %}"/>
     </div>
     </div>
 </div>
-
 {% elif player.treat == "cbc" %}
-<div class="instructions">
-    <p>Below you can access an excerpt of the Country-by-Country financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+<div class="instructions" style="text-align: center;">
+    <p>Holding the button reveals excerpts of <b>Alophonica's</b> and <b>Bellico's</b> financial reports,<br> which report financial indicators on a <b>Country-by-Country</b> basis.</p>
+<!--    <p>Holding the button reveals financial report excerpts of <b>Alophonica</b> and <b>Bellico</b> which report financial indicators on a <b>country-by-country</b> basis.</p>-->
     <div class="container">
-    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial information</button>
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial report excerpts</button>
     <p>   </p>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="72.5%" src="{% static 'publictax/alohigher.jpg' %}"/>
     </div>
     </div>
 </div>
-
 {% elif player.treat == "australia" %}
-<div class="instructions">
-    <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b> (in thousand USD):</p>
+<div class="instructions" style="text-align: center;">
+    <p>The tax authorities publish the following information about <b>Alophonica</b> and <b>Bellico</b> (in thousand USD):</p>
     {% if player.higher == "A" %}
-    <table border="1" align="left">
+    <table border="1" align="center">
     <thead>
         <tr>
             <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
@@ -63,7 +63,7 @@
         </tr>
     </table><br clear="all">
     {% else %}
-        <table border="1" align="left">
+        <table border="1" align="center">
     <thead>
         <tr>
             <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
@@ -91,23 +91,22 @@
     </table><br clear="all">
     {% endif %}
 </div>
-<div class="instructions">
-    <p>Below you can access an excerpt of the IFRS financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+<div class="instructions" style="text-align: center;">
+     <p>Holding the button reveals excerpts of <b>Alophonica's</b> and <b>Bellico's</b> financial reports,<br> which report financial indicators on an <b>aggregated</b> basis.</p>
+<!--    <p>Holding the button reveals financial report excerpts of <b>Alophonica</b> and <b>Bellico</b>, which reports financial indicators on an <b>aggregated</b> basis.</p>-->
     <div class="container">
-    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial information</button>
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial report excerpts</button>
     <p>   </p>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="72.5%" src="{% static 'publictax/alohigher.jpg' %}"/>
     </div>
     </div>
 </div>
-
-
 {% else %}
 <div class="instructions">
-    <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b> (in thousand USD):</p>
+    <p>The tax authorities publish the following information about <b>Alophonica</b> and <b>Bellico</b> (in thousand USD):</p>
     {% if player.higher == "A" %}
-    <table border="1" align="left">
+    <table border="1" align="center">
     <thead>
         <tr>
             <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
@@ -134,7 +133,7 @@
         </tr>
     </table><br clear="all">
     {% else %}
-        <table border="1" align="left">
+        <table border="1" align="center">
     <thead>
         <tr>
             <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
@@ -162,13 +161,14 @@
     </table><br clear="all">
     {% endif %}
 </div>
-<div class="instructions">
-    <p>Below you can access an excerpt of the Country-by-Country financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+<div class="instructions" style="text-align: center;">
+    <p>Holding the button reveals excerpts of <b>Alophonica's</b> and <b>Bellico's</b> financial reports,<br> which report financial indicators on a <b>Country-by-Country</b> basis.</p>
+<!--    <p>Holding the button reveals financial report excerpts of <b>Alophonica</b> and <b>Bellico</b> which report financial indicators on a <b>country-by-country</b> basis.</p>-->
     <div class="container">
-    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial information</button>
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial report excerpts</button>
     <p>   </p>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="72.5%" src="{% static 'publictax/alohigher.jpg' %}"/>
     </div>
     </div>
 </div>

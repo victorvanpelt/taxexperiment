@@ -355,17 +355,27 @@ class Player(BasePlayer):
 # Process Variables
 
     rd = models.IntegerField(
-        label="To what extent were your investment decisions influenced by how innovative the firms are?",
-        choices=Constants.DefinitelyChoices
+        label="My decisions about firms paying their fair share were influenced by how innovative the firms were.",
+        choices=Constants.AgreeChoices
+    )
+
+    australia_check = models.IntegerField(
+        label="The tax authorities published information about both firms",
+        choices=Constants.AgreeChoices
+    )
+
+    cbc_check = models.IntegerField(
+        label="Both firms prepared a country-by-country report with information on the allocation of income, profit, taxes paid among the two countries in which the firms operate",
+        choices=Constants.AgreeChoices
     )
 
     rev = models.IntegerField(
-        label="My decisions about the firm's paying their fair share were influenced by the amount of revenues that the firms made.",
+        label="My decisions about firms paying their fair share were influenced by the amount of revenues that the firms made.",
         choices=Constants.AgreeChoices
     )
 
     purple = models.IntegerField(
-        label = "To make sure you are paying attention, please select 'disagree a little'.",
+        label = "To make sure you are paying attention, please select 'Disagree a little'.",
         choices = Constants.AgreeChoices
     )
 
@@ -375,18 +385,18 @@ class Player(BasePlayer):
     )
 
     fair_rd = models.IntegerField(
-        label = "I consider it fair to manage taxes using Research & Development tax credits.",
-        choices = Constants.DefinitelyChoices
+        label = "It is fair to manage taxes using investment tax credits.",
+        choices = Constants.AgreeChoices
     )
 
     fair_ps = models.IntegerField(
-        label = "I consider it fair to manage taxes by shifting profits to other countries.",
-        choices = Constants.DefinitelyChoices
+        label = "It is fair to manage taxes by shifting profits to other countries.",
+        choices = Constants.AgreeChoices
     )
 
     fair_more = models.IntegerField(
-        label = "I consider it more fair to manage taxes by shifting profit than to manage taxes using Research & Development tax credits.",
-        choices = Constants.DefinitelyChoices
+        label = "It is fairer to manage taxes by shifting profit than to manage taxes using investment tax credits.",
+        choices = Constants.AgreeChoices
     )
 
     politics = models.IntegerField(
