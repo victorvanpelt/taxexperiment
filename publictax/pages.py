@@ -40,9 +40,9 @@ class Info_3(Page):
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_alotax"] == None:
-                return 'Please drag both sliders to make your decisions'
+                return 'Please drag both sliders to make your decisions.'
             if value["check_beltax"] == None:
-                return 'Please drag both sliders to make your decisions'
+                return 'Please drag both sliders to make your decisions.'
 
 class Judgment(Page):
     form_model = 'player'
@@ -51,11 +51,11 @@ class Judgment(Page):
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_islider"] == None:
-                return 'Please drag all sliders to make your decisions'
+                return 'Please drag all three sliders to make your decisions.'
             if value["check_islider2"] == None:
-                return 'Please drag all sliders to make your decisions'
+                return 'Please drag all three sliders to make your decisions.'
             if value["check_imarketslider"] == None:
-                return 'Please drag x sliders to make your decisions'
+                return 'Please drag all three sliders to make your decisions.'
 
 
 class Financial(Page):
@@ -78,21 +78,21 @@ class Financial(Page):
         random.shuffle(fields)
         return fields
 
-class Experience(Page):
-    form_model = 'player'
-    form_fields = [
-        'FE1',
-        'FE2',
-        'FE3',
-        'FE4',
-        'FE5',
-        'FE6'
-    ]
-
-    def get_form_fields(self):
-        fields = self.form_fields
-        random.shuffle(fields)
-        return fields
+# class Experience(Page):
+#     form_model = 'player'
+#     form_fields = [
+#         'FE1',
+#         'FE2',
+#         'FE3',
+#         'FE4',
+#         'FE5',
+#         'FE6'
+#     ]
+#
+#     def get_form_fields(self):
+#         fields = self.form_fields
+#         random.shuffle(fields)
+#         return fields
 
 class PEQ(Page):
     form_model = 'player'
@@ -111,7 +111,11 @@ class PEQ(Page):
         'fair_ps',
         'fair_more',
         'politics',
-        'tax_advisor'
+        'tax_advisor',
+        'fin_exp',
+        'fin_own',
+        'tax_exp',
+        'tax_an'
     ]
 
     def get_form_fields(self):
@@ -134,7 +138,6 @@ page_sequence = [
     Info_3,
     Judgment,
     Financial,
-    Experience,
     PEQ,
     Turk
 ]
