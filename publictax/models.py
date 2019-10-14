@@ -299,7 +299,7 @@ class Player(BasePlayer):
     )
 
     employment = models.IntegerField(
-        label = "Please select what best describes your current employment status",
+        label = "Please select what best describes your current employment status.",
         choices = [
             [1, "Working a full-time job for pay or profit (i.e., 35 hours a week or more)"],
             [2, "Working a part-time job for pay or profit (i.e., 1-34 hours a week)"],
@@ -366,6 +366,11 @@ class Player(BasePlayer):
 
     purple = models.IntegerField(
         label = "To make sure you are paying attention, please select 'disagree a little'.",
+        choices = Constants.AgreeChoices
+    )
+
+    green = models.IntegerField(
+        label = "To make sure you are paying attention, please select 'Agree moderately'.",
         choices = Constants.AgreeChoices
     )
 
@@ -483,7 +488,7 @@ class Player(BasePlayer):
 
     alotax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
-        min=-100,
+        min=0,
         initial=None,
         max=100,
         )
@@ -492,7 +497,7 @@ class Player(BasePlayer):
 
     beltax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
-        min=-100,
+        min=0,
         initial=None,
         max=100,
         )

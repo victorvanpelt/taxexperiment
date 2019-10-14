@@ -94,16 +94,9 @@ class Financial(Page):
 #         random.shuffle(fields)
 #         return fields
 
-class PEQ(Page):
+class PEQ_1(Page):
     form_model = 'player'
     form_fields = [
-        'gender',
-        'age',
-        'nationality',
-        'employment',
-        'education',
-        'workexperience',
-        'english',
         'rd',
         'rev',
         'purple',
@@ -116,6 +109,24 @@ class PEQ(Page):
         'fin_own',
         'tax_exp',
         'tax_an'
+    ]
+
+    def get_form_fields(self):
+        fields = self.form_fields
+        random.shuffle(fields)
+        return fields
+
+class PEQ_2(Page):
+    form_model = 'player'
+    form_fields = [
+        'gender',
+        'age',
+        'green',
+        'nationality',
+        'employment',
+        'education',
+        'workexperience',
+        'english'
     ]
 
     def get_form_fields(self):
@@ -138,6 +149,7 @@ page_sequence = [
     Info_3,
     Judgment,
     Financial,
-    PEQ,
+    PEQ_1,
+    PEQ_2,
     Turk
 ]

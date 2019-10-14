@@ -22,7 +22,7 @@
 
 {% elif player.treat == "cbc" %}
 <div class="instructions">
-    <p>Below you can access an excerpt of the CBC financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+    <p>Below you can access an excerpt of the Country-by-Country financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial information</button>
     <p>   </p>
@@ -35,6 +35,7 @@
 {% elif player.treat == "australia" %}
 <div class="instructions">
     <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b> (in thousand USD):</p>
+    {% if player.higher == "A" %}
     <table border="1" align="left">
     <thead>
         <tr>
@@ -44,23 +45,51 @@
     </thead>
         <tr>
             <td><b>Revenues:</b></td>
-            <td>$12,000</td>
+            <td>$18,240</td>
             <td><b>Revenues:</b></td>
-            <td>$10,200</td>
+            <td>$15,200</td>
         </tr>
         <tr>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$2,619</td>
+            <td>$5,107</td>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$2,653</td>
+            <td>$4,256</td>
         </tr>
         <tr>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$267</td>
+            <td>$766</td>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$270</td>
+            <td>$638</td>
         </tr>
     </table><br clear="all">
+    {% else %}
+        <table border="1" align="left">
+    <thead>
+        <tr>
+            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
+            <td align="center" colspan="2"><h6><b>Bellico</b></h6></td>
+        </tr>
+    </thead>
+        <tr>
+            <td><b>Revenues:</b></td>
+            <td>$15,200</td>
+            <td><b>Revenues:</b></td>
+            <td>$18,240</td>
+        </tr>
+        <tr>
+            <td><b>Profit Before Taxes:</b></td>
+            <td>$4,256</td>
+            <td><b>Profit Before Taxes:</b></td>
+            <td>$5,107</td>
+        </tr>
+        <tr>
+            <td><b>Corporate Taxes Paid:</b></td>
+            <td>$638</td>
+            <td><b>Corporate Taxes Paid:</b></td>
+            <td>$766</td>
+        </tr>
+    </table><br clear="all">
+    {% endif %}
 </div>
 <div class="instructions">
     <p>Below you can access an excerpt of the IFRS financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
@@ -77,6 +106,7 @@
 {% else %}
 <div class="instructions">
     <p>The tax authorities also publish the following information about <b>Alophonica</b> and <b>Bellico</b> (in thousand USD):</p>
+    {% if player.higher == "A" %}
     <table border="1" align="left">
     <thead>
         <tr>
@@ -86,26 +116,54 @@
     </thead>
         <tr>
             <td><b>Revenues:</b></td>
-            <td>$12,000</td>
+            <td>$18,240</td>
             <td><b>Revenues:</b></td>
-            <td>$10,200</td>
+            <td>$15,200</td>
         </tr>
         <tr>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$2,619</td>
+            <td>$5,107</td>
             <td><b>Profit Before Taxes:</b></td>
-            <td>$2,653</td>
+            <td>$4,256</td>
         </tr>
         <tr>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$267</td>
+            <td>$766</td>
             <td><b>Corporate Taxes Paid:</b></td>
-            <td>$270</td>
+            <td>$638</td>
         </tr>
     </table><br clear="all">
+    {% else %}
+        <table border="1" align="left">
+    <thead>
+        <tr>
+            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
+            <td align="center" colspan="2"><h6><b>Bellico</b></h6></td>
+        </tr>
+    </thead>
+        <tr>
+            <td><b>Revenues:</b></td>
+            <td>$15,200</td>
+            <td><b>Revenues:</b></td>
+            <td>$18,240</td>
+        </tr>
+        <tr>
+            <td><b>Profit Before Taxes:</b></td>
+            <td>$4,256</td>
+            <td><b>Profit Before Taxes:</b></td>
+            <td>$5,107</td>
+        </tr>
+        <tr>
+            <td><b>Corporate Taxes Paid:</b></td>
+            <td>$638</td>
+            <td><b>Corporate Taxes Paid:</b></td>
+            <td>$766</td>
+        </tr>
+    </table><br clear="all">
+    {% endif %}
 </div>
 <div class="instructions">
-    <p>Below you can access an excerpt of the CBC financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
+    <p>Below you can access an excerpt of the Country-by-Country financial statements of <b>Alophonica</b> and <b>Bellico</b> by holding the button.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Hold to view financial information</button>
     <p>   </p>
@@ -122,12 +180,12 @@
 <input type="hidden" name="check_beltax" value="" id="check_beltax"/>
 
 <div class="instructions">
-    <p>Please assess whether both firms are paying their fair share. Please rate from completely unfair (<b>-100%</b>) to completely fair (<b>100%</b>).</p>
+    <p>Please assess whether both firms are paying their fair share. Please rate from completely unfair (<b>0%</b>) to completely fair (<b>100%</b>).</p>
 
-    <b>Alophonica</b>: <b id="demo1">0%</b>
+    <b>Alophonica</b>: <b id="demo1">50%</b>
     {% formfield player.alotax label=None %}
 
-    <b>Bellico</b>: <b id="demo2">0%</b>
+    <b>Bellico</b>: <b id="demo2">50%</b>
     {% formfield player.beltax label=None %}
 
 </div>
