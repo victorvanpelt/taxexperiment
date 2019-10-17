@@ -98,7 +98,6 @@ class PEQ_1(Page):
     form_model = 'player'
     form_fields = [
         'rd',
-        'rev',
         'purple',
         'fair_rd',
         'fair_ps',
@@ -128,13 +127,11 @@ class PEQ_2(Page):
         'fin_exp',
         'fin_own',
         'tax_exp',
-        'tax_an'
+        'tax_an',
+        'TA_1',
+        'TA_2',
+        'TA_3'
     ]
-
-    def get_form_fields(self):
-        fields = self.form_fields
-        random.shuffle(fields)
-        return fields
 
 class Turk(Page):
     form_model = 'player'
@@ -142,6 +139,12 @@ class Turk(Page):
         'mturk',
         'mturk_feedback',
         'mturk_motivation'
+    ]
+
+class MBA(Page):
+    form_model = 'player'
+    form_fields = [
+        'mturk_feedback',
     ]
 
 page_sequence = [
@@ -153,5 +156,5 @@ page_sequence = [
     PEQ_1,
     Financial,
     PEQ_2,
-    Turk
+    MBA
 ]

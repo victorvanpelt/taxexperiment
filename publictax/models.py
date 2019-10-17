@@ -359,20 +359,18 @@ class Player(BasePlayer):
         choices=Constants.AgreeChoices
     )
 
-    australia_check = models.IntegerField(
-        label="The tax authorities published information about both firms",
-        choices=Constants.AgreeChoices
+    australia_check = models.BooleanField(
+        label="The tax authorities disclosed information about both firms separately from the financial statements."
     )
 
-    cbc_check = models.IntegerField(
+    cbc_check = models.BooleanField(
         label="Both firms prepared a country-by-country report with information on the allocation of income, profit, taxes paid among the two countries in which the firms operate",
-        choices=Constants.AgreeChoices
     )
 
-    rev = models.IntegerField(
-        label="My decisions about firms paying their fair share were influenced by the amount of revenues that the firms made.",
-        choices=Constants.AgreeChoices
-    )
+    # rev = models.IntegerField(
+    #     label="My decisions about firms paying their fair share were influenced by the amount of revenues that the firms made.",
+    #     choices=Constants.AgreeChoices
+    # )
 
     purple = models.IntegerField(
         label = "To make sure you are paying attention, please select 'Disagree a little'.",
@@ -410,7 +408,7 @@ class Player(BasePlayer):
     )
 
     tax_advisor = models.IntegerField(
-        label = "How often do you consult a tax advisor?",
+        label = "How often do you consult a tax advisor, both privately and as part of your job?",
         choices = [
             [1, 'Never'],
             [2, 'Very rarely'],
@@ -419,6 +417,69 @@ class Player(BasePlayer):
             [5, 'Occasionally'],
             [6, 'Frequently'],
             [7, 'Very frequently']
+        ]
+    )
+
+    norm_1 = models.IntegerField(
+        label = "When buying products, I generally purchase those brands that I think others will approve of.",
+        choices = Constants.AgreeChoices
+    )
+
+    norm_2 = models.IntegerField(
+        label = "If other people can see me using a product, I often purchase the brand they expect me to buy.",
+        choices = Constants.AgreeChoices
+    )
+
+    norm_3 = models.IntegerField(
+        label = "I achieve a sense of belonging by purchasing the same products and brands that others purchase.",
+        choices = Constants.AgreeChoices
+    )
+
+    TA_1 = models.IntegerField(
+        label = "To what extent do you think claiming state benefits to which one is not entitled is justified? (1 = Never Justified, 10 = Always Justified)",
+        choices = [
+        [1, '1: Never Justified'],
+        [2, '2'],
+        [3, '3'],
+        [4, '4'],
+        [5, '5'],
+        [6, '6'],
+        [7, '7'],
+        [8, '8'],
+        [9, '9'],
+        [10,'10: Always Justified']
+        ]
+    )
+
+    TA_2 = models.IntegerField(
+        label = "To what extent do you think that cheating on taxes if one had the chance is justified? (1 = Never Justified, 10 = Always Justified)",
+        choices = [
+        [1, '1: Never Justified'],
+        [2, '2'],
+        [3, '3'],
+        [4, '4'],
+        [5, '5'],
+        [6, '6'],
+        [7, '7'],
+        [8, '8'],
+        [9, '9'],
+        [10,'10: Always Justified']
+        ]
+    )
+
+    TA_3 = models.IntegerField(
+        label = "To what extent do you think that avoiding taxes by using legal means if given the chance is justified? (1 = Never Justified, 10 = Always Justified)",
+        choices = [
+        [1, '1: Never Justified'],
+        [2, '2'],
+        [3, '3'],
+        [4, '4'],
+        [5, '5'],
+        [6, '6'],
+        [7, '7'],
+        [8, '8'],
+        [9, '9'],
+        [10,'10: Always Justified']
         ]
     )
 
@@ -439,7 +500,7 @@ class Player(BasePlayer):
     )
 
     mturk_feedback = models.StringField(
-        label = "Any comments or feedback for this HIT?",
+        label = "Do you have any feedback or anything else you would like to share with us?",
         blank=True
     )
 
