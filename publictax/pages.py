@@ -98,7 +98,6 @@ class PEQ_1(Page):
     form_model = 'player'
     form_fields = [
         'rd',
-        'purple',
         'fair_rd',
         'fair_ps',
         'fair_more',
@@ -116,7 +115,6 @@ class PEQ_2(Page):
     form_fields = [
         'gender',
         'age',
-        'green',
         'politics',
         'nationality',
         'employment',
