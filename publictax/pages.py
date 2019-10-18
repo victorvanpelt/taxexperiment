@@ -130,8 +130,15 @@ class PEQ_2(Page):
         'tax_an',
         'TA_1',
         'TA_2',
-        'TA_3'
+        'TA_3',
+        'Function',
+        'Industry'
     ]
+
+    def get_form_fields(self):
+        fields = self.form_fields
+        random.shuffle(fields)
+        return fields
 
 class Turk(Page):
     form_model = 'player'
