@@ -40,9 +40,8 @@ class Subsession(BaseSubsession):
     def creating_session(self):
         # randomize to treatments
         for player in self.get_players():
-            player.treat = random.choice(['control', 'australia', 'cbc', 'full'])
-            player.judgorder = random.choice(['A', 'B'])
-            player.higher = random.choice(['A', 'B'])
+            player.treat_public = random.choice(['control', 'australia'])
+            player.treat_AB = random.choice(['A', 'B'])
             #print('set player.color to', player.color)
 
 
@@ -51,9 +50,8 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    treat = models.StringField()
-    higher = models.StringField()
-    judgorder = models.StringField()
+    treat_public = models.StringField()
+    treat_AB = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
     # accept_continue1 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
     # accept_continue2 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
@@ -364,7 +362,7 @@ class Player(BasePlayer):
     )
 
     cbc_check = models.BooleanField(
-        label="Both firms prepared a country-by-country report with information on the allocation of income, profit, taxes paid among the two countries in which the firms operate",
+        label="Both firms prepared a country-by-country report with information on the allocation of income, profit, and taxes paid among the two countries in which the firms operate",
     )
 
     # rev = models.IntegerField(
@@ -559,7 +557,6 @@ class Player(BasePlayer):
     check_islider = models.FloatField(blank=True, initial=None)
 
     iinvest = models.IntegerField(
-        label="Based on the information you just read, would you consider investing in Alophonica?",
         choices=Constants.DefinitelyChoices
         )
 
@@ -573,7 +570,6 @@ class Player(BasePlayer):
     check_islider2 = models.FloatField(blank=True, initial=None)
 
     iinvest2 = models.IntegerField(
-        label="Based on the information you just read, would you consider investing in Bellico?",
         choices=Constants.DefinitelyChoices
         )
 
@@ -604,3 +600,12 @@ class Player(BasePlayer):
         )
 
     check_beltax = models.FloatField(blank=True, initial=None)
+
+    cmotax = models.FloatField(
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
+        min=0,
+        initial=None,
+        max=100,
+        )
+
+    check_cmotax = models.FloatField(blank=True, initial=None)

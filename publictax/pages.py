@@ -35,7 +35,7 @@ class Info_2(Page):
 
 class Info_3(Page):
     form_model = 'player'
-    form_fields = ['timer_id', 'alotax', 'beltax', 'check_alotax', 'check_beltax']
+    form_fields = ['timer_id', 'alotax', 'beltax', 'check_alotax', 'check_beltax', 'cmotax', 'check_cmotax']
 
     def error_message(self, value):
         #if self.group.r == None:
@@ -129,6 +129,9 @@ class PEQ_2(Page):
         'TA_1',
         'TA_2',
         'TA_3',
+        'playernorm_1',
+        'playernorm_2',
+        'playernorm_3',
         'Function',
         'Industry'
     ]

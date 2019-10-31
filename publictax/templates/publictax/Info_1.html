@@ -16,7 +16,7 @@
         You are asked to evaluate whether the two firms are paying their fair share of taxes.
     </li>
     <li>
-        There are two firms called <b>Alophonica</b> and <b>Bellico</b>.
+        There are two firms called {% if player.treat_AB == "A" %}<b>Alophonica</b>{% else %}<b>Bellico</b>{% endif %} and <b>C-Mobile</b>.
     <li>
         Both firms operate in the telecommunications industry and have similar operations in two countries: <b>Olmeos</b> and <b>Hingland</b>.
     </li>
@@ -24,14 +24,14 @@
         Both firms also have the majority of their operations and their headquarter in <b>Olmeos</b>.
     </li>
     <li>
-        In <b>Olmeos</b>, the <b>statutory tax rate</b> for firms is <b>24%</b>. In <b>Hingland</b>, the <b>statutory tax rate</b> for firms is <b>10%</b>.
+        In <b>Olmeos</b>, the <b>statutory tax rate</b> for firms is <b>24%</b>. In <b>Hingland</b>, the <b>statutory tax rate</b> for firms is <b>5%</b>.
     </li>
 </div>
     <p>
         <b>Please evaluate the following statements.</b>
     </p>
     <p>
-        <b>Alophonica</b> has similar operations in the two countries as <b>Bellico</b>.
+        {% if player.treat_AB %}<b>Alophonica</b>{% else %}<b>Bellico</b>{% endif %} has similar operations in the two countries as <b>C-Mobile</b>.
         {% formfield player.Instr1a label=None %}
     </p>
     <p>
