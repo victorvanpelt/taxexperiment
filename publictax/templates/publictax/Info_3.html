@@ -137,7 +137,7 @@
                 <button id="reconciliation_button" style="color: rgb(255,255,255); background-color: rgb(26,148,49);" type="button" class="btn btn-outline-secondary">Hold to view tax rate reconciliation</button>
                 <p>   </p>
                     <div align="center">
-                        <img id="matrix" style="display:none;" align="center" width="72.5%" src="{% static "publictax/BC_RATE.jpg" %}"/>
+                        <img id="matrixr" style="display:none;" align="center" width="72.5%" src="{% static "publictax/BC_RATE.jpg" %}"/>
                     </div>
                 </div>
             </div>
@@ -209,12 +209,12 @@
             var timeDownr;
 
             function showr() {
-               document.getElementById('matrix').style="display:inline;";
+               document.getElementById('matrixr').style="display:inline;";
                timeDownr = new Date().getTime();
             }
 
             function hider() {
-               document.getElementById('matrix').style="display:none;";
+               document.getElementById('matrixr').style="display:none;";
                if (timeDownr) {
                    timeShownr += (new Date().getTime() - timeDownr);
                    document.getElementById('timer_idr').value = String(timeShownr);
