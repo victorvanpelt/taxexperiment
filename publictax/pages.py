@@ -13,9 +13,9 @@ class Intro(Page):
     #def after_all_players_arrive(self):
         #pass
 
-class Info_1(Page):
+class Info(Page):
     form_model = 'player'
-    form_fields = ['Instr1a', 'Instr1b']
+    form_fields = ['Instr1', 'Instr2', 'Instr3']
 
     # def error_message(self, values):
     #     if values["Instr1a"] != 1:
@@ -23,40 +23,29 @@ class Info_1(Page):
     #     if values["Instr1b"] != 2:
     #         return 'Your second answer is incorrect. Check the instructions to understand the difference between statutory and effective tax rates.'
 
-class Info_2(Page):
+class E_judge(Page):
     form_model = 'player'
-    form_fields = ['Instr2a', 'Instr2b']
-
-    # def error_message(self, values):
-    #     if values["Instr2a"] != 2:
-    #         return 'Your first answer is incorrect. Check the instructions to understand where both countries are headquartered and where they operate.'
-    #     if values["Instr2b"] != 1:
-    #         return 'Your second answer is incorrect. Check the instructions to understand how statutory and effective tax rates can differ.'
-
-class Info_3(Page):
-    form_model = 'player'
-    form_fields = ['timer_id', 'alotax', 'beltax', 'check_alotax', 'check_beltax', 'cmotax', 'check_cmotax']
+    form_fields = ['timer_id', 'alotax', 'check_alotax']
 
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_alotax"] == None:
-                return 'Please drag both sliders to make your decisions.'
-            if value["check_beltax"] == None:
-                return 'Please drag both sliders to make your decisions.'
+                return 'Please the slider to make a decision.'
 
-class Judgment(Page):
+class I_judge(Page):
     form_model = 'player'
-    form_fields = ['islider', 'iinvest', 'islider2', 'iinvest2', 'check_islider', 'check_islider2', 'imarketslider', 'check_imarketslider',]
+    form_fields = ['i_judge_1', 'i_judge_2', 'i_judge_3', 'check_i_judge_1', 'check_i_judge_2', 'check_i_judge_3', 'i_market', 'check_i_market',]
 
     def error_message(self, value):
         #if self.group.r == None:
-            if value["check_islider"] == None:
-                return 'Please drag all three sliders to make your decisions.'
-            if value["check_islider2"] == None:
-                return 'Please drag all three sliders to make your decisions.'
-            if value["check_imarketslider"] == None:
-                return 'Please drag all three sliders to make your decisions.'
-
+            if value["check_i_judge_1"] == None:
+                return 'Please drag all four sliders to make your decisions.'
+            if value["check_i_judge_2"] == None:
+                return 'Please drag all four sliders to make your decisions.'
+            if value["check_i_judge_3"] == None:
+                return 'Please drag all four sliders to make your decisions.'
+            if value["check_i_market"] == None:
+                return 'Please drag all four sliders to make your decisions.'
 
 class Financial(Page):
     form_model = 'player'
@@ -78,23 +67,7 @@ class Financial(Page):
         random.shuffle(fields)
         return fields
 
-# class Experience(Page):
-#     form_model = 'player'
-#     form_fields = [
-#         'FE1',
-#         'FE2',
-#         'FE3',
-#         'FE4',
-#         'FE5',
-#         'FE6'
-#     ]
-#
-#     def get_form_fields(self):
-#         fields = self.form_fields
-#         random.shuffle(fields)
-#         return fields
-
-class PEQ_1(Page):
+class Peq_1(Page):
     form_model = 'player'
     form_fields = [
         'rd',
@@ -110,7 +83,7 @@ class PEQ_1(Page):
         random.shuffle(fields)
         return fields
 
-class PEQ_2(Page):
+class Peq_2(Page):
     form_model = 'player'
     form_fields = [
         'gender',
@@ -129,9 +102,6 @@ class PEQ_2(Page):
         'TA_1',
         'TA_2',
         'TA_3',
-        'playernorm_1',
-        'playernorm_2',
-        'playernorm_3',
         'Function',
         'Industry'
     ]
@@ -149,20 +119,19 @@ class Turk(Page):
         'mturk_motivation'
     ]
 
-class MBA(Page):
-    form_model = 'player'
-    form_fields = [
-        'mturk_feedback',
-    ]
+# class Mba(Page):
+#     form_model = 'player'
+#     form_fields = [
+#         'mturk_feedback',
+#     ]
 
 page_sequence = [
     Intro,
-    Info_1,
-    Info_2,
-    Info_3,
-    Judgment,
-    PEQ_1,
+    Info,
+    E_judge,
+    I_judge,
+    Peq_1,
     Financial,
-    PEQ_2,
-    MBA
+    Peq_2,
+    Turk
 ]

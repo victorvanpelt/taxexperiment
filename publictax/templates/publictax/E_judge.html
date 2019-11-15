@@ -1,0 +1,157 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Paying a fair share of tax (Page 3/8)
+{% endblock %}
+
+{% block content %}
+
+{% if player.treat == "credit" %}
+<!-- Financial Statements US GAAP / IFRS-->
+<div class="instructions" align="center">
+    The statutory tax rate in Olmeos is 24%.
+</div>
+<div class="instructions" align="center">
+    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports financial information for countries that Alophonica operates in collectively.</p>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
+    <p>   </p>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/credit.jpg' %}"/>
+    </div>
+    </div>
+</div>
+
+<!--{% elif player.treat == "control_cbc" %}-->
+<!--<div class="instructions" align="center">-->
+<!--    The statutory tax rate in Olmeos is 24%.-->
+<!--</div>-->
+<!--<div class="instructions" align="center">-->
+<!--    <p>Hold the button for Alophonica’s country-by-country financial report,<br> which reports financial information for countries that Alophonica operates in individually.</p>-->
+<!--    <div class="container">-->
+<!--    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>-->
+<!--    <p>   </p>-->
+<!--    <div align="center">-->
+<!--        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+{% elif player.treat == "credit_p" %}
+<div class="instructions" align="center">
+    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica in thousands of USD:</p>
+    <table border="1" align="center">
+    <thead>
+        <tr>
+            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>
+        </tr>
+    </thead>
+        <tr>
+            <td><b>Revenues:</b></td>
+            <td>$14,200</td>
+        </tr>
+        <tr>
+            <td><b>Profit Before Taxes:</b></td>
+            <td>$3,976</td>
+        </tr>
+        <tr>
+            <td><b>Corporate Taxes Paid:</b></td>
+            <td>$430</td>
+        </tr>
+        <tr>
+            <td><b>Effective tax rate in Olmeos:</b></td>
+            <td>11%</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div class="instructions" align="center">
+    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports financial information for countries that Alophonica operates in collectively.</p>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
+    <p>   </p>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/credit.jpg' %}"/>
+    </div>
+    </div>
+</div>
+
+<!--{% else %}-->
+<!--<div class="instructions" align="center">-->
+<!--    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica in thousands of USD:</p>-->
+<!--    <table border="1" align="center">-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>-->
+<!--        </tr>-->
+<!--    </thead>-->
+<!--        <tr>-->
+<!--            <td><b>Revenues:</b></td>-->
+<!--            <td>$18,240</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><b>Profit Before Taxes:</b></td>-->
+<!--            <td>$5,107</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><b>Corporate Taxes Paid:</b></td>-->
+<!--            <td>$766</td>-->
+<!--        </tr>-->
+<!--    </table><br clear="all">-->
+<!--</div>-->
+<!--<div class="instructions" align="center">-->
+<!--    <p>Hold the button for Alophonica’s country-by-country financial report,<br> which reports financial information for countries that Alophonica operates in individually.</p>-->
+<!--    <div class="container">-->
+<!--    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>-->
+<!--    <p>   </p>-->
+<!--    <div align="center">-->
+<!--        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>-->
+<!--    </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+{% endif %}
+
+<input type="hidden" name="timer_id" value="" id="timer_id"/>
+<input type="hidden" name="check_alotax" value="" id="check_alotax"/>
+
+<div class="instructions" align=center>
+    <p>Please rate the extent to which Alophonica pays its fair share of taxes from completely unfair (-100%) to completely fair (100%).</p>
+    <b id="demo1">0%</b>
+    {% formfield player.alotax label=None %}
+</div>
+<br>
+{% next_button %}
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+    var timeShown = 0;
+        var timeDown;
+        function show() {
+           document.getElementById('matrix').style="display:inline;";
+           timeDown = new Date().getTime();
+        }
+        function hide() {
+           document.getElementById('matrix').style="display:none;";
+           if (timeDown) {
+               timeShown += (new Date().getTime() - timeDown);
+               document.getElementById('timer_id').value = String(timeShown);
+           }
+           timeDown = null;
+        }
+       document.getElementById('image_button').addEventListener('mousedown', show);
+       document.getElementById('image_button').addEventListener('mouseup', hide);
+       document.getElementById('image_button').addEventListener('mouseleave', hide);
+</script>
+
+    <script>
+        $('input[name=alotax]').on('input', function() {
+            document.getElementById("demo1").innerHTML = $(this).val()+'<b>%</b>';
+            $('#check_alotax').val(1);
+        });
+    </script>
+
+{% endblock %}

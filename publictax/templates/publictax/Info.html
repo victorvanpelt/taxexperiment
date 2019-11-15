@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions (Page 2/8)
+{% endblock %}
+
+{% block content %}
+
+<div align="center">
+    <img width="65%" src="{% static "publictax/image.jpg" %}"/>
+</div>
+
+<div class="instructions">
+    <li>
+        Alophonica is a publicly-listed firm in the telecommunications industry and is headquartered in a country called Olmeos.
+    </li>
+    <li>
+        Olmeos has a statutory tax rate of 24% for publicly-listed firms such as Alophonica.
+    <li>
+        However, the tax rate Alophonica effectively pays may be lower.
+    </li>
+            <ul>
+            <li>
+                Alophonica may use investment tax credits offered by the government of Olmeos, meaning that every dollar of investment for business operations in Olmeos lowers the taxes they effectively pay by one dollar.
+            </li>
+            <li>
+                Alophonica may also shift its profits from Olmeos to another country with lower statutory tax rate such as Hingland, which is known to be a tax haven. Alophonica could do so by using gaps and mismatches between the two countries' tax systems.
+            </li>
+        </ul>
+</div>
+    <p>
+        <b>Please evaluate the following statements.</b>
+    </p>
+    <p>
+        The taxes Alophonica effectively pays in Olmeos is always the same as the statutory tax rate of 24%.
+        {% formfield player.Instr1 label=None %}
+    </p>
+    <p>
+        The more investments Alophonica makes for business operations in Olmeos, the less taxes it effectively pays in Olmeos.
+        {% formfield player.Instr2 label=None %}
+    </p>
+    <p>
+        Next to using investment tax credits offered by the government of Olmeos, Alophonica may also pay less tax in Olmeos by shifting profits from Olmeos to another low tax country such as Hingland.
+        {% formfield player.Instr3 label=None %}
+    </p>
+
+<br>
+{% next_button %}
+
+{% endblock %}
