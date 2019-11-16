@@ -6,7 +6,7 @@ from otree.api import (
 )
 
 
-author = 'Christian Peters'
+author = 'Christian Peters and Victor van Pelt'
 
 doc = """
 Public Tax Experiment Software
@@ -51,8 +51,6 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     treat = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
-    # accept_continue1 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
-    # accept_continue2 = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
 
     # Instruction checks
     Instr1 = models.IntegerField(blank=False, choices=[[1, 'True'], [2, 'False']], widget=widgets.RadioSelect)
@@ -314,21 +312,6 @@ class Player(BasePlayer):
             [7, 'Very frequently']
         ]
     )
-
-    # norm_1 = models.IntegerField(
-    #     label="When buying products, I generally purchase those brands that I think others will approve of.",
-    #     choices=Constants.AgreeChoices
-    # )
-    #
-    # norm_2 = models.IntegerField(
-    #     label="If other people can see me using a product, I often purchase the brand they expect me to buy.",
-    #     choices=Constants.AgreeChoices
-    # )
-    #
-    # norm_3 = models.IntegerField(
-    #     label="I achieve a sense of belonging by purchasing the same products and brands that others purchase.",
-    #     choices=Constants.AgreeChoices
-    # )
 
     TA_1 = models.IntegerField(
         label="To what extent do you think claiming state benefits to which one is not entitled is justified?",
