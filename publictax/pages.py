@@ -71,7 +71,7 @@ class Financial(Page):
         random.shuffle(fields)
         return fields
 
-class Peq_1(Page):
+class Peq1(Page):
     form_model = 'player'
     form_fields = [
         'rd',
@@ -87,7 +87,7 @@ class Peq_1(Page):
         random.shuffle(fields)
         return fields
 
-class Peq_2(Page):
+class Peq2(Page):
     form_model = 'player'
     form_fields = [
         'gender',
@@ -135,8 +135,8 @@ page_sequence = [
     Info_2,
     E_judge,
     I_judge,
-    Peq_1,
+    Peq1,
     Financial,
-    Peq_2,
+    Peq2,
     Turk
 ]
