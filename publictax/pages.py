@@ -15,7 +15,7 @@ class Intro(Page):
 
 class Info_1(Page):
     form_model = 'player'
-    form_fields = ['Instr1']
+    form_fields = ['Instr1', 'Instr2']
 
     # def error_message(self, values):
     #     if values["Instr1a"] != 1:
@@ -25,7 +25,7 @@ class Info_1(Page):
 
 class Info_2(Page):
     form_model = 'player'
-    form_fields = ['Instr2', 'Instr3']
+    form_fields = ['Instr3', 'Instr4']
 
 class E_judge(Page):
     form_model = 'player'
