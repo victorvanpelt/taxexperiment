@@ -40,13 +40,10 @@ class Subsession(BaseSubsession):
     def creating_session(self):
         # randomize to treatments
         for player in self.get_players():
-            #player.treat = random.choice(['control', 'credit', 'credit_p', 'credit_cbc', 'credit_cbc_p', 'shift', 'shift_p','shift_cbc', 'shift_cbc_p'])
             player.treat = random.choice(['control', 'credit', 'credit_p', 'shift', 'shift_p'])
-            #print('set player.color to', player.color)
 
 class Group(BaseGroup):
     pass
-
 
 class Player(BasePlayer):
     treat = models.StringField()
