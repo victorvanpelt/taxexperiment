@@ -13,15 +13,19 @@ class Intro(Page):
     #def after_all_players_arrive(self):
         #pass
 
-class Info(Page):
+class Info_1(Page):
     form_model = 'player'
-    form_fields = ['Instr1', 'Instr2', 'Instr3']
+    form_fields = ['Instr1']
 
     # def error_message(self, values):
     #     if values["Instr1a"] != 1:
     #         return 'Your first answer is incorrect. Check the instructions to understand what the task of this HIT is.'
     #     if values["Instr1b"] != 2:
     #         return 'Your second answer is incorrect. Check the instructions to understand the difference between statutory and effective tax rates.'
+
+class Info_2(Page):
+    form_model = 'player'
+    form_fields = ['Instr2', 'Instr3']
 
 class E_judge(Page):
     form_model = 'player'
@@ -127,7 +131,8 @@ class Turk(Page):
 
 page_sequence = [
     Intro,
-    Info,
+    Info_1,
+    Info_2,
     E_judge,
     I_judge,
     Peq_1,

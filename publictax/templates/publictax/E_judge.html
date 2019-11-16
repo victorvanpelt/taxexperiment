@@ -2,22 +2,22 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Paying a fair share of tax (Page 3/8)
+    Paying a fair share of taxes (Page 4/9)
 {% endblock %}
 
 {% block content %}
 
-{% if player.treat == "credit" %}
+{% if player.treat == "control" %}
 <div class="instructions" align="center">
     The statutory tax rate in Olmeos is 24%.
 </div>
 <div class="instructions" align="center">
-    <p>Hold the button for Alophonica’s financial report, which reports consolidated financial information.</p>
+    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
     <p>   </p>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="50%" src="{% static 'publictax/credit.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control.jpg' %}"/>
     </div>
     </div>
 </div>
@@ -35,33 +35,60 @@
 <!--    </div>-->
 <!--    </div>-->
 <!--</div>-->
-
-{% else %}
+{% elif player.treat == "credit" %}
 <div class="instructions" align="center">
-    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly report the following about Alophonica:</p>
+    The statutory tax rate in Olmeos is 24%.
+</div>
+<div class="instructions" align="center">
+    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
+    <p>   </p>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
+    </div>
+    </div>
+</div>
+
+{% elif player.treat == "credit_p" %}
+<div class="instructions" align="center">
+    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos in millions of USD:</p>
     <table border="1" align="center">
-    <thead>
         <tr>
-            <td align="center" colspan="2"><h6><b>Alophonica (thousands of USD)</b></h6></td>
-        </tr>
-    </thead>
-        <tr>
-            <td><b>Revenues:</b></td>
-            <td>$14,200</td>
+            <td align="left"><h6><b>Alophonica</b></h6></td>
+            <td align="center"><h6><b>Olmeos</b></h6></td>
         </tr>
         <tr>
-            <td><b>Profit Before Taxes:</b></td>
-            <td>$3,976</td>
+            <td>>Revenues:</td>
+            <td align="center">$14,200</td>
         </tr>
         <tr>
-            <td><b>Corporate Taxes Paid:</b></td>
-            <td>$430</td>
+            <td>Profit Before Taxes:</td>
+            <td align="center">$3,976</td>
         </tr>
         <tr>
-            <td><b>Effective tax rate in Olmeos:</b></td>
-            <td>11%</td>
+            <td>Corporate Taxes Paid:</td>
+            <td align="center">$430</td>
+        </tr>
+        <tr>
+            <td>Effective tax rate in Olmeos:</td>
+            <td align="center">11%</td>
         </tr>
     </table><br clear="all">
+</div>
+<div class="instructions" align="center">
+    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
+    <p>   </p>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift" %}
+<div class="instructions" align="center">
+    The statutory tax rate in Olmeos is 24%.
 </div>
 <div class="instructions" align="center">
     <p>Hold the button for Alophonica’s financial report, which reports consolidated financial information.</p>
@@ -69,43 +96,47 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
     <p>   </p>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="50%" src="{% static 'publictax/credit.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
+    </div>
+    </div>
+</div>
+{% else %}
+<div class="instructions" align="center">
+    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos in millions of USD:</p>
+    <table border="1" align="center">
+        <tr>
+            <td align="left"><h6><b>Alophonica</b></h6></td>
+            <td align="center"><h6><b>Olmeos</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$10,200</td>
+        </tr>
+        <tr>
+            <td>Profit Before Taxes:</td>
+            <td align="center">$1,219</td>
+        </tr>
+        <tr>
+            <td>Corporate Taxes Paid:</td>
+            <td align="center">$292</td>
+        </tr>
+        <tr>
+            <td>Effective tax rate in Olmeos:</td>
+            <td align="center">24%</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div class="instructions" align="center">
+    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
+    <p>   </p>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
     </div>
     </div>
 </div>
 {% endif %}
-<!--<div class="instructions" align="center">-->
-<!--    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica in thousands of USD:</p>-->
-<!--    <table border="1" align="center">-->
-<!--    <thead>-->
-<!--        <tr>-->
-<!--            <td align="center" colspan="2"><h6><b>Alophonica</b></h6></td>-->
-<!--        </tr>-->
-<!--    </thead>-->
-<!--        <tr>-->
-<!--            <td><b>Revenues:</b></td>-->
-<!--            <td>$18,240</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td><b>Profit Before Taxes:</b></td>-->
-<!--            <td>$5,107</td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td><b>Corporate Taxes Paid:</b></td>-->
-<!--            <td>$766</td>-->
-<!--        </tr>-->
-<!--    </table><br clear="all">-->
-<!--</div>-->
-<!--<div class="instructions" align="center">-->
-<!--    <p>Hold the button for Alophonica’s country-by-country financial report,<br> which reports financial information for countries that Alophonica operates in individually.</p>-->
-<!--    <div class="container">-->
-<!--    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>-->
-<!--    <p>   </p>-->
-<!--    <div align="center">-->
-<!--        <img id="matrix" style="display:none;" align="center" width="70%" src="{% static 'publictax/alohigher.jpg' %}"/>-->
-<!--    </div>-->
-<!--    </div>-->
-<!--</div>-->
 
 <input type="hidden" name="timer_id" value="" id="timer_id"/>
 <input type="hidden" name="check_alotax" value="" id="check_alotax"/>

@@ -41,8 +41,7 @@ class Subsession(BaseSubsession):
         # randomize to treatments
         for player in self.get_players():
             #player.treat = random.choice(['control', 'credit', 'credit_p', 'credit_cbc', 'credit_cbc_p', 'shift', 'shift_p','shift_cbc', 'shift_cbc_p'])
-            player.treat = random.choice(['credit', 'credit_p'])
-            #player.treat_AB = random.choice(['A', 'B'])
+            player.treat = random.choice(['control', 'credit', 'credit_p', 'shift', 'shift_p'])
             #print('set player.color to', player.color)
 
 class Group(BaseGroup):
@@ -184,22 +183,12 @@ class Player(BasePlayer):
     )
 
     australia_check = models.BooleanField(
-        label="The tax authorities of Olmeos disclosed information about Alophonica."
+        label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in Olmeos."
     )
 
     cbc_check = models.BooleanField(
-        label="Alophonica prepared a country-by-country financial report, which reports financial information for countries that Alophonica operates in individually.",
+        label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in other countries than Olmeos.",
     )
-
-    # purple = models.IntegerField(
-    #     label = "To make sure you are paying attention, please select 'Disagree a little'.",
-    #     choices = Constants.AgreeChoices
-    # )
-    #
-    # green = models.IntegerField(
-    #     label = "To make sure you are paying attention, please select 'Agree moderately'.",
-    #     choices = Constants.AgreeChoices
-    # )
 
     fair_rd = models.IntegerField(
         label="It is fair to lower taxes using investment tax credits.",

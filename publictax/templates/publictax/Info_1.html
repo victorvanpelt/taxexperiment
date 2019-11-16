@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions (Page 2/9)
+{% endblock %}
+
+{% block content %}
+
+<div align="center">
+    <img width="65%" src="{% static "publictax/image.jpg" %}"/>
+</div>
+
+<div class="instructions">
+    <ul>
+        <li>
+            Alophonica is a publicly-listed firm in the telecommunications industry and is headquartered in a country called Olmeos.
+        </li>
+        <li>
+            Olmeos has a statutory tax rate of 24% for publicly-listed firms such as Alophonica.
+        </li>
+        <li>
+            A statutory tax rate of 24% implies paying 24 percent of Profit Before Tax as tax to Olmeos.
+        </li>
+    </ul>
+</div>
+    <p>
+        <b>Please evaluate the following statement.</b>
+    </p>
+    <p>
+        A statutory tax rate of 24% means paying 24% of Revenues as tax to Olmeos.
+        {% formfield player.Instr1 label=None %}
+    </p>
+
+<br>
+{% next_button %}
+
+{% endblock %}
