@@ -106,8 +106,7 @@ class Peq2(Page):
         'TA_1',
         'TA_2',
         'TA_3',
-        'Function',
-        'Industry'
+        'attention_1'
     ]
 
     def get_form_fields(self):

@@ -359,35 +359,14 @@ class Player(BasePlayer):
         ]
     )
 
-    Function = models.IntegerField(
-        label="In which function of your organization do you currently work (please check one)?",
+# Attention checks for PEQ_2
+    attention_1 = models.IntegerField(
+        label="What rhymes on tree?",
         choices=[
-            [1, 'General Management'],
-            [2, 'Operations'],
-            [3, 'Finance/Accounting'],
-            [4, 'Marketing/Sales'],
-            [5, 'Human Resources'],
-            [6, 'R&D'],
-            [7, 'Other'],
-            [8, 'None, I am unemployed']
-        ]
-    )
-
-    Industry = models.IntegerField(
-        label="In which industry does your firm primarily conduct business?",
-        choices=[
-            [1, 'Mining/Oil/Gas'],
-            [2, 'Construction'],
-            [3, 'Transportation'],
-            [4, 'Manufacturing'],
-            [5, 'Retail'],
-            [6, 'Financial Services'],
-            [7, 'Health Care'],
-            [8, 'Other Services'],
-            [9, 'Not-For-Profit'],
-            [10, 'Government'],
-            [11, 'Other'],
-            [12, 'None, I am unemployed']
+            [1, 'box'],
+            [2, 'crow'],
+            [3, 'flee'],
+            [4, 'car']
         ]
     )
 
