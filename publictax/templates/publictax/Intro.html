@@ -4,7 +4,6 @@
 {% block title %}
     Before you begin ... (Page 1/9)
 {% endblock %}
-
 {% block content %}
 <div class="instructions">
 <!--Please take note of the following information:-->
@@ -41,4 +40,7 @@
 {% formfield player.accept_conditions label="I have read and accept the conditions above." %}
 <br>
 {% next_button %}
+{% endblock %}
+{% block styles %}
+<link href="_static\otree\css\theme.css" rel="stylesheet">
 {% endblock %}
