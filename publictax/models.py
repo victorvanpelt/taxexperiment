@@ -370,6 +370,22 @@ class Player(BasePlayer):
         ]
     )
 
+# Interpersonal influence PEQ2
+    norm_1 = models.IntegerField(
+        label="When buying products, I generally purchase those brands that I think others will approve of.",
+        choices=Constants.AgreeChoices
+    )
+
+    norm_2 = models.IntegerField(
+        label="If other people can see me using a product, I often purchase the brand they expect me to buy.",
+        choices=Constants.AgreeChoices
+    )
+
+    norm_3 = models.IntegerField(
+        label="I achieve a sense of belonging by purchasing the same products and brands that others purchase.",
+        choices=Constants.AgreeChoices
+    )
+
 # Experience Questions for PEQ_2
     fin_exp = models.IntegerField(
         label="I have experience with conducting trades and transactions with financial assets such as debt securities, bonds, shares, financial funds, and derivatives.",
@@ -439,7 +455,7 @@ class Player(BasePlayer):
 # End of HIT MTurk
 
     mturk = models.IntegerField(
-        label = "How difficult was this HIT?",
+        label = "How difficult was this study?",
         choices = [
             [1, 'Extremely easy'],
             [2, 'Moderately easy'],
@@ -458,7 +474,7 @@ class Player(BasePlayer):
     )
 
     mturk_motivation = models.IntegerField(
-        label = "How motivated were you during this HIT?",
+        label = "How motivated were you during this study?",
         choices = [
             [1, 'Extremely unmotivated'],
             [2, 'Very unmotivated'],

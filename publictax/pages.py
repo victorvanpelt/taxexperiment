@@ -106,7 +106,10 @@ class Peq2(Page):
         'TA_1',
         'TA_2',
         'TA_3',
-        'attention_1'
+        'attention_1',
+        'norm_1',
+        'norm_2',
+        'norm_3'
     ]
 
     def get_form_fields(self):
@@ -125,7 +128,9 @@ class Peq2(Page):
 class M(Page):
     form_model = 'player'
     form_fields = [
+        'mturk',
         'mturk_feedback',
+        'mturk_motivation'
     ]
 
 page_sequence = [
