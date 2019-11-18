@@ -115,19 +115,19 @@ class Peq2(Page):
         random.shuffle(fields)
         return fields
 
-class Turk(Page):
-    form_model = 'player'
-    form_fields = [
-        'mturk',
-        'mturk_feedback',
-        'mturk_motivation'
-    ]
-
-# class Mba(Page):
+# class Turk(Page):
 #     form_model = 'player'
 #     form_fields = [
+#         'mturk',
 #         'mturk_feedback',
+#         'mturk_motivation'
 #     ]
+
+class M(Page):
+    form_model = 'player'
+    form_fields = [
+        'mturk_feedback',
+    ]
 
 page_sequence = [
     Intro,
@@ -138,5 +138,5 @@ page_sequence = [
     Peq1,
     Financial,
     Peq2,
-    Turk
+    M
 ]
