@@ -4,6 +4,7 @@ venv
 *~
 *.sqlite3
 _bots*s
+_temp*
 __pycache__/
 *.py[cod]
 .DS_Store

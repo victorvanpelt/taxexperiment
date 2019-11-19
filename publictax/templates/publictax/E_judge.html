@@ -8,11 +8,11 @@
 {% block content %}
 
 {% if player.treat == "control" %}
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     The statutory tax rate in Olmeos is 24%.
     <br>
 </div>
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
@@ -25,11 +25,11 @@
 </div>
 
 {% elif player.treat == "credit" %}
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     The statutory tax rate in Olmeos is 24%.
     <br>
 </div>
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
@@ -42,7 +42,7 @@
 </div>
 
 {% elif player.treat == "credit_p" %}
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos in millions of USD:</p>
     <table border="1" align="center">
         <tr>
@@ -67,7 +67,7 @@
         </tr>
     </table><br clear="all">
 </div>
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
@@ -79,11 +79,11 @@
     </div>
 </div>
 {% elif player.treat == "shift" %}
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     The statutory tax rate in Olmeos is 24%.
     <br>
 </div>
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>Hold the button for Alophonica’s financial report, which reports consolidated financial information.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
@@ -95,7 +95,7 @@
     </div>
 </div>
 {% else %}
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos in millions of USD:</p>
     <table border="1" align="center">
         <tr>
@@ -120,7 +120,7 @@
         </tr>
     </table><br clear="all">
 </div>
-<div class="instructions" align="center">
+<div class="card bg-light instructions" align="center">
     <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Show financial report</button>
@@ -136,7 +136,7 @@
 <input type="hidden" name="timer_id" value="" id="timer_id"/>
 <input type="hidden" name="check_alotax" value="" id="check_alotax"/>
 
-<div class="instructions" align=center>
+<div class="card bg-light instructions" align=center>
     <p>Please rate the extent to which Alophonica pays its fair share of taxes from completely unfair (-100%) to completely fair (100%).</p>
     <b id="demo1">0%</b>
     {% formfield player.alotax label=None %}
