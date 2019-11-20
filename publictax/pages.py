@@ -46,8 +46,6 @@ class I_judge(Page):
                 return 'Please drag all four sliders to make your decisions.'
             if value["check_i_judge_2"] == None:
                 return 'Please drag all four sliders to make your decisions.'
-            if value["check_i_judge_3"] == None:
-                return 'Please drag all four sliders to make your decisions.'
             if value["check_i_market"] == None:
                 return 'Please drag all four sliders to make your decisions.'
 
