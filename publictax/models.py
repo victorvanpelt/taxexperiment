@@ -196,16 +196,6 @@ class Player(BasePlayer):
         label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower statutory tax rate.",
         choices=Constants.AgreeChoices
     )
-
-    fair_ptd = models.IntegerField(
-        label="The information disclosed by Olmeos' tax authorities influenced my decision about Alophonica paying its fair share of taxes.",
-        choices=Constants.AgreeChoices
-    )
-
-    fair_report = models.IntegerField(
-        label="The information in Alophonica's financial report influenced my decision about Alophonica paying its fair share of taxes.",
-        choices=Constants.AgreeChoices
-    )
     tax_advisor = models.IntegerField(
         label="How often do you consult a tax advisor, both privately and as part of your job?",
         choices=[
@@ -271,16 +261,26 @@ class Player(BasePlayer):
     )
     fin_own = models.IntegerField(
         label="I own or have indirectly or directly owned financial assets such as debt securities, bonds, shares, mutual or pension funds, and derivatives.",
-        choices=Constants.FrequencyChoices
+        choices=[
+            [1, 'Never'],
+            [2, 'Very rarely'],
+            [3, 'Rarely'],
+            [4, 'Sometimes'],
+            [5, 'Occasionally'],
+            [6, 'Frequently'],
+            [7, 'Very frequently']
+        ]
     )
     tax_exp = models.IntegerField(
         label="I have been involved in developing tax management policies and setting out tax strategies for firms.",
         choices=[
             [1, 'Never'],
-            [2, 'Rarely'],
-            [3, 'Sometimes'],
-            [4, 'Often'],
-            [5, 'Always']
+            [2, 'Very rarely'],
+            [3, 'Rarely'],
+            [4, 'Sometimes'],
+            [5, 'Occasionally'],
+            [6, 'Frequently'],
+            [7, 'Very frequently']
         ]
     )
     tax_fam = models.IntegerField(
@@ -297,10 +297,12 @@ class Player(BasePlayer):
         label="How often do you look at a firm's tax management strategy and policy when developing your opinion about a firm?",
         choices=[
             [1, 'Never'],
-            [2, 'Rarely'],
-            [3, 'Sometimes'],
-            [4, 'Often'],
-            [5, 'Always']
+            [2, 'Very rarely'],
+            [3, 'Rarely'],
+            [4, 'Sometimes'],
+            [5, 'Occasionally'],
+            [6, 'Frequently'],
+            [7, 'Very frequently']
         ]
     )
 
