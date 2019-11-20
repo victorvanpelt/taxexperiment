@@ -9,8 +9,10 @@
 <div align="center">
 <hr>
     <p>
-        To what extent does the information you read change your willingness to invest in Alophonica?<br>
-        Please rate from -100% (Greatly decreases my willingness) to 100% (Greatly increases my willingness).
+        How does the financial information you consulted on the previous screen change your willingness to invest in
+        Alophonica compared to your willingness to invest in Alophonica before consulting the financial information on
+        the previous screen?<br>
+        Answer scale varies from -100% (strongly decreases my willingness to invest) to 100% (strongly increases my willingness to invest).
     </p>
 
     <b id="demo1">0%</b>
@@ -19,8 +21,9 @@
     <input type="hidden" name="check_i_judge_1" value="" id="check_i_judge_1"/>
 <hr>
     <p>
-        How do you rate the implications of the information you read for your valuation of Alophonica?<br>
-        Please rate from -100% (Greatly decreases my valuation) to 100% (Greatly increases my valuation).
+        How does the financial information you consulted on the previous screen change your valuation of Alophonica's
+        stock compared to your valuation of Alophonica's stock before consulting the financial information on the previous
+        screen? Answer scale varies from -100% (strongly decreasing my valuation) to 100% (strongly increases my valuation).
     </p>
 
     <b id="demo2">0%</b>
@@ -29,19 +32,9 @@
     <input type="hidden" name="check_i_judge_2" value="" id="check_i_judge_2"/>
 <hr>
     <p>
-        How strongly does the information you read change your pricing of Alophonica's stock?<br>
-        Please rate from -100% (Greatly decreases its stock price) to 100% (Greatly increases its stock price).
+        Suppose you have invested $10,000 in a mutual fund that tracks the value of the Dow Jones.<br> How does the information you consulted on the previous screen impact your investment in this fund?
     </p>
-
-    <b id="demo3">0%</b>
-    {% formfield player.i_judge_3 label=None %}
-
-    <input type="hidden" name="check_i_judge_3" value="" id="check_i_judge_3"/>
-<hr>
-    <p>
-        Suppose you have invested $10,000 in the stock market.<br> To what extent does the information you read impact your investment in the stock market?
-    </p>
-    <b id="demo4">0%</b>
+    <b id="demo4">0</b>
     {% formfield player.i_market label=None %}
     <input type="hidden" name="check_i_market" value="" id="check_i_market"/>
 <hr>
@@ -63,13 +56,6 @@
         $('input[name=i_judge_2]').on('input', function() {
             document.getElementById("demo2").innerHTML = $(this).val()+'<b>%</b>';
             $('#check_i_judge_2').val(1);
-        });
-    </script>
-
-    <script>
-        $('input[name=i_judge_3]').on('input', function() {
-            document.getElementById("demo3").innerHTML = $(this).val()+'<b>%</b>';
-            $('#check_i_judge_3').val(1);
         });
     </script>
 

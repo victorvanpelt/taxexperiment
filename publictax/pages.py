@@ -38,7 +38,7 @@ class E_judge(Page):
 
 class I_judge(Page):
     form_model = 'player'
-    form_fields = ['i_judge_1', 'i_judge_2', 'i_judge_3', 'check_i_judge_1', 'check_i_judge_2', 'check_i_judge_3', 'i_market', 'check_i_market',]
+    form_fields = ['i_judge_1', 'i_judge_2', 'check_i_judge_1', 'check_i_judge_2', 'i_market', 'check_i_market',]
 
     def error_message(self, value):
         #if self.group.r == None:
@@ -74,12 +74,18 @@ class Financial(Page):
 class Peq1(Page):
     form_model = 'player'
     form_fields = [
-        'rd',
         'fair_rd',
         'fair_ps',
         'fair_more',
-        'australia_check',
-        'cbc_check'
+        'tax_advisor',
+        'fin_exp',
+        'fin_own',
+        'tax_exp',
+        'tax_fam',
+        'tax_freq',
+        'TA_1',
+        'TA_2',
+        'TA_3',
     ]
 
     def get_form_fields(self):
@@ -98,14 +104,6 @@ class Peq2(Page):
         'education',
         'workexperience',
         'english',
-        'tax_advisor',
-        'fin_exp',
-        'fin_own',
-        'tax_exp',
-        'tax_an',
-        'TA_1',
-        'TA_2',
-        'TA_3',
         'attention_1',
         'norm_1',
         'norm_2',
@@ -139,8 +137,8 @@ page_sequence = [
     Info_2,
     E_judge,
     I_judge,
-    Peq1,
     Financial,
+    Peq1,
     Peq2,
     M
 ]

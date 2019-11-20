@@ -18,13 +18,13 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
     AgreeChoices=[
-        [1, 'Disagree strongly'],
-        [2, 'Disagree moderately'],
-        [3, 'Disagree a little'],
+        [1, 'Strongly disagree'],
+        [2, 'Disagree'],
+        [3, 'Somewhat disagree'],
         [4, 'Neither agree nor disagree'],
-        [5, 'Agree a little'],
-        [6, 'Agree moderately'],
-        [7, 'Agree strongly'],
+        [5, 'Somewhat agree'],
+        [6, 'Agree'],
+        [7, 'Strongly agree'],
     ]
     DefinitelyChoices=[
         [1, 'Definitely not'],
@@ -35,6 +35,14 @@ class Constants(BaseConstants):
         [6, 'Very likely'],
         [7, 'Definitely'],
     ]
+    FrequencyChoices=[
+        [1, 'Never'],
+        [2, 'Rarely'],
+        [3, 'Sometimes'],
+        [4, 'Often'],
+        [5, 'Always'],
+    ]
+
 
 class Subsession(BaseSubsession):
     def creating_session(self):
@@ -173,11 +181,6 @@ class Player(BasePlayer):
 
 # PEQ_1 Process Variables
 
-    rd = models.IntegerField(
-        label="Alophonica’s innovativeness influenced my decision about it paying its fair share of taxes",
-        choices=Constants.AgreeChoices
-    )
-
     australia_check = models.BooleanField(
         label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in Olmeos."
     )
@@ -186,18 +189,22 @@ class Player(BasePlayer):
         label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in other countries than Olmeos.",
     )
 
+    button_click_check = models.BooleanField(
+        label="I held the button to view the financial reports of Alophonica."
+    )
+
     fair_rd = models.IntegerField(
-        label="It is fair to lower taxes using investment tax credits.",
+        label="In general, I consider it fair if companies lower taxes by using investment tax credits.",
         choices=Constants.AgreeChoices
     )
 
     fair_ps = models.IntegerField(
-        label="It is fair to lower taxes by shifting profits to countries with lower statutory tax rate such as Hingland.",
+        label="In general, I consider it fair if companies lower taxes by shifting profits to countries with a lower statutory tax rate.",
         choices=Constants.AgreeChoices
     )
 
     fair_more = models.IntegerField(
-        label="It is fairer to lower taxes by shifting profit than by using investment tax credits.",
+        label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower statutory tax rate.",
         choices=Constants.AgreeChoices
     )
 
@@ -299,7 +306,7 @@ class Player(BasePlayer):
     )
 
     tax_advisor = models.IntegerField(
-        label="How often do you consult a tax advisor, both privately or as part of your job?",
+        label="How often do you consult a tax advisor, both privately and as part of your job?",
         choices=[
             [1, 'Never'],
             [2, 'Very rarely'],
@@ -312,50 +319,41 @@ class Player(BasePlayer):
     )
 
     TA_1 = models.IntegerField(
-        label="To what extent do you think claiming state benefits to which one is not entitled is justified?",
+        label="Cheating on taxes if one had the chance is justified.",
         choices=[
-            [1, '1: Never Justified'],
-            [2, '2'],
-            [3, '3'],
-            [4, '4'],
-            [5, '5'],
-            [6, '6'],
-            [7, '7'],
-            [8, '8'],
-            [9, '9'],
-            [10, '10: Always Justified']
+            [1, 'Very untrue of what I believe'],
+            [2, 'Untrue of what I believe'],
+            [3, 'Somewhat untrue of what I believe'],
+            [4, 'Neutral'],
+            [5, 'Somewhat true of what I believe'],
+            [6, 'True of what I believe'],
+            [7, 'Very true of what I believe']
         ]
     )
 
     TA_2 = models.IntegerField(
-        label="To what extent do you think that cheating on taxes if one had the chance is justified?",
+        label="Claiming state benefits to which one is not entitled is justified.",
         choices=[
-            [1, '1: Never Justified'],
-            [2, '2'],
-            [3, '3'],
-            [4, '4'],
-            [5, '5'],
-            [6, '6'],
-            [7, '7'],
-            [8, '8'],
-            [9, '9'],
-            [10, '10: Always Justified']
+            [1, 'Very untrue of what I believe'],
+            [2, 'Untrue of what I believe'],
+            [3, 'Somewhat untrue of what I believe'],
+            [4, 'Neutral'],
+            [5, 'Somewhat true of what I believe'],
+            [6, 'True of what I believe'],
+            [7, 'Very true of what I believe']
         ]
     )
 
     TA_3 = models.IntegerField(
-        label="To what extent do you think that avoiding taxes by using legal means if given the chance is justified?",
+        label="Reducing taxes by using legal means is justified.",
         choices=[
-            [1, '1: Never Justified'],
-            [2, '2'],
-            [3, '3'],
-            [4, '4'],
-            [5, '5'],
-            [6, '6'],
-            [7, '7'],
-            [8, '8'],
-            [9, '9'],
-            [10, '10: Always Justified']
+            [1, 'Very untrue of what I believe'],
+            [2, 'Untrue of what I believe'],
+            [3, 'Somewhat untrue of what I believe'],
+            [4, 'Neutral'],
+            [5, 'Somewhat true of what I believe'],
+            [6, 'True of what I believe'],
+            [7, 'Very true of what I believe']
         ]
     )
 
@@ -388,20 +386,48 @@ class Player(BasePlayer):
 
 # Experience Questions for PEQ_2
     fin_exp = models.IntegerField(
-        label="I have experience with conducting trades and transactions with financial assets such as debt securities, bonds, shares, financial funds, and derivatives.",
-        choices=Constants.AgreeChoices
+        label="How familiar are you with conducting trades and transactions with financial assets such as debt securities, bonds, shares, financial funds, and derivatives.",
+        choices=[
+            [1, 'Not at all familiar'],
+            [2, 'Slightly familiar'],
+            [3, 'Somewhat familiar'],
+            [4, 'Moderately familiar'],
+            [5, 'Extremely familiar']
+        ]
     )
     fin_own = models.IntegerField(
-        label="I have indirectly or directly owned financial assets such as debt securities, bonds, shares, mutual or pension funds, and derivatives.",
-        choices=Constants.AgreeChoices
+        label="I own or have indirectly or directly owned financial assets such as debt securities, bonds, shares, mutual or pension funds, and derivatives.",
+        choices=Constants.FrequencyChoices
     )
     tax_exp = models.IntegerField(
-        label="I have been involved in making tax management policies and setting out tax strategies for firms.",
-        choices=Constants.AgreeChoices
+        label="I have been involved in developing tax management policies and setting out tax strategies for firms.",
+        choices=[
+            [1, 'Never'],
+            [2, 'Rarely'],
+            [3, 'Sometimes'],
+            [4, 'Often'],
+            [5, 'Always']
+        ]
     )
-    tax_an = models.IntegerField(
-        label="I have experience with analyzing and evaluating firms' tax management strategies and policies.",
-        choices=Constants.AgreeChoices
+    tax_fam = models.IntegerField(
+        label="How familiar are you with analyzing and evaluating firms' tax management strategies and policies?",
+        choices=[
+            [1, 'Not at all familiar'],
+            [2, 'Slightly familiar'],
+            [3, 'Somewhat familiar'],
+            [4, 'Moderately familiar'],
+            [5, 'Extremely familiar']
+        ]
+    )
+    tax_freq = models.IntegerField(
+        label="How often do you look at a firm's tax management strategy and policy when developing your opinion about a firm?",
+        choices = [
+            [1, 'Never'],
+            [2, 'Rarely'],
+            [3, 'Sometimes'],
+            [4, 'Often'],
+            [5, 'Always']
+        ]
     )
 
 # Investor Judgments
@@ -423,15 +449,6 @@ class Player(BasePlayer):
     )
 
     check_i_judge_2 = models.FloatField(blank=True, initial=None)
-
-    i_judge_3 = models.FloatField(
-        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px', 'autocomplete':'off'}, show_value=False),
-        min=-100,
-        initial=0,
-        max=100,
-        )
-
-    check_i_judge_3 = models.FloatField(blank=True, initial=None)
 
     i_market = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px', 'autocomplete':'off'}, show_value=False),
@@ -468,8 +485,8 @@ class Player(BasePlayer):
         blank=True
     )
 
-    mturk_feedback = models.StringField(
-        label = "Do you have any feedback for us or anything you would like to say to us",
+    mturk_feedback = models.TextField(
+        label = "Do you have any feedback for us or anything you would like to say to us?",
         blank=True
     )
 
