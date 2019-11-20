@@ -122,7 +122,7 @@ class Player(BasePlayer):
     )
 
     FL6 = models.IntegerField(
-        label = "Which of the following financial assets typically grant you the highest return over a long period of time (e.g., 10-20 years)?",
+        label = "Which of the following financial assets typically grants you the highest return over a long period of time (e.g., 10-20 years)?",
         choices = [
             [1, 'Savings accounts'],
             [2, 'Individual shares and stocks'],
@@ -179,19 +179,8 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect
     )
 
-# PEQ_1 Process Variables
+# PEQ_1
 
-    australia_check = models.BooleanField(
-        label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in Olmeos."
-    )
-
-    cbc_check = models.BooleanField(
-        label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in other countries than Olmeos.",
-    )
-
-    button_click_check = models.BooleanField(
-        label="I held the button to view the financial reports of Alophonica."
-    )
 
     fair_rd = models.IntegerField(
         label="In general, I consider it fair if companies lower taxes by using investment tax credits.",
@@ -216,6 +205,103 @@ class Player(BasePlayer):
     fair_report = models.IntegerField(
         label="The information in Alophonica's financial report influenced my decision about Alophonica paying its fair share of taxes.",
         choices=Constants.AgreeChoices
+    )
+    tax_advisor = models.IntegerField(
+        label="How often do you consult a tax advisor, both privately and as part of your job?",
+        choices=[
+            [1, 'Never'],
+            [2, 'Very rarely'],
+            [3, 'Rarely'],
+            [4, 'Sometimes'],
+            [5, 'Occasionally'],
+            [6, 'Frequently'],
+            [7, 'Very frequently']
+        ]
+    )
+
+    TA_1 = models.IntegerField(
+        label="Cheating on taxes if one had the chance is justified.",
+        choices=[
+            [1, 'Very untrue of what I believe'],
+            [2, 'Untrue of what I believe'],
+            [3, 'Somewhat untrue of what I believe'],
+            [4, 'Neutral'],
+            [5, 'Somewhat true of what I believe'],
+            [6, 'True of what I believe'],
+            [7, 'Very true of what I believe']
+        ]
+    )
+
+    TA_2 = models.IntegerField(
+        label="Claiming state benefits to which one is not entitled is justified.",
+        choices=[
+            [1, 'Very untrue of what I believe'],
+            [2, 'Untrue of what I believe'],
+            [3, 'Somewhat untrue of what I believe'],
+            [4, 'Neutral'],
+            [5, 'Somewhat true of what I believe'],
+            [6, 'True of what I believe'],
+            [7, 'Very true of what I believe']
+        ]
+    )
+
+    TA_3 = models.IntegerField(
+        label="Reducing taxes by using legal means is justified.",
+        choices=[
+            [1, 'Very untrue of what I believe'],
+            [2, 'Untrue of what I believe'],
+            [3, 'Somewhat untrue of what I believe'],
+            [4, 'Neutral'],
+            [5, 'Somewhat true of what I believe'],
+            [6, 'True of what I believe'],
+            [7, 'Very true of what I believe']
+        ]
+    )
+
+    # Experience Questions for PEQ_2
+    fin_exp = models.IntegerField(
+        label="How familiar are you with conducting trades and transactions with financial assets such as debt securities, bonds, shares, financial funds, and derivatives.",
+        choices=[
+            [1, 'Not at all familiar'],
+            [2, 'Slightly familiar'],
+            [3, 'Somewhat familiar'],
+            [4, 'Moderately familiar'],
+            [5, 'Extremely familiar']
+        ]
+    )
+    fin_own = models.IntegerField(
+        label="I own or have indirectly or directly owned financial assets such as debt securities, bonds, shares, mutual or pension funds, and derivatives.",
+        choices=Constants.FrequencyChoices
+    )
+    tax_exp = models.IntegerField(
+        label="I have been involved in developing tax management policies and setting out tax strategies for firms.",
+        choices=[
+            [1, 'Never'],
+            [2, 'Rarely'],
+            [3, 'Sometimes'],
+            [4, 'Often'],
+            [5, 'Always']
+        ]
+    )
+    tax_fam = models.IntegerField(
+        label="How familiar are you with analyzing and evaluating firms' tax management strategies and policies?",
+        choices=[
+            [1, 'Not at all familiar'],
+            [2, 'Slightly familiar'],
+            [3, 'Somewhat familiar'],
+            [4, 'Moderately familiar'],
+            [5, 'Extremely familiar']
+        ]
+    )
+    tax_freq = models.IntegerField(
+        label="How often do you look at a firm's tax management strategy and policy when developing your opinion about a firm?",
+        choices=[
+            [1, 'Never'],
+            [2, 'Rarely'],
+            [3, 'Sometimes'],
+            [4, 'Often'],
+            [5, 'Always']
+        ]
     )
 
     # PEQ_2
@@ -305,57 +391,6 @@ class Player(BasePlayer):
         ]
     )
 
-    tax_advisor = models.IntegerField(
-        label="How often do you consult a tax advisor, both privately and as part of your job?",
-        choices=[
-            [1, 'Never'],
-            [2, 'Very rarely'],
-            [3, 'Rarely'],
-            [4, 'Sometimes'],
-            [5, 'Occasionally'],
-            [6, 'Frequently'],
-            [7, 'Very frequently']
-        ]
-    )
-
-    TA_1 = models.IntegerField(
-        label="Cheating on taxes if one had the chance is justified.",
-        choices=[
-            [1, 'Very untrue of what I believe'],
-            [2, 'Untrue of what I believe'],
-            [3, 'Somewhat untrue of what I believe'],
-            [4, 'Neutral'],
-            [5, 'Somewhat true of what I believe'],
-            [6, 'True of what I believe'],
-            [7, 'Very true of what I believe']
-        ]
-    )
-
-    TA_2 = models.IntegerField(
-        label="Claiming state benefits to which one is not entitled is justified.",
-        choices=[
-            [1, 'Very untrue of what I believe'],
-            [2, 'Untrue of what I believe'],
-            [3, 'Somewhat untrue of what I believe'],
-            [4, 'Neutral'],
-            [5, 'Somewhat true of what I believe'],
-            [6, 'True of what I believe'],
-            [7, 'Very true of what I believe']
-        ]
-    )
-
-    TA_3 = models.IntegerField(
-        label="Reducing taxes by using legal means is justified.",
-        choices=[
-            [1, 'Very untrue of what I believe'],
-            [2, 'Untrue of what I believe'],
-            [3, 'Somewhat untrue of what I believe'],
-            [4, 'Neutral'],
-            [5, 'Somewhat true of what I believe'],
-            [6, 'True of what I believe'],
-            [7, 'Very true of what I believe']
-        ]
-    )
 
 # Attention checks for PEQ_2
     attention_1 = models.IntegerField(
@@ -382,52 +417,6 @@ class Player(BasePlayer):
     norm_3 = models.IntegerField(
         label="I achieve a sense of belonging by purchasing the same products and brands that others purchase.",
         choices=Constants.AgreeChoices
-    )
-
-# Experience Questions for PEQ_2
-    fin_exp = models.IntegerField(
-        label="How familiar are you with conducting trades and transactions with financial assets such as debt securities, bonds, shares, financial funds, and derivatives.",
-        choices=[
-            [1, 'Not at all familiar'],
-            [2, 'Slightly familiar'],
-            [3, 'Somewhat familiar'],
-            [4, 'Moderately familiar'],
-            [5, 'Extremely familiar']
-        ]
-    )
-    fin_own = models.IntegerField(
-        label="I own or have indirectly or directly owned financial assets such as debt securities, bonds, shares, mutual or pension funds, and derivatives.",
-        choices=Constants.FrequencyChoices
-    )
-    tax_exp = models.IntegerField(
-        label="I have been involved in developing tax management policies and setting out tax strategies for firms.",
-        choices=[
-            [1, 'Never'],
-            [2, 'Rarely'],
-            [3, 'Sometimes'],
-            [4, 'Often'],
-            [5, 'Always']
-        ]
-    )
-    tax_fam = models.IntegerField(
-        label="How familiar are you with analyzing and evaluating firms' tax management strategies and policies?",
-        choices=[
-            [1, 'Not at all familiar'],
-            [2, 'Slightly familiar'],
-            [3, 'Somewhat familiar'],
-            [4, 'Moderately familiar'],
-            [5, 'Extremely familiar']
-        ]
-    )
-    tax_freq = models.IntegerField(
-        label="How often do you look at a firm's tax management strategy and policy when developing your opinion about a firm?",
-        choices = [
-            [1, 'Never'],
-            [2, 'Rarely'],
-            [3, 'Sometimes'],
-            [4, 'Often'],
-            [5, 'Always']
-        ]
     )
 
 # Investor Judgments
