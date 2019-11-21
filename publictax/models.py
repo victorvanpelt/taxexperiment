@@ -193,7 +193,7 @@ class Player(BasePlayer):
     )
 
     fair_more = models.IntegerField(
-        label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower statutory tax rate.",
+        label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower statutory tax rate than when companies use investment tax credits.",
         choices=Constants.AgreeChoices
     )
     tax_advisor = models.IntegerField(
