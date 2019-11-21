@@ -458,6 +458,15 @@ class Player(BasePlayer):
 
     check_i_judge_2 = models.FloatField(blank=True, initial=None)
 
+    i_judge_3 = models.FloatField(
+        widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px', 'autocomplete':'off'}, show_value=False),
+        min=-100,
+        initial=0,
+        max=100,
+        )
+
+    check_i_judge_3 = models.FloatField(blank=True, initial=None)
+
     i_market = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px', 'autocomplete':'off'}, show_value=False),
         min=-100,

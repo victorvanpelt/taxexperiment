@@ -38,16 +38,18 @@ class E_judge(Page):
 
 class I_judge(Page):
     form_model = 'player'
-    form_fields = ['i_judge_1', 'i_judge_2', 'check_i_judge_1', 'check_i_judge_2', 'i_market', 'check_i_market']
+    form_fields = ['i_judge_1', 'i_judge_2', 'i_judge_3', 'check_i_judge_1', 'check_i_judge_2', 'check_i_judge_3', 'i_market', 'check_i_market']
 
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_i_judge_1"] == None:
-                return 'Please drag all three sliders to make your decisions.'
+                return 'Please drag all four sliders to make your decisions.'
             if value["check_i_judge_2"] == None:
-                return 'Please drag all three sliders to make your decisions.'
+                return 'Please drag all four sliders to make your decisions.'
+            if value["check_i_judge_3"] == None:
+                return 'Please drag all four sliders to make your decisions.'
             if value["check_i_market"] == None:
-                return 'Please drag all three sliders to make your decisions.'
+                return 'Please drag all four sliders to make your decisions.'
 
 class Financial(Page):
     form_model = 'player'
