@@ -189,7 +189,7 @@ class Player(BasePlayer):
         ]
     )
 
-    taxmanagement_check = models.IntegerField(
+    taxmanagement_check = models.BooleanField(
         label = "Which tax management strategy did Alophonica follow to pay less than the statutory tax rate?",
         choices = [
             [1, "Shifting profits to countries with a lower statutory tax rate"],
@@ -199,9 +199,6 @@ class Player(BasePlayer):
             [5, "I don't know"]
         ]
     )
-    # cbc_check = models.BooleanField(
-    #     label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in other countries than Olmeos.",
-    # )
 
     fair_rd = models.IntegerField(
         label="In general, I consider it fair if companies lower taxes by using investment tax credits.",
