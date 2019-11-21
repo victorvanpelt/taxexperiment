@@ -181,7 +181,12 @@ class Player(BasePlayer):
 
 # PEQ_1
     australia_check = models.BooleanField(
-        label="In addition to Alophonica's financial report, the tax authorities of Olmeos publicly disclosed information about Alophonica’s operations in Olmeos."
+        label = "In addition to Alophonica's financial report which you could reveal by pressing the button, what else was disclosed?",
+        choices = [
+            [1, "The statutory tax rate in Olmeos is 24%"],
+            [2, "The statutory tax rate in Olmeos is 24% and a table containing Alophonica's Revenues, Profit Before Tax, and Corporate Taxes Paid in Olmeos"],
+            [3, "I don't know"]
+        ]
     )
 
     taxmanagement_check = models.IntegerField(
