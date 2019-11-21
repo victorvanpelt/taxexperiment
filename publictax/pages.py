@@ -51,26 +51,6 @@ class I_judge(Page):
             if value["check_i_market"] == None:
                 return 'Please drag all four sliders to make your decisions.'
 
-class Financial(Page):
-    form_model = 'player'
-    form_fields = [
-        'FL1',
-        'FL2',
-        'FL3',
-        'FL4',
-        'FL5',
-        'FL6',
-        'FL7',
-        'FL8',
-        'FL9',
-        'FL10'
-    ]
-
-    def get_form_fields(self):
-        fields = self.form_fields
-        random.shuffle(fields)
-        return fields
-
 class Peq1(Page):
     form_model = 'player'
     form_fields = [
@@ -88,6 +68,26 @@ class Peq1(Page):
         'TA_3',
         'taxmanagement_check',
         'australia_check'
+    ]
+
+    def get_form_fields(self):
+        fields = self.form_fields
+        random.shuffle(fields)
+        return fields
+
+class Financial(Page):
+    form_model = 'player'
+    form_fields = [
+        'FL1',
+        'FL2',
+        'FL3',
+        'FL4',
+        'FL5',
+        'FL6',
+        'FL7',
+        'FL8',
+        'FL9',
+        'FL10'
     ]
 
     def get_form_fields(self):
@@ -139,8 +139,8 @@ page_sequence = [
     Info_2,
     E_judge,
     I_judge,
-    Financial,
     Peq1,
+    Financial,
     Peq2,
     M
 ]
