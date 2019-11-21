@@ -181,7 +181,7 @@ class Player(BasePlayer):
 
 # PEQ_1
     australia_check = models.BooleanField(
-        label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in Olmeos."
+        label="In addition to Alophonica's financial report, the tax authorities of Olmeos publicly disclosed information about Alophonica’s operations in Olmeos."
     )
 
     taxmanagement_check = models.IntegerField(
