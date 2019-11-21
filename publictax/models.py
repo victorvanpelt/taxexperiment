@@ -180,7 +180,24 @@ class Player(BasePlayer):
     )
 
 # PEQ_1
+    australia_check = models.BooleanField(
+        label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in Olmeos."
+    )
 
+    taxmanagement_check = models.IntegerField(
+        label = "Which tax management strategy did Alophonica follow to pay less than the statutory tax rate?",
+        choices = [
+            [1, "Shifting profits to countries with a lower statutory tax rate"],
+            [2, "Using investment tax credits"],
+            [3, "Both shifting profits and using investment tax credits"],
+            [4, "Alophonica did not use a tax management strategy’"],
+            [5, "I don't know"]
+        ],
+        widget=widgets.RadioSelect
+    )
+    # cbc_check = models.BooleanField(
+    #     label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in other countries than Olmeos.",
+    # )
 
     fair_rd = models.IntegerField(
         label="In general, I consider it fair if companies lower taxes by using investment tax credits.",

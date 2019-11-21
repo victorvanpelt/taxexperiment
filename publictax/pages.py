@@ -84,6 +84,8 @@ class Peq1(Page):
         'TA_1',
         'TA_2',
         'TA_3',
+        'taxmanagement_check',
+        'australia_check'
     ]
 
     def get_form_fields(self):
