@@ -192,8 +192,7 @@ class Player(BasePlayer):
             [3, "Both shifting profits and using investment tax credits"],
             [4, "Alophonica did not use a tax management strategy’"],
             [5, "I don't know"]
-        ],
-        widget=widgets.RadioSelect
+        ]
     )
     # cbc_check = models.BooleanField(
     #     label="The tax authorities of Olmeos disclosed information about Alophonica’s operations in other countries than Olmeos.",
