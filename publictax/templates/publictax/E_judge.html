@@ -27,7 +27,6 @@
     </div>
     </div>
 </div>
-<!--</div>-->
 {% elif player.treat == "credit" %}
 <div class="card card-body bg-light instructions" align="center">
     The statutory tax rate in Olmeos is 24%.
@@ -72,11 +71,8 @@
 </div>
 <div align="center">
 <hr>
-<!--<div class="card card-body bg-light instructions" align="center">-->
-<!--    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>-->
-    <div class="container">
+<div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
-<!--    <p>   </p>-->
     <br>
     <div align="center">
         <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
@@ -92,9 +88,7 @@
 </div>
 <div align="center">
 <hr>
-<!--<div class="card card-body bg-light instructions" align="center">-->
-<!--    <p>Hold the button for Alophonica’s financial report, which reports consolidated financial information.</p>-->
-    <div class="container">
+<div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
 <!--    <p>   </p>-->
     <br>
@@ -105,7 +99,7 @@
     </div>
     </div>
 </div>
-{% else %}
+{% elif player.treat == "shift_p" %}
 <div class="card card-body bg-light instructions" align="center">
     <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos publicly disclose the following information about Alophonica's operations in Olmeos. All numbers are in millions of USD:</p>
     <table border="1" align="center">
@@ -129,6 +123,78 @@
 </div>
 <div align="center">
 <hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit_cbc" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos and, if applicable, other operations across the world in millions of USD:</p>
+    <table border="1" align="center">
+        <tr>
+            <td align="left"><h6><b>Alophonica</b></h6></td>
+            <td align="center"><h6><b>Olmeos</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$700</td>
+        </tr>
+        <tr>
+            <td>Profit Before Taxes:</td>
+            <td align="center">$199</td>
+        </tr>
+        <tr>
+            <td>Corporate Taxes Paid:</td>
+            <td align="center">$22</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% else %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos and, if applicable, other operations across the world in millions of USD:</p>
+    <table border="1" align="center">
+        <tr>
+            <td align="left"><h6><b>Alophonica</b></h6></td>
+            <td align="center"><h6><b>Olmeos</b></h6></td>
+            <td align="center"><h6><b>Hingland</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$510</td>
+            <td align="center">$200</td>
+        </tr>
+        <tr>
+            <td>Profit Before Taxes:</td>
+            <td align="center">$61</td>
+            <td align="center">$138</td>
+        </tr>
+        <tr>
+            <td>Corporate Taxes Paid:</td>
+            <td align="center">$15</td>
+            <td align="center">$7</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
 <!--<div class="card card-body bg-light instructions" align="center">-->
 <!--    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>-->
     <div class="container">
@@ -147,8 +213,8 @@
 <input type="hidden" name="timer_id" value="" id="timer_id"/>
 <input type="hidden" name="check_alotax" value="" id="check_alotax"/>
 <!--<div class="card card-body bg-light instructions" align=center>-->
-    <p>Please rate the fairness of Alophonica’s tax management strategy from completely unfair (-100%) to completely fair (100%).<br>
-        A completely fair tax management strategy implies that Alophonica is paying its fair share of taxes.</p>
+    <p>Please rate the fairness of Alophonica’s tax management strategy from completely unfair (0%), through neither fair nor unfair (50%) to completely fair (100%).<br>
+        A completely fair tax management strategy implies that Alophonica is paying a fair share of taxes.</p>
     <b id="demo1">0%</b>
     {% formfield player.alotax label=None %}
 <hr>

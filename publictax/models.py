@@ -48,7 +48,7 @@ class Subsession(BaseSubsession):
     def creating_session(self):
         # randomize to treatments
         for player in self.get_players():
-            player.treat = random.choice(['control', 'credit', 'credit_p', 'shift', 'shift_p'])
+            player.treat = random.choice(['control', 'credit', 'credit_p', 'credit_cbc', 'shift', 'shift_p', 'shift_cbc'])
 
 class Group(BaseGroup):
     pass
@@ -327,7 +327,7 @@ class Player(BasePlayer):
     # PEQ_2
 
     gender = models.IntegerField(
-        label="Please select your gender.",
+        label="Please select which gender you identify most with.",
         blank=False,
         choices=[
             [1, 'Male'],
@@ -480,7 +480,7 @@ class Player(BasePlayer):
 
     alotax = models.FloatField(
         widget=widgets.SliderInput(attrs={'step': '1', 'style': 'width:500px'}, show_value=False),
-        min=-100,
+        min=0,
         initial=None,
         max=100,
         )
