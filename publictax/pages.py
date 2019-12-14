@@ -8,11 +8,6 @@ class Intro(Page):
     form_model = 'player'
     form_fields = ['accept_conditions']
 
-#class ResultsWaitPage(WaitPage):
-
-    #def after_all_players_arrive(self):
-        #pass
-
 class Info_1(Page):
     form_model = 'player'
     form_fields = ['Instr1', 'Instr2']
@@ -25,7 +20,15 @@ class Info_1(Page):
 
 class Info_2(Page):
     form_model = 'player'
-    form_fields = ['Instr3', 'Instr4']
+    form_fields = ['Instr3']
+
+class Info_3(Page):
+    form_model = 'player'
+    form_fields = ['Instr4', 'Instr5']
+
+class Important(Page):
+    form_model = 'player'
+    form_fields = ['accept_important']
 
 class E_judge(Page):
     form_model = 'player'
@@ -82,12 +85,7 @@ class Financial(Page):
         'FL2',
         'FL3',
         'FL4',
-        'FL5',
-        'FL6',
-        'FL7',
-        'FL8',
-        'FL9',
-        'FL10'
+        'FL5'
     ]
 
     def get_form_fields(self):
@@ -137,6 +135,8 @@ page_sequence = [
     Intro,
     Info_1,
     Info_2,
+    Info_3,
+    Important,
     E_judge,
     I_judge,
     Peq1,

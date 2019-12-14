@@ -2,23 +2,20 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Paying a fair share of taxes (Page 4/9)
+    Paying a fair share of taxes (Page 6/11)
 {% endblock %}
 
 {% block content %}
 
 {% if player.treat == "control" %}
-<div class="card card-body bg-light instructions" align="center">
-    The statutory tax rate in Olmeos is 24%.
-    <br>
-</div>
+<!--<div class="card card-body bg-light instructions" align="center">-->
+<!--    The statutory tax rate in Olmeos is 24%.-->
+<!--    <br>-->
+<!--</div>-->
 <div align="center">
 <hr>
-<!--<div class="card card-body bg-light instructions" align="center">-->
-<!--    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>-->
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
-<!--    <p>   </p>-->
     <br>
     <div align="center">
         <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control.jpg' %}"/>
@@ -28,17 +25,14 @@
     </div>
 </div>
 {% elif player.treat == "credit" %}
-<div class="card card-body bg-light instructions" align="center">
-    The statutory tax rate in Olmeos is 24%.
-    <br>
-</div>
+<!--<div class="card card-body bg-light instructions" align="center">-->
+<!--The statutory tax rate in Olmeos is 24%.-->
+<!--    <br>-->
+<!--</div>-->
 <div align="center">
 <hr>
-<!--<div class="card card-body bg-light instructions" align="center">-->
-<!--    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>-->
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
-<!--    <p>   </p>-->
     <br>
     <div align="center">
         <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
@@ -49,22 +43,22 @@
 </div>
 {% elif player.treat == "credit_p" %}
 <div class="card card-body bg-light instructions" align="center">
-    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos publicly disclose the following information about Alophonica's operations in Olmeos. All numbers are in millions of USD:</p>
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
     <table border="1" align="center">
         <tr>
-            <td align="left"><h6><b>Alophonica</b></h6></td>
-            <td align="center"><h6><b>Olmeos</b></h6></td>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
         </tr>
         <tr>
             <td>Revenues:</td>
             <td align="center">$700</td>
         </tr>
         <tr>
-            <td>Profit Before Taxes:</td>
+            <td>Profit before taxes:</td>
             <td align="center">$199</td>
         </tr>
         <tr>
-            <td>Corporate Taxes Paid:</td>
+            <td>Corporate taxes:</td>
             <td align="center">$22</td>
         </tr>
     </table><br clear="all">
@@ -82,15 +76,14 @@
     </div>
 </div>
 {% elif player.treat == "shift" %}
-<div class="card card-body bg-light instructions" align="center">
-    The statutory tax rate in Olmeos is 24%.
-    <br>
-</div>
+<!--<div class="card card-body bg-light instructions" align="center">-->
+<!--    The statutory tax rate in Olmeos is 24%.-->
+<!--    <br>-->
+<!--</div>-->
 <div align="center">
 <hr>
 <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
-<!--    <p>   </p>-->
     <br>
     <div align="center">
         <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
@@ -101,22 +94,22 @@
 </div>
 {% elif player.treat == "shift_p" %}
 <div class="card card-body bg-light instructions" align="center">
-    <p>The statutory tax rate in Olmeos is 24%. The tax authorities in Olmeos publicly disclose the following information about Alophonica's operations in Olmeos. All numbers are in millions of USD:</p>
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
     <table border="1" align="center">
         <tr>
-            <td align="left"><h6><b>Alophonica</b></h6></td>
-            <td align="center"><h6><b>Olmeos</b></h6></td>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
         </tr>
         <tr>
             <td>Revenues:</td>
             <td align="center">$510</td>
         </tr>
         <tr>
-            <td>Profit Before Taxes:</td>
+            <td>Profit before taxes:</td>
             <td align="center">$61</td>
         </tr>
         <tr>
-            <td>Corporate Taxes Paid:</td>
+            <td>Corporate taxes:</td>
             <td align="center">$15</td>
         </tr>
     </table><br clear="all">
@@ -135,22 +128,22 @@
 </div>
 {% elif player.treat == "credit_cbc" %}
 <div class="card card-body bg-light instructions" align="center">
-    <p>The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos and, if applicable, other operations across the world in millions of USD:</p>
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A also publicly disclose the following information about Telecom Co.’s operations in Country A and, if applicable, other operations across the world in millions of USD.</p>
     <table border="1" align="center">
         <tr>
-            <td align="left"><h6><b>Alophonica</b></h6></td>
-            <td align="center"><h6><b>Olmeos</b></h6></td>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
         </tr>
         <tr>
             <td>Revenues:</td>
             <td align="center">$700</td>
         </tr>
         <tr>
-            <td>Profit Before Taxes:</td>
+            <td>Profit before taxes:</td>
             <td align="center">$199</td>
         </tr>
         <tr>
-            <td>Corporate Taxes Paid:</td>
+            <td>Corporate taxes paid:</td>
             <td align="center">$22</td>
         </tr>
     </table><br clear="all">
@@ -169,12 +162,12 @@
 </div>
 {% else %}
 <div class="card card-body bg-light instructions" align="center">
-    <p>The tax authorities in Olmeos also publicly disclose the following information about Alophonica’s operations in Olmeos and, if applicable, other operations across the world in millions of USD:</p>
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A also publicly disclose the following information about Telecom Co.’s operations in Country A and, if applicable, other operations across the world in millions of USD.</p>
     <table border="1" align="center">
         <tr>
-            <td align="left"><h6><b>Alophonica</b></h6></td>
-            <td align="center"><h6><b>Olmeos</b></h6></td>
-            <td align="center"><h6><b>Hingland</b></h6></td>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+            <td align="center"><h6><b>Country B</b></h6></td>
         </tr>
         <tr>
             <td>Revenues:</td>
@@ -182,12 +175,12 @@
             <td align="center">$200</td>
         </tr>
         <tr>
-            <td>Profit Before Taxes:</td>
+            <td>Profit before taxes:</td>
             <td align="center">$61</td>
             <td align="center">$138</td>
         </tr>
         <tr>
-            <td>Corporate Taxes Paid:</td>
+            <td>Corporate taxes:</td>
             <td align="center">$15</td>
             <td align="center">$7</td>
         </tr>
@@ -195,8 +188,6 @@
 </div>
 <div align="center">
 <hr>
-<!--<div class="card card-body bg-light instructions" align="center">-->
-<!--    <p>Hold the button for Alophonica’s consolidated financial report,<br> which reports aggregate financial information for all its operations across the world.</p>-->
     <div class="container">
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
 <!--    <p>   </p>-->
@@ -212,10 +203,9 @@
 <div align="center">
 <input type="hidden" name="timer_id" value="" id="timer_id"/>
 <input type="hidden" name="check_alotax" value="" id="check_alotax"/>
-<!--<div class="card card-body bg-light instructions" align=center>-->
-    <p>Please rate the fairness of Alophonica’s tax management strategy from completely unfair (0%), through neither fair nor unfair (50%) to completely fair (100%).<br>
-        A completely fair tax management strategy implies that Alophonica is paying a fair share of taxes.</p>
-    <b id="demo1">0%</b>
+    <p>To what extent do you think that Telecom Co. is paying its fair share of taxes? Please rate this on the slider below. <br>
+        The slider ranges from 0% (completely unfair) to 100% (completely fair).</p>
+    <b id="demo1">50%</b>
     {% formfield player.alotax label=None %}
 <hr>
 </div>

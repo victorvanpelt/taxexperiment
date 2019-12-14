@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions (Page 4/11)
+{% endblock %}
+
+{% block content %}
+
+<div align="center">
+    <img width="86.125%" src="{% static "publictax/image_c.jpg" %}"/>
+</div>
+
+<div class="card card-body bg-light instructions">
+    <ul>
+    <li>
+        There is another way Telecom Co. can reduce its taxes in Country A.
+    </li>
+    <li>
+        That is, Telecom Co. can shift profits to Country B, which has a tax rate of 5%.
+    </li>
+    <li>
+        It can do this by using gaps and mismatches between the tax systems of both countries.
+    </li>
+    <li>
+        Thus, shifting profits from Country A to Country B results in a tax difference due to foreign profits.
+    </li>
+    </ul>
+</div>
+<br>
+    <p>
+        <b>Please evaluate the following statements.</b>
+    </p>
+    <p>
+        The tax rate of Country B is higher than Country A.
+        {% formfield player.Instr4 label=None %}
+    </p>
+    <p>
+        Telecom Co. can pay less tax in Country A by shifting profits from Country A to Country B, creating a tax difference.
+        {% formfield player.Instr5 label=None %}
+    </p>
+
+<br>
+{% next_button %}
+
+{% endblock %}

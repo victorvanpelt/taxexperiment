@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Important! (Page 5/11)
+{% endblock %}
+{% block content %}
+<div class="card card-body bg-light instructions" style="text-align:center">
+    <b>
+        On the next few screens, we will ask you to evaluate whether Telecom Co. is paying its fair share of taxes.<br>
+        Recall that the tax rate in Country A is 24%.
+    </b>
+</div>
+<br>
+{% formfield player.accept_important label="I am ready to continue." %}
+<br>
+{% next_button %}
+{% endblock %}

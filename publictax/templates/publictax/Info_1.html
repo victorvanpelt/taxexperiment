@@ -2,25 +2,28 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Instructions (Page 2/9)
+    Instructions (Page 2/11)
 {% endblock %}
 
 {% block content %}
 
 <div align="center">
-    <img width="65%" src="{% static "publictax/image.jpg" %}"/>
+    <img width="40%" src="{% static "publictax/image_a.jpg" %}"/>
 </div>
 
 <div class="card card-body bg-light instructions">
     <ul>
         <li>
-            Alophonica is a publicly-listed firm in the telecommunications industry and is headquartered in a country called Olmeos.
+            You are a citizen of Country A, and we ask you to evaluate whether Telecom Co. is paying its fair share of taxes.
         </li>
         <li>
-            Olmeos has a statutory tax rate of 24% for publicly-listed firms such as Alophonica.
+            Telecom Co. is a publicly listed company in the telecommunications industry and is headquartered in Country A.
         </li>
         <li>
-            A statutory tax rate of 24% implies that firms pay 24% of their Profit Before Tax to the tax authorities of Olmeos.
+            Country A has a tax rate of 24% for publicly listed companies such as Telecom Co.
+        </li>
+        <li>
+            A tax rate of 24% implies that companies pay 24% of their profit before taxes to the tax authorities of Country A.
         </li>
     </ul>
 </div>
@@ -29,11 +32,11 @@
         <b>Please evaluate the following statements.</b>
     </p>
     <p>
-        Alophonica's headquarters is in Olmeos.
+        Telecom Co. is headquartered in Country A.
         {% formfield player.Instr1 label=None %}
     </p>
     <p>
-        A statutory tax rate of 24% means that firms pay 24% of Profit Before Tax.
+        A tax rate of 24% means that companies pay 24% of profit before taxes.
         {% formfield player.Instr2 label=None %}
     </p>
 
