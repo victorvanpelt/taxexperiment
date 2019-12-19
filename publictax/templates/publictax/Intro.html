@@ -2,7 +2,7 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Before you begin ... (Page 1/11)
+    Before you begin ... (Page 1/12)
 {% endblock %}
 {% block content %}
 <div class="card card-body bg-light instructions">
@@ -25,12 +25,20 @@
         </li>
     </ul>
 <!--    <p>Do you have any feedback or suggestions? Feel free to put them into the feedback box at the end.<br></p>-->
+    By continuing you agree to the abovementioned conditions.
+
     <p>Thank you,</p>
 
     <p>The research team</p>
     </div>
 <br>
-{% formfield player.accept_conditions label="I have read and accept the conditions above." %}
+
+<div class="g-recaptcha" data-sitekey="6LfmYcgUAAAAAGyqUdz4M9_PNBsUOnUDbKmTFRma"></div>
+
 <br>
 {% next_button %}
+{% endblock %}
+
+{% block scripts %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
 {% endblock %}

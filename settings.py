@@ -84,5 +84,7 @@ DEMO_PAGE_INTRO_HTML = """ """
 
 SECRET_KEY = '6w-&=9x6umsmu%ohlg!66jk3-&8bku#wpnz_j$0^)zi*58e3+1'
 
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LfmYcgUAAAAADCpMDcV_KzyfxiFJ0ZjZRmhLoXM'
+
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']

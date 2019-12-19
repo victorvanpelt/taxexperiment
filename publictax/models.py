@@ -10,7 +10,7 @@ from otree.api import (
 author = 'Christian Peters and Victor van Pelt'
 
 doc = """
-Public Tax Experiment Software
+Public Tax Experiment in oTree
 """
 
 
@@ -43,7 +43,15 @@ class Constants(BaseConstants):
         [4, 'Often'],
         [5, 'Always'],
     ]
-
+    ImportantChoices=[
+        [1, 'Not at all important'],
+        [2, 'Low importance'],
+        [3, 'Slightly important'],
+        [4, 'Moderately important'],
+        [5, 'Important'],
+        [6, 'Very important'],
+        [7, 'Extremely important']
+    ]
 
 class Subsession(BaseSubsession):
     def creating_session(self):
@@ -183,7 +191,7 @@ class Player(BasePlayer):
     #     widget=widgets.RadioSelect
     # )
 
-# PEQ_1
+# PEQ 1
     australia_check = models.IntegerField(
         label = "In addition to Alophonica's financial report which you could reveal by pressing the button, what else was disclosed?",
         choices = [
@@ -203,7 +211,21 @@ class Player(BasePlayer):
             [5, "I don't know"]
         ]
     )
+    assessments_confident = models.IntegerField(
+        label="I am confident about the assessments about Telecom Co. I made on the previous screens.",
+        choices=Constants.AgreeChoices
+    )
+    assessments_random = models.IntegerField(
+        label="I made my assessments on the previous screens in a more or less random way.",
+        choices=Constants.AgreeChoices
+    )
+    assessments_no_use = models.IntegerField(
+        label="I did not really know how I should use the financial information to make my assessments.",
+        choices=Constants.AgreeChoices
+    )
 
+
+# PEQ_2
     fair_rd = models.IntegerField(
         label="In general, I consider it fair if companies lower taxes by using investment tax credits.",
         choices=Constants.AgreeChoices
@@ -269,8 +291,12 @@ class Player(BasePlayer):
             [7, 'Very true of what I believe']
         ]
     )
+    taxmanagement_important= models.IntegerField(
+        label="How important do you consider a company's tax management strategy when developing your overall opinion about a company?",
+        choices=Constants.ImportantChoices
+    )
 
-    # Experience Questions for PEQ_2
+# Experience Questions for PEQ_2
     fin_exp = models.IntegerField(
         label="How familiar are you with conducting trades and transactions with financial assets such as debt securities, bonds, shares, financial funds, and derivatives.",
         choices=[
@@ -294,7 +320,7 @@ class Player(BasePlayer):
         ]
     )
     tax_exp = models.IntegerField(
-        label="I have been involved in developing tax management policies and setting out tax strategies for firms.",
+        label="I have been involved in developing tax management policies and setting out tax strategies for companies.",
         choices=[
             [1, 'Never'],
             [2, 'Very rarely'],
@@ -306,7 +332,7 @@ class Player(BasePlayer):
         ]
     )
     tax_fam = models.IntegerField(
-        label="How familiar are you with analyzing and evaluating firms' tax management strategies and policies?",
+        label="How familiar are you with analyzing and evaluating companies' tax management strategies and policies?",
         choices=[
             [1, 'Not at all familiar'],
             [2, 'Slightly familiar'],
@@ -316,7 +342,7 @@ class Player(BasePlayer):
         ]
     )
     tax_freq = models.IntegerField(
-        label="How often do you look at a firm's tax management strategy and policy when developing your opinion about a firm?",
+        label="How often do you look at a company's tax management strategy and policy when developing your opinion about a company?",
         choices=[
             [1, 'Never'],
             [2, 'Very rarely'],
@@ -328,7 +354,7 @@ class Player(BasePlayer):
         ]
     )
 
-    # PEQ_2
+# PEQ_3
 
     gender = models.IntegerField(
         label="Please select which gender you identify most with.",
@@ -416,7 +442,7 @@ class Player(BasePlayer):
     )
 
 
-# Attention checks for PEQ_2
+# Attention checks for PEQ_3
     attention_1 = models.IntegerField(
         label="What rhymes on tree?",
         choices=[

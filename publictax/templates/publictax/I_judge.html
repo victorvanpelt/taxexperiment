@@ -2,16 +2,14 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Some questions about Alophonica (Page 7/11)
+    Some questions about Alophonica (Page 7/12)
 {% endblock %}
 
 {% block content %}
 <div align="center">
 <hr>
     <p>
-        How does the financial information you consulted on the previous screen change your willingness to invest in
-        Alophonica compared to your willingness to invest in Alophonica before consulting the financial information on
-        the previous screen?<br>
+        How does the financial information you consulted on the previous screen influence your willingness to invest in Telecom Co.?<br>
         Answer scale varies from -100% (strongly decreases my willingness to invest) to 100% (strongly increases my willingness to invest).
     </p>
 
@@ -21,9 +19,7 @@
     <input type="hidden" name="check_i_judge_1" value="" id="check_i_judge_1"/>
 <hr>
     <p>
-        How does the financial information you consulted on the previous screen change your valuation of Alophonica
-        compared to your valuation of Alophonica before consulting the financial information on the previous
-        screen?<br>
+        How does the financial information you consulted on the previous screen influence your valuation of Telecom Co.?<br>
         Answer scale varies from -100% (strongly decreases my valuation) to 100% (strongly increases my valuation).
     </p>
 
@@ -33,9 +29,7 @@
     <input type="hidden" name="check_i_judge_2" value="" id="check_i_judge_2"/>
 <hr>
     <p>
-        How does the financial information you consulted on the previous screen change your pricing of Alophonica's
-        stock compared to your pricing of Alophonica's stock before consulting the financial information on the previous
-        screen?<br>
+        How does the financial information you consulted on the previous screen influence your pricing of Telecom Co.’s stock?<br>
         Answer scale varies from -100% (strongly decreases my pricing) to 100% (strongly increases my pricing).
     </p>
 
@@ -44,14 +38,14 @@
 
     <input type="hidden" name="check_i_judge_3" value="" id="check_i_judge_3"/>
 <hr>
-    <p>
-        Suppose you have invested $10,000 in a mutual fund that tracks the value of the Dow Jones, which does not include Alophonica.<br>
-        How does the information you consulted on the previous screen impact your investment in this mutual fund?
-    </p>
-    <b id="demo4">0</b>
-    {% formfield player.i_market label=None %}
-    <input type="hidden" name="check_i_market" value="" id="check_i_market"/>
-<hr>
+<!--    <p>-->
+<!--        Suppose you have invested $10,000 in a mutual fund that tracks the value of the Dow Jones, which does not include Alophonica.<br>-->
+<!--        How does the information you consulted on the previous screen impact your investment in this mutual fund?-->
+<!--    </p>-->
+<!--    <b id="demo4">0</b>-->
+<!--    {% formfield player.i_market label=None %}-->
+<!--    <input type="hidden" name="check_i_market" value="" id="check_i_market"/>-->
+<!--<hr>-->
 </div>
 {% next_button %}
 
@@ -80,11 +74,11 @@
         });
     </script>
 
-    <script>
-        $('input[name=i_market]').on('input', function() {
-            x = 10000 + $(this).val()/100 * 10000;
-            document.getElementById("demo4").innerHTML = $(this).val()+'<span>%</span>'+'<span> ($</span>'+x+'<span>)</span>';
-            $('#check_i_market').val(1);
-        });
-    </script>
+<!--    <script>-->
+<!--        $('input[name=i_market]').on('input', function() {-->
+<!--            x = 10000 + $(this).val()/100 * 10000;-->
+<!--            document.getElementById("demo4").innerHTML = $(this).val()+'<span>%</span>'+'<span> ($</span>'+x+'<span>)</span>';-->
+<!--            $('#check_i_market').val(1);-->
+<!--        });-->
+<!--    </script>-->
 {% endblock %}

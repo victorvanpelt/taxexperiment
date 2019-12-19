@@ -2,10 +2,14 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Please answer the following questions based on your current situation and current views. (Page 10/11)
+    Some questions and statements (Page 9/12)
 {% endblock %}
 
 {% block content %}
+
+    <div class="card card-body bg-light instructions" style="text-align:center">
+        Please answer the following questions and evaluate the following statements based on your current situation and views.<br>
+    </div>
 
     <table class="table">
     {% for field in form %}

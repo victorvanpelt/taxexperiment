@@ -5,8 +5,9 @@ import random
 
 
 class Intro(Page):
-    form_model = 'player'
-    form_fields = ['accept_conditions']
+    #form_model = 'player'
+    #form_fields = ['accept_conditions']
+    pass
 
 class Info_1(Page):
     form_model = 'player'
@@ -41,7 +42,7 @@ class E_judge(Page):
 
 class I_judge(Page):
     form_model = 'player'
-    form_fields = ['i_judge_1', 'i_judge_2', 'i_judge_3', 'check_i_judge_1', 'check_i_judge_2', 'check_i_judge_3', 'i_market', 'check_i_market']
+    form_fields = ['i_judge_1', 'i_judge_2', 'i_judge_3', 'check_i_judge_1', 'check_i_judge_2', 'check_i_judge_3']
 
     def error_message(self, value):
         #if self.group.r == None:
@@ -51,10 +52,25 @@ class I_judge(Page):
                 return 'Please drag all four sliders to make your decisions.'
             if value["check_i_judge_3"] == None:
                 return 'Please drag all four sliders to make your decisions.'
-            if value["check_i_market"] == None:
-                return 'Please drag all four sliders to make your decisions.'
+            # if value["check_i_market"] == None:
+            #     return 'Please drag all four sliders to make your decisions.'
 
 class Peq1(Page):
+    form_model = 'player'
+    form_fields = [
+        'taxmanagement_check',
+        'australia_check',
+        'assessments_confident',
+        'assessments_random',
+        'assessments_no_use'
+    ]
+
+    def get_form_fields(self):
+        fields = self.form_fields
+        random.shuffle(fields)
+        return fields
+
+class Peq2(Page):
     form_model = 'player'
     form_fields = [
         'fair_rd',
@@ -69,8 +85,7 @@ class Peq1(Page):
         'TA_1',
         'TA_2',
         'TA_3',
-        'taxmanagement_check',
-        'australia_check'
+        'taxmanagement_important'
     ]
 
     def get_form_fields(self):
@@ -93,7 +108,7 @@ class Financial(Page):
         random.shuffle(fields)
         return fields
 
-class Peq2(Page):
+class Peq3(Page):
     form_model = 'player'
     form_fields = [
         'gender',
@@ -115,14 +130,6 @@ class Peq2(Page):
         random.shuffle(fields)
         return fields
 
-# class Turk(Page):
-#     form_model = 'player'
-#     form_fields = [
-#         'mturk',
-#         'mturk_feedback',
-#         'mturk_motivation'
-#     ]
-
 class M(Page):
     form_model = 'player'
     form_fields = [
@@ -140,7 +147,8 @@ page_sequence = [
     E_judge,
     I_judge,
     Peq1,
-    Financial,
     Peq2,
+    Financial,
+    Peq3,
     M
 ]
