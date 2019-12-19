@@ -194,21 +194,21 @@ class Player(BasePlayer):
 
 # PEQ 1
     australia_check = models.IntegerField(
-        label = "In addition to Alophonica's financial report which you could reveal by pressing the button, what else was disclosed?",
+        label = "In addition to Telecom Co.'s financial report which you could reveal by pressing the button, what else was disclosed?",
         choices = [
-            [1, "The statutory tax rate in Olmeos is 24%"],
-            [2, "The statutory tax rate in Olmeos is 24% and a table containing Alophonica's Revenues, Profit Before Tax, and Corporate Taxes Paid in Olmeos"],
+            [1, "Nothing"],
+            [2, "A table containing Revenues, Profit Before Tax, and Corporate Taxes"],
             [3, "I don't know"]
         ]
     )
 
     taxmanagement_check = models.IntegerField(
-        label = "Which tax management strategy did Alophonica follow to pay less than the statutory tax rate?",
+        label = "Which tax management strategy did Telecom Co. follow to pay less than the tax rate?",
         choices = [
-            [1, "Shifting profits to countries with a lower statutory tax rate"],
+            [1, "Shifting profits to countries with a lower tax rate"],
             [2, "Using investment tax credits"],
             [3, "Both shifting profits and using investment tax credits"],
-            [4, "Alophonica did not use a tax management strategy’"],
+            [4, "Telecom Co. did not use a tax management strategy’"],
             [5, "I don't know"]
         ]
     )
@@ -233,12 +233,12 @@ class Player(BasePlayer):
     )
 
     fair_ps = models.IntegerField(
-        label="In general, I consider it fair if companies lower taxes by shifting profits to countries with a lower statutory tax rate.",
+        label="In general, I consider it fair if companies lower taxes by shifting profits to countries with a lower tax rate.",
         choices=Constants.AgreeChoices
     )
 
     fair_more = models.IntegerField(
-        label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower statutory tax rate than when companies use investment tax credits.",
+        label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower tax rate than when companies use investment tax credits.",
         choices=Constants.AgreeChoices
     )
     tax_advisor = models.IntegerField(
