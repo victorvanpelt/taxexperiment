@@ -66,6 +66,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     treat = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
+    captcha = models.CharField(blank=True)
     accept_important = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
 
     # Instruction checks

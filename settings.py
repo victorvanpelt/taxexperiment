@@ -88,3 +88,8 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LfmYcgUAAAAADCpMDcV_KzyfxiFJ0ZjZRmhLoXM'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
+
+# reCAPTCHA
+EXTENSION_APPS = ['captcha']
+RECAPTCHA_PUBLIC_KEY = '6LddnMgUAAAAAI5WBwMn_wrnt6Ct7AvKsaBF9ciF'
+RECAPTCHA_PRIVATE_KEY = '6LddnMgUAAAAADqlcMhLHA9dTKZ8Sbc6PyqHkQ'

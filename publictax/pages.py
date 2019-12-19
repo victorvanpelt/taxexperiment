@@ -5,9 +5,13 @@ import random
 
 
 class Intro(Page):
-    #form_model = 'player'
-    #form_fields = ['accept_conditions']
-    pass
+    form_model = 'player'
+    form_fields = ['captcha']
+
+    def get_form(self, data=None, files=None, **kwargs):
+        frm = super().get_form(data, files, **kwargs)
+        frm.fields['captcha'] = ReCaptchaField(label='')
+        return frm
 
 class Info_1(Page):
     form_model = 'player'

@@ -33,12 +33,12 @@
     </div>
 <br>
 
-<div class="g-recaptcha" data-sitekey="6LfmYcgUAAAAAGyqUdz4M9_PNBsUOnUDbKmTFRma"></div>
+{% formfield player.captcha %}
 
 <br>
 {% next_button %}
 {% endblock %}
 
 {% block scripts %}
-<script src='https://www.google.com/recaptcha/api.js'></script>
+
 {% endblock %}
