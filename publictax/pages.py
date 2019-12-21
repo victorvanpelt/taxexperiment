@@ -142,6 +142,10 @@ class M(Page):
         'mturk_motivation'
     ]
 
+class Thank(Page):
+    form_model = 'player'
+    form_fields = ['completion_code']
+
 page_sequence = [
     Intro,
     Info_1,
@@ -154,5 +158,6 @@ page_sequence = [
     Peq2,
     Financial,
     Peq3,
-    M
+    M,
+    Thank
 ]

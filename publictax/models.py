@@ -18,6 +18,7 @@ class Constants(BaseConstants):
     name_in_url = 'publictax'
     players_per_group = None
     num_rounds = 1
+    completion_code = 'TAX_uvt_122019'
     AgreeChoices=[
         [1, 'Strongly disagree'],
         [2, 'Disagree'],
@@ -60,10 +61,15 @@ class Subsession(BaseSubsession):
         for player in self.get_players():
             player.treat = next(treats)
 
+        # assign fixed completion code to player
+        for player in self.get_players():
+            player.completion_code = Constants.completion_code
+
 class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
+    completion_code = models.StringField()
     treat = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
     captcha = models.CharField(blank=True)
@@ -415,11 +421,11 @@ class Player(BasePlayer):
         blank=False,
         choices=[
             [1, 'I do not have work experience.'],
-            [2, 'Less than 5 year work experience.'],
-            [3, 'Between 5 and less than 10 years of work experience'],
-            [4, 'Between 10 and less than 20 years work experience.'],
-            [5, 'Between 20 and less than 30 years work experience.'],
-            [6, 'Between 30 and less than 40 years work experience.'],
+            [2, 'Less than 5 years work experience.'],
+            [3, '5 to 10 years of work experience'],
+            [4, '10 to 20 years work experience.'],
+            [5, '20 to 30 years work experience.'],
+            [6, '30 to 40 years work experience.'],
             [7, '40 years or more work experience.']
         ]
     )
