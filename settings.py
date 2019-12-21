@@ -7,8 +7,8 @@ from os import environ
 
 mturk_hit_settings = {
     'keywords': ['financial', 'tax', 'study', 'academic'],
-    'title': 'An Academic Study about Corporate Tax Strategies',
-    'description': 'Evaluate corporate tax strategies of companies',
+    'title': 'An Academic Study about Corporate Tax Strategies ($1 for about 5 min)',
+    'description': 'Evaluate corporate tax strategies of companies.',
     'frame_height': 500,
     #'preview_template': 'global/MTurkPreview.html',
     'template': 'global/mturk_template.html',
@@ -27,17 +27,17 @@ mturk_hit_settings = {
             'Comparator': "EqualTo",
             'LocaleValues': [{'Country': "US"}]
         },
-        # At least 500 HITs approved
+        # At least x HITs approved
         {
             'QualificationTypeId': "00000000000000000040",
             'Comparator': "GreaterThanOrEqualTo",
             'IntegerValues': [500]
         },
-        # At least 95% of HITs approved
+        # At least x% of HITs approved
         {
             'QualificationTypeId': "000000000000000000L0",
             'Comparator': "GreaterThanOrEqualTo",
-            'IntegerValues': [95]
+            'IntegerValues': [98]
         },
         ]
 }
