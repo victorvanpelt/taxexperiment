@@ -200,7 +200,7 @@ class Player(BasePlayer):
 
 # PEQ 1
     australia_check = models.IntegerField(
-        label = "In addition to Telecom Co.'s financial report which you could reveal by pressing the button, what else was disclosed?",
+        label = "In addition to Telecom Co.'s financial report, which you could reveal by pressing the button, what else was disclosed?",
         choices = [
             [1, "Nothing"],
             [2, "A table containing Revenues, Profit Before Tax, and Corporate Taxes"],
