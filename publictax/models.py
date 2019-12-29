@@ -451,7 +451,7 @@ class Player(BasePlayer):
 
 # Attention checks for PEQ_3
     attention_1 = models.IntegerField(
-        label="What rhymes on tree?",
+        label="What rhymes with tree?",
         choices=[
             [1, 'box'],
             [2, 'crow'],
