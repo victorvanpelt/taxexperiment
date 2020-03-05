@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% if player.etr == 1 %}
 {% if player.treat == "control" %}
 <div align="center">
 <hr>
@@ -14,7 +14,7 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control_high.jpg' %}"/>
         <br>
         <br>
     </div>
@@ -27,7 +27,7 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_high.jpg' %}"/>
         <br>
         <br>
     </div>
@@ -43,7 +43,7 @@
         </tr>
         <tr>
             <td>Revenues:</td>
-            <td align="center">$700</td>
+            <td align="center">$710</td>
         </tr>
         <tr>
             <td>Profit before taxes:</td>
@@ -61,7 +61,7 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_high.jpg' %}"/>
         <br>
         <br>
     </div>
@@ -74,7 +74,7 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_high.jpg' %}"/>
         <br>
         <br>
     </div>
@@ -108,7 +108,7 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_high.jpg' %}"/>
         <br>
         <br>
     </div>
@@ -124,7 +124,7 @@
         </tr>
         <tr>
             <td>Revenues:</td>
-            <td align="center">$700</td>
+            <td align="center">$710</td>
         </tr>
         <tr>
             <td>Profit before taxes:</td>
@@ -142,7 +142,7 @@
     <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_high.jpg' %}"/>
         <br>
         <br>
     </div>
@@ -181,12 +181,122 @@
 <!--    <p>   </p>-->
     <br>
     <div align="center">
-        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift.jpg' %}"/>
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_high.jpg' %}"/>
         <br>
         <br>
     </div>
     </div>
 </div>
+{% endif %}
+{% elif player.etr == 2}
+{% if player.treat == "control" %}
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit" %}
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit_p" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
+    <table border="1" align="center">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$710</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$199</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$2</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift" %}
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift_p" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
+    <table border="1" align="center">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$410</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$10</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$2</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% endif %}
 {% endif %}
 <div align="center">
 <input type="hidden" name="timer_id" value="" id="timer_id"/>

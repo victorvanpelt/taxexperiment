@@ -19,6 +19,8 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
     completion_code = 'TAX_uvt_122019'
+    # 1 equals high, 2 equals low
+    etr = 2
     AgreeChoices=[
         [1, 'Strongly disagree'],
         [2, 'Disagree'],
@@ -56,20 +58,32 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-        # randomize to treatments without control
-        treats = itertools.cycle(['credit', 'credit_p', 'credit_cbc', 'shift', 'shift_p', 'shift_cbc'])
-        for player in self.get_players():
-            player.treat = next(treats)
+        # assign etr
+        for player in self.get_player():
+            player.etr = Constants.etr
+
+        if Constants.etr == 1:
+            # randomize to treatments without control
+            treats = itertools.cycle(['credit', 'credit_p', 'credit_cbc', 'shift', 'shift_p', 'shift_cbc'])
+            for player in self.get_players():
+                player.treat = next(treats)
+        else:
+            treats = itertools.cycle(['credit', 'credit_p', 'shift', 'shift_p'])
+            for player in self.get_players():
+                player.treat = next(treats)
 
         # assign fixed completion code to player
         for player in self.get_players():
             player.completion_code = Constants.completion_code
+
+
 
 class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
     completion_code = models.StringField()
+    etr = models.IntegerField()
     treat = models.StringField()
     accept_conditions = models.BooleanField(blank=False, widget=widgets.CheckboxInput)
     captcha = models.CharField(blank=True)
@@ -139,64 +153,6 @@ class Player(BasePlayer):
         ],
         widget=widgets.RadioSelect
     )
-
-    # FL6 = models.IntegerField(
-    #     label = "Which of the following financial assets typically grants you the highest return over a long period of time (e.g., 10-20 years)?",
-    #     choices = [
-    #         [1, 'Savings accounts'],
-    #         [2, 'Individual shares and stocks'],
-    #         [3, 'Debt securities and bonds'],
-    #         [4, "I don't know"]
-    #     ],
-    #     widget=widgets.RadioSelect
-    # )
-    #
-    # FL7 = models.IntegerField(
-    #     label = "If the interest rate drops, what happens to bond prices?",
-    #     choices = [
-    #         [1, 'They rise'],
-    #         [2, 'They fall'],
-    #         [3, 'They stay the same'],
-    #         [4, 'I do not know']
-    #     ],
-    #     widget=widgets.RadioSelect
-    # )
-    #
-    # FL8 = models.IntegerField(
-    #     label = "Compared to similar firms in the same industry, a company uses more borrowed money to finance its operations. Which of the following statements is most likely to be true for the company?",
-    #     choices = [
-    #         [1, 'It is less likely to experience any difficulty with its creditors compared to other firms in the industry'],
-    #         [2, 'It has less liquidity than other firms in the industry'],
-    #         [3, 'It will be viewed as having relatively high creditworthiness'],
-    #         [4, 'It has greater than average financial risk when compared to other firms in the industry'],
-    #         [5, "I don't know"]
-    #     ],
-    #     widget=widgets.RadioSelect
-    # )
-    #
-    # FL9 = models.IntegerField(
-    #     label="Which of the following activities would most likely result in an increased risk of the firm being unable to repay borrowed funds?",
-    #     choices = [
-    #         [1, 'Increasing short-term assets while decreasing short-term liabilities'],
-    #         [2, 'Increasing short-term assets while increasing short-term liabilities'],
-    #         [3, 'Reducing short-term assets, increasing short-term liabilities, and reducing long-term liabilities'],
-    #         [4, 'Replacing short-term liabilities with equity'],
-    #         [5, "I don't know"]
-    #     ],
-    #     widget=widgets.RadioSelect
-    # )
-    #
-    # FL10 = models.IntegerField(
-    #     label = "Which of the following statements is correct? If somebody buys a bond of firm B:",
-    #     choices = [
-    #         [1, "He owns a part of firm B"],
-    #         [2, "He has lent money to firm B"],
-    #         [3, "He is liable for firm B's debts"],
-    #         [4, "None of the above"],
-    #         [5, "I don't know"]
-    #     ],
-    #     widget=widgets.RadioSelect
-    # )
 
 # PEQ 1
     australia_check = models.IntegerField(
