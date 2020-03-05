@@ -59,7 +59,7 @@ class Constants(BaseConstants):
 class Subsession(BaseSubsession):
     def creating_session(self):
         # assign etr
-        for player in self.get_player():
+        for player in self.get_players():
             player.etr = Constants.etr
 
         if Constants.etr == 1:
