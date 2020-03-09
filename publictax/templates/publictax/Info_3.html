@@ -7,8 +7,9 @@
 
 {% block content %}
 
+{% if player.etr == 1 %}
 <div align="center">
-    <img width="90%" src="{% static "publictax/gif_c.gif" %}"/>
+    <img width="90%" src="{% static "publictax/gif_c_high.gif" %}"/>
 </div>
 
 <div class="card card-body bg-light instructions">
@@ -27,6 +28,29 @@
     </li>
     </ul>
 </div>
+{% elif player.etr == 2 %}
+<div align="center">
+    <img width="90%" src="{% static "publictax/gif_c_low.gif" %}"/>
+</div>
+
+<div class="card card-body bg-light instructions">
+    <ul>
+    <li>
+        Telecom Co. can also use another way to reduce the taxes it effectively pays in Country A.
+    </li>
+    <li>
+        Specifically, it can shift profits from Country A to Country B, which has a tax rate of 0%.
+    </li>
+    <li>
+        Telecom Co. can shift profits by using gaps and mismatches between the tax systems of Country A and Country B.
+    </li>
+    <li>
+        Shifting profits from Country A to Country B results in a tax difference due to foreign profits.
+    </li>
+    </ul>
+</div>
+{% endif %}
+
 <br>
     <p>
         <b>Please evaluate the following statements.</b>
