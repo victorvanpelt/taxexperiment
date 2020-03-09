@@ -18,7 +18,7 @@ class Constants(BaseConstants):
     name_in_url = 'publictax'
     players_per_group = None
     num_rounds = 1
-    completion_code = 'TAX_uvt_122019'
+    completion_code = 'TAX_uvt_032020'
     # 1 equals high, 2 equals low
     etr = 2
     AgreeChoices=[
@@ -75,8 +75,6 @@ class Subsession(BaseSubsession):
         # assign fixed completion code to player
         for player in self.get_players():
             player.completion_code = Constants.completion_code
-
-
 
 class Group(BaseGroup):
     pass
