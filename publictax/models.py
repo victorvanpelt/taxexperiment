@@ -316,6 +316,10 @@ class Player(BasePlayer):
     )
 
 # PEQ_3
+    corona = models.IntegerField(
+        label="I am worried about the Corona virus (COVID2019).",
+        choices=Constants.AgreeChoices
+    )
 
     gender = models.IntegerField(
         label="Please select which gender you identify most with.",

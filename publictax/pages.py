@@ -36,7 +36,7 @@ class E_judge(Page):
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_alotax"] == None:
-                return 'Please the slider to make a decision.'
+                return 'Please drag the slider to make a decision.'
 
 class I_judge(Page):
     form_model = 'player'
@@ -118,7 +118,8 @@ class Peq3(Page):
         'attention_1',
         'norm_1',
         'norm_2',
-        'norm_3'
+        'norm_3',
+        'corona'
     ]
 
     def get_form_fields(self):
