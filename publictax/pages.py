@@ -17,12 +17,6 @@ class Info_1(Page):
     form_model = 'player'
     form_fields = ['Instr1', 'Instr2']
 
-    # def error_message(self, values):
-    #     if values["Instr1a"] != 1:
-    #         return 'Your first answer is incorrect. Check the instructions to understand what the task of this HIT is.'
-    #     if values["Instr1b"] != 2:
-    #         return 'Your second answer is incorrect. Check the instructions to understand the difference between statutory and effective tax rates.'
-
 class Info_2(Page):
     form_model = 'player'
     form_fields = ['Instr3']
@@ -51,13 +45,11 @@ class I_judge(Page):
     def error_message(self, value):
         #if self.group.r == None:
             if value["check_i_judge_1"] == None:
-                return 'Please drag all four sliders to make your decisions.'
+                return 'Please drag all sliders to make your decisions.'
             if value["check_i_judge_2"] == None:
-                return 'Please drag all four sliders to make your decisions.'
+                return 'Please drag all sliders to make your decisions.'
             if value["check_i_judge_3"] == None:
-                return 'Please drag all four sliders to make your decisions.'
-            # if value["check_i_market"] == None:
-            #     return 'Please drag all four sliders to make your decisions.'
+                return 'Please drag all sliders to make your decisions.'
 
 class Peq1(Page):
     form_model = 'player'
