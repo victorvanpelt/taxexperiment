@@ -61,6 +61,7 @@ class Subsession(BaseSubsession):
         for player in self.get_players():
             # 1 equals high, 2 equals low
             etr = player.session.config['etr']
+            player.etr = etr
             # 0 is off and 1 is on
             cbc = player.session.config['cbc']
 
