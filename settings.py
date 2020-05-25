@@ -5,12 +5,6 @@ from os import environ
 # the session config can be accessed from methods in your apps as self.session.config,
 # e.g. self.session.config['participation_fee']
 
-DEMO_PAGE_INTRO_HTML = """
-<p>
-    This landing page presents demo versions of the oTree apps developed by Bart Dierynck, Martin Jacob, Maximilian A. Müller, Christian Peters, and Victor van Pelt.
-</p>
-"""
-
 mturk_hit_settings = {
     'keywords': ['financial', 'tax', 'study', 'academic'],
     'title': 'Assess Corporate Tax Strategies ($1.05 for about 7 min)',
@@ -57,24 +51,24 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'publictax_extreme',
-        'display_name': "Australian Setting - 1% ETR",
-        'num_demo_participants': 25,
-        'app_sequence': ['publictax'],
-        'etr': 2,
-        'cbc': 0,
-    },
-    {
         'name': 'publictax_normal',
-        'display_name': "Australian Setting - 11% ETR",
+        'display_name': "Main Experiment - Australian Setting - 11% ETR",
         'num_demo_participants': 25,
         'app_sequence': ['publictax'],
         'etr': 1,
         'cbc': 0,
     },
     {
+        'name': 'publictax_extreme',
+        'display_name': "Supplemental Experiment 1 - Australian Setting - 1% ETR",
+        'num_demo_participants': 25,
+        'app_sequence': ['publictax'],
+        'etr': 2,
+        'cbc': 0,
+    },
+    {
         'name': 'publictax_normal_cbc',
-        'display_name': "Australian Setting - 11% ETR and CbC",
+        'display_name': "Supplemental Experiment 2 - CbC Setting - 11% ETR",
         'num_demo_participants': 4,
         'app_sequence': ['publictax'],
         'etr': 1,
