@@ -20,7 +20,8 @@ class Constants(BaseConstants):
     num_rounds = 1
     completion_code = 'TAX_uvt_032020'
     # 1 equals high, 2 equals low
-    etr = 2
+    etr = self.session.config['etr']
+    cbc = self.session.config['cbc']
     AgreeChoices=[
         [1, 'Strongly disagree'],
         [2, 'Disagree'],
@@ -64,9 +65,14 @@ class Subsession(BaseSubsession):
 
         if Constants.etr == 1:
             # randomize to treatments without control
-            treats = itertools.cycle(['credit', 'credit_p', 'credit_cbc', 'shift', 'shift_p', 'shift_cbc'])
-            for player in self.get_players():
-                player.treat = next(treats)
+            if Constants.cbc == 0:
+                treats = itertools.cycle(['credit', 'credit_p', 'shift', 'shift_p'])
+                for player in self.get_players():
+                    player.treat = next(treats)
+            else:
+                treats = itertools.cycle(['credit_cbc', 'shift_cbc'])
+                for player in self.get_players():
+                    player.treat = next(treats)
         else:
             treats = itertools.cycle(['credit', 'credit_p', 'shift', 'shift_p'])
             for player in self.get_players():
