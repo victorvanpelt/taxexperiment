@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Some questions about financial situations (Page 10/12)
+{% endblock %}
+
+{% block content %}
+
+    <div class="card card-body bg-light instructions" style="text-align:center">
+        Please answer the following questions to the best of your ability.<br>
+        If you do not know the answer to a question, please select "I don't know."
+    </div>
+<hr>
+{% formfields %}
+<hr>
+{% next_button %}
+
+{% endblock %}

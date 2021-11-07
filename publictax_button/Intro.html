@@ -5,6 +5,7 @@
     Before you begin ... (Page 1/12)
 {% endblock %}
 {% block content %}
+<script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="card card-body bg-light instructions">
     <ul>
         <li>
@@ -26,13 +27,21 @@
     <p>The research team</p>
     </div>
 <br>
-
-{% formfield player.captcha %}
-
-<br>
-{% next_button %}
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-sitekey="6LddnMgUAAAAAI5WBwMn_wrnt6Ct7AvKsaBF9ciF"></div>
+      <br>
+      <button class="otree-btn-next btn btn-primary" type="submit">Next</button>
+    </form>
 {% endblock %}
 
 {% block scripts %}
-
+<script>
+    window.onload = function() {
+    var recaptcha = document.querySelector('#g-recaptcha-response');
+    recaptcha.required = true;
+    recaptcha.oninvalid = function(e) {
+    alert("Please complete the Captcha");
+      }
+   }
+</script>
 {% endblock %}

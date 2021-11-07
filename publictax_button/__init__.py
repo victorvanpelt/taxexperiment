@@ -12,10 +12,10 @@ Public Tax Experiment in oTree
 
 
 class Constants(BaseConstants):
-    name_in_url = 'publictax'
+    name_in_url = 'publictax_btn'
     players_per_group = None
     num_rounds = 1
-    completion_code = 'TAX_whu_112021'
+    completion_code = 'TAX_uvt_032020'
     AgreeChoices = [
         [1, 'Strongly disagree'],
         [2, 'Disagree'],
@@ -512,10 +512,11 @@ class Important(Page):
 
 class E_judge(Page):
     form_model = 'player'
-    form_fields = ['alotax', 'check_alotax']
+    form_fields = ['timer_id', 'alotax', 'check_alotax']
 
     @staticmethod
     def error_message(player: Player, value):
+        # if self.group.r == None:
         if value["check_alotax"] == None:
             return 'Please drag the slider to make a decision.'
 
@@ -533,6 +534,7 @@ class I_judge(Page):
 
     @staticmethod
     def error_message(player: Player, value):
+        # if self.group.r == None:
         if value["check_i_judge_1"] == None:
             return 'Please drag all sliders to make your decisions.'
         if value["check_i_judge_2"] == None:

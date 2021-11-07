@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Brief Summary (Page 5/12)
+{% endblock %}
+{% block content %}
+<div class="card card-body bg-light instructions">
+    <ul>
+    <p>
+        Telecom Co. is a company headquartered in Country A which has a tax rate of 24%.
+    </p>
+    <p>
+        However, the taxes Telecom Co. effectively pays in Country A may be lower than the tax rate of 24%.
+    </p>
+    <ul>
+        <li>
+            Telecom Co. can use investment tax credits to deduct the amount they invest in business operations in Country A from the taxes they have to pay based on the tax rate of 24%.
+        </li>
+{% if player.etr == 1 %}
+        <li>
+            Telecom Co. can also shift profits from Country A to Country B, which has a tax rate of 5%, by using gaps and mismatches between the tax systems of Country A and Country B, which creates a tax difference due to foreign profits.
+        </li>
+{% elif player.etr == 2 %}
+        <li>
+            Telecom Co. can also shift profits from Country A to Country B, which has a tax rate of 0%, by using gaps and mismatches between the tax systems of Country A and Country B, which creates a tax difference due to foreign profits.
+        </li>
+{% endif %}
+    </ul>
+</div>
+<br>
+<div class="card card-body bg-light instructions" style="text-align:center">
+    <b>Important!</b>
+    On the next screen, we present information to you and ask you to evaluate whether Telecom Co. is paying its fair share of taxes.
+</div>
+<br>
+{% formfield player.accept_important label="I am ready to continue." %}
+<br>
+{% next_button %}
+{% endblock %}
