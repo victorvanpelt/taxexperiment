@@ -7,14 +7,14 @@ from os import environ
 
 mturk_hit_settings = {
     'keywords': ['financial', 'tax', 'study', 'academic'],
-    'title': 'Assess Corporate Tax Strategies ($1.05 for about 7 min)',
-    'description': 'Assess corporate tax strategies of companies for $1.05 for about 7 minutes.',
+    #'title': 'Assess Corporate Tax Strategies ($1.05 for about 7 min)',
+    'title': 'Academic study ($1.05 for about 7 min)',
+    'description': 'Academic study that pays $1.05 for about 7 minutes.',
     'frame_height': 500,
     #'preview_template': 'global/MTurkPreview.html',
     'template': 'global/mturk_template.html',
     'minutes_allotted_per_assignment': 45,
     'expiration_hours': 7*24, # 7 days
-    #'grant_qualification_id': 'YOUR_QUALIFICATION_ID_HERE',# to prevent retakes
     'qualification_requirements': [
         # No-retakers
         {
