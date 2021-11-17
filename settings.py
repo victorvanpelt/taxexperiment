@@ -8,8 +8,8 @@ from os import environ
 mturk_hit_settings = {
     'keywords': ['financial', 'tax', 'study', 'academic'],
     #'title': 'Assess Corporate Tax Strategies ($1.05 for about 7 min)',
-    'title': 'Academic study ($1.05 for about 7 min)',
-    'description': 'Academic study that pays $1.05 for about 7 minutes.',
+    'title': 'University study ($1.05 for about 7 min)',
+    'description': 'University study that pays $1.05 for about 7 minutes.',
     'frame_height': 500,
     #'preview_template': 'global/MTurkPreview.html',
     'template': 'global/mturk_template.html',
