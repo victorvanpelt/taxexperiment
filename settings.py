@@ -6,10 +6,10 @@ from os import environ
 # e.g. self.session.config['participation_fee']
 
 mturk_hit_settings = {
-    'keywords': ['financial', 'tax', 'study', 'academic'],
+    'keywords': ['financial', 'tax', 'study', 'academic', 'research', 'accounting', 'investment'],
     #'title': 'Assess Corporate Tax Strategies ($1.05 for about 7 min)',
-    'title': 'University study ($1.05 for about 7 min)',
-    'description': 'University study that pays $1.05 for about 7 minutes.',
+    'title': 'Academic study ($1.05 for about 7 min)',
+    'description': 'Academic study that pays $1.05 for about 7 minutes.',
     'frame_height': 500,
     #'preview_template': 'global/MTurkPreview.html',
     'template': 'global/mturk_template.html',
