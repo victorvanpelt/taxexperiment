@@ -1,0 +1,475 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Paying a fair share of taxes (Page 6/12)
+{% endblock %}
+
+{% block content %}
+   <style>
+    .otree-timer {
+        display: none;
+    }
+    .myclass::-webkit-slider-thumb {
+        box-shadow: 2px 2px 2px #000000, 0px 0px 1px #007afe;
+        border: 1px solid #000000;
+        height: 21px;
+        width: 10px;
+        border-radius: 0px;
+        background: #ffffff;
+        cursor: pointer;
+        -webkit-appearance: none !important;
+        margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    }
+
+    .myclass::-moz-range-thumb {
+        box-shadow: 2px 2px 2px #000000, 0px 0px 1px #007afe;
+        border: 1px solid #000000;
+        height: 21px;
+        width: 10px;
+        border-radius: 0px;
+        background: #ffffff;
+        -webkit-appearance: none !important;
+        cursor: pointer;
+    }
+
+    .myclass::-ms-thumb {
+        box-shadow: 2px 2px 2px #000000, 0px 0px 1px #007afe;
+        border: 1px solid #000000;
+        height: 21px;
+        width: 10px;
+        -webkit-appearance: none !important;
+        border-radius: 0px;
+        background: #ffffff;
+        cursor: pointer;
+    }
+        .myclass::-ms-track {
+        width: 100%;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .myclass:focus {
+        outline: none;
+    }
+
+    .myclass {
+        -webkit-appearance: none;
+        width: 90%;
+        margin: 18px 0;
+        height: 12px;
+        background: #007afe;
+        border-radius: 15px;
+        border: 0.0px solid #ffffff;
+    }
+
+    .slider::-moz-range-thumb {
+        box-shadow: 2px 2px 2px #000000, 0px 0px 1px #007afe;
+        border: 1px solid #000000;
+        height: 21px;
+        width: 10px;
+        border-radius: 0px;
+        background: #ffffff;
+        cursor: pointer;
+        visibility: hidden;
+    }
+
+    .slider::-webkit-slider-thumb {
+        border: 1px solid #000000;
+        height: 21px;
+        width: 10px;
+        border-radius: 0px;
+        background: #ffffff;
+        cursor: pointer;
+        margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        box-shadow: 2px 2px 2px #000000, 0px 0px 1px #007afe;
+        visibility: hidden;
+    }
+
+    .slider::-ms-thumb {
+        box-shadow: 2px 2px 2px #000000, 0px 0px 1px #007afe;
+        border: 1px solid #000000;
+        height: 21px;
+        width: 10px;
+        border-radius: 0px;
+        background: #ffffff;
+        cursor: pointer;
+        visibility: hidden;
+    }
+    .slider::-ms-track {
+        width: 100%;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+
+    .slider:focus {
+        outline: none;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 90%;
+        margin: 18px 0;
+        height: 12px;
+        background: #007afe;
+        border-radius: 15px;
+        border: 0.0px solid #ffffff;
+    }
+    </style>
+
+{% if player.etr == 1 %}
+{% if player.treat == "control" %}
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit" %}
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit_p" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
+    <p>Please note, however, that the aggregated figures listed here cannot and do not reflect the complexity of the tax system. This information is intended to be read in conjunction with other public-available information.</p>
+    <table border="1" style="margin: 0 auto;">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$710</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$199</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$22</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift" %}
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift_p" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
+    <p>Please note, however, that the aggregated figures listed here cannot and do not reflect the complexity of the tax system. This information is intended to be read in conjunction with other public-available information.</p>
+    <table border="1" style="margin: 0 auto;">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$510</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$61</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$15</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit_cbc" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A also publicly disclose the following information about Telecom Co.’s operations in Country A and, if applicable, other operations in other countries in millions of USD.</p>
+    <p>Please note, however, that the aggregated figures listed here cannot and do not reflect the complexity of the tax system. This information is intended to be read in conjunction with other public-available information.</p>
+    <table border="1" style="margin: 0 auto;">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$710</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$199</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes paid:</td>
+            <td align="center">$22</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% else %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A also publicly disclose the following information about Telecom Co.’s operations in Country A and, if applicable, other operations in other countries in millions of USD.</p>
+    <p>Please note, however, that the aggregated figures listed here cannot and do not reflect the complexity of the tax system. This information is intended to be read in conjunction with other public-available information.</p>
+    <table border="1" style="margin: 0 auto;">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+            <td align="center"><h6><b>Country B</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$510</td>
+            <td align="center">$200</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$61</td>
+            <td align="center">$138</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$15</td>
+            <td align="center">$7</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <p>   </p>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_high.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% endif %}
+{% elif player.etr == 2 %}
+{% if player.treat == "control" %}
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/control_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit" %}
+<div align="center">
+<hr>
+    <div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "credit_p" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
+    <p>Please note, however, that the aggregated figures listed here cannot and do not reflect the complexity of the tax system. This information is intended to be read in conjunction with other public-available information.</p>
+    <table border="1" style="margin: 0 auto;">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$710</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$199</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$2</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/credit_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift" %}
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% elif player.treat == "shift_p" %}
+<div class="card card-body bg-light instructions" align="center">
+    <p>To inform the public about companies’ tax policies, the tax authorities in Country A publicly disclose the following information about Telecom Co.'s operations in Country A. All numbers are in millions of USD.</p>
+    <p>Please note, however, that the aggregated figures listed here cannot and do not reflect the complexity of the tax system. This information is intended to be read in conjunction with other public-available information.</p>
+    <table border="1" style="margin: 0 auto;">
+        <tr>
+            <td align="left"><h6><b>Telecom Co.</b></h6></td>
+            <td align="center"><h6><b>Country A</b></h6></td>
+        </tr>
+        <tr>
+            <td>Revenues:</td>
+            <td align="center">$410</td>
+        </tr>
+        <tr>
+            <td>Profit before taxes:</td>
+            <td align="center">$10</td>
+        </tr>
+        <tr>
+            <td>Corporate taxes:</td>
+            <td align="center">$2</td>
+        </tr>
+    </table><br clear="all">
+</div>
+<div align="center">
+<hr>
+<div class="container">
+    <button id="image_button" style="color: rgb(255,255,255); background-color: rgb(0,123,255);" type="button" class="btn btn-outline-secondary">Keep pressing to show financial report</button>
+    <br>
+    <div align="center">
+        <img id="matrix" style="display:none;" align="center" width="55%" src="{% static 'publictax/shift_low.jpg' %}"/>
+        <br>
+        <br>
+    </div>
+    </div>
+</div>
+{% endif %}
+{% endif %}
+<div align="center">
+<input type="hidden" name="timer_id" value="" id="timer_id"/>
+<input type="hidden" name="check_alotax" value="" id="check_alotax"/>
+    <p>To what extent do you think that Telecom Co. is paying its fair share of taxes? Please rate this on the slider below. <br>
+        The slider ranges from 0% (completely unfair) to 100% (completely fair).</p>
+    <b id="demo1"> </b>
+    <br>
+    <input type="range" id="alotax" name="alotax" class="slider" step="1" min="0" max="100" style="width:500px;">
+<hr>
+</div>
+{% next_button %}
+
+<div align="center">
+        <img id="matrix" align="center" width="75%" src="{% static 'publictax/blank.jpg' %}"/>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+    var timeShown = 0;
+        var timeDown;
+        function show() {
+           document.getElementById('matrix').style="display:inline;";
+           timeDown = new Date().getTime();
+        }
+        function hide() {
+           document.getElementById('matrix').style="display:none;";
+           if (timeDown) {
+               timeShown += (new Date().getTime() - timeDown);
+               document.getElementById('timer_id').value = String(timeShown);
+           }
+           timeDown = null;
+        }
+       document.getElementById('image_button').addEventListener('mousedown', show);
+       document.getElementById('image_button').addEventListener('mouseup', hide);
+       document.getElementById('image_button').addEventListener('mouseleave', hide);
+</script>
+
+<script>
+	$(document).ready(function () {
+    	$('input[name=alotax]').on('input change', function () {
+    	    $('input[name=alotax]').removeClass('slider');
+            $('input[name=alotax]').addClass('myclass');
+        });
+        $('input[name=alotax]').on('input', function() {
+            document.getElementById("demo1").innerHTML = $(this).val()+'<b>%</b>';
+            $('#check_alotax').val(1);
+        });
+    });
+</script>
+
+{% endblock %}

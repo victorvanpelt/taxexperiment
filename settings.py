@@ -82,6 +82,14 @@ SESSION_CONFIGS = [
         'etr': 1,
         'cbc': 0,
     },
+    {
+        'name': 'publictax_disclaimer',
+        'display_name': "Supplemental Experiment 4 - Australian Setting - Disclaimer",
+        'num_demo_participants': 25,
+        'app_sequence': ['publictax_button_disclaimer'],
+        'etr': 1,
+        'cbc': 0,
+    },
 ]
 
 AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
