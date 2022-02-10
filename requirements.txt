@@ -1,4 +1,4 @@
-otree[mturk]>=5.4.6
+otree[mturk]>=5.7.2
 psycopg2>=2.8.5
 sentry-sdk>=0.7.9
 django-recaptcha
