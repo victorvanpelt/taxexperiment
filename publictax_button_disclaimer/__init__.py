@@ -15,7 +15,7 @@ class Constants(BaseConstants):
     name_in_url = 'publictax_disc'
     players_per_group = None
     num_rounds = 1
-    completion_code = 'TAX_whu_112021'
+    completion_code = 'TAX_whu_032022'
     AgreeChoices = [
         [1, 'Strongly disagree'],
         [2, 'Disagree'],
