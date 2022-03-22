@@ -57,6 +57,7 @@ SESSION_CONFIGS = [
         'app_sequence': ['publictax_button'],
         'etr': 1,
         'cbc': 0,
+        'disclaim': 0,
     },
     {
         'name': 'publictax_extreme',
@@ -65,6 +66,7 @@ SESSION_CONFIGS = [
         'app_sequence': ['publictax_button'],
         'etr': 2,
         'cbc': 0,
+        'disclaim': 0,
     },
     {
         'name': 'publictax_normal_cbc',
@@ -73,6 +75,7 @@ SESSION_CONFIGS = [
         'app_sequence': ['publictax_button'],
         'etr': 1,
         'cbc': 1,
+        'disclaim': 0,
     },
     {
         'name': 'publictax_no_btn',
@@ -81,6 +84,7 @@ SESSION_CONFIGS = [
         'app_sequence': ['publictax'],
         'etr': 1,
         'cbc': 0,
+        'disclaim': 0,
     },
     {
         'name': 'publictax_disclaimer',
@@ -89,6 +93,7 @@ SESSION_CONFIGS = [
         'app_sequence': ['publictax_button_disclaimer'],
         'etr': 1,
         'cbc': 0,
+        'disclaim': 1,
     },
 ]
 
