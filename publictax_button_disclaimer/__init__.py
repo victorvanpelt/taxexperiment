@@ -445,7 +445,7 @@ def creating_session(subsession: Subsession):
     if etr == 1:
         # randomize to treatments without control
         if cbc == 0:
-            treats = itertools.cycle(['credit', 'credit_p', 'shift', 'shift_p'])
+            treats = itertools.cycle(['credit_p', 'shift_p'])
             for player in subsession.get_players():
                 player.treat = next(treats)
         else:
