@@ -1,7 +1,7 @@
 import itertools
 import random
 
-from django import forms
+#from django import forms
 from otree.api import *
 
 
