@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Thank you!
+{% endblock %}
+{% block content %}
+<div class="card card-body bg-light instructions">
+    <p>We appreciate you participated in this study and would like to thank you very much for your time and effort!</p>
+    <p>Your completion code is {{player.completion_code}}</p>
+    <p>Thank you,</p>
+
+    <p>The research team</p>
+</div>
+{% endblock %}

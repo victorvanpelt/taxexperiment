@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Instructions (Page 3/12)
+{% endblock %}
+
+{% block content %}
+
+<div align="center">
+    <img width="90%" src="{% static "publictax/gif_b.gif" %}"/>
+</div>
+
+<div class="card card-body bg-light instructions">
+    <ul>
+        <li>
+            Although the tax rate in Country A is 24%, the taxes Telecom Co. effectively pays in Country A may be lower because of different reasons.
+        </li>
+        <li>
+            For instance, Telecom Co. can reduce its taxes by using investment tax credits.
+        </li>
+        <li>
+            Investment tax credits are offered by Country A, and they lower the taxes effectively paid by Telecom Co. by the amount it invests in business operations in Country A.
+        </li>
+    </ul>
+</div>
+<br>
+    <p>
+        <b>Please evaluate the following statements.</b>
+    </p>
+    <p>
+        {% formfield player.Instr3 %}
+    </p>
+
+<br>
+{% next_button %}
+
+{% endblock %}

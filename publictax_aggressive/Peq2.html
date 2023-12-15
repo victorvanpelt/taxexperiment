@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Some questions and statements (Page 9/12)
+{% endblock %}
+
+{% block content %}
+
+    <div class="card card-body bg-light instructions" style="text-align:center">
+        Please answer the following questions and evaluate the following statements based on your current situation and views.<br>
+    </div>
+
+    <table class="table">
+    {% for field in form %}
+        <tr>
+            <td>
+                {{ field.label }}
+            </td>
+            <td>
+                {{ field }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <hr>
+    {% next_button %}
+
+{% endblock %}
+
