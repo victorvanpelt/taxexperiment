@@ -181,7 +181,11 @@ class Player(BasePlayer):
         choices=Constants.AgreeChoices,
     )
     risk_perception = models.IntegerField(
-        label="Telecom Co.'s tax management strategy is risky.",
+        label="Telecom Co.’s tax management strategy is financially risky.",
+        choices=Constants.AgreeChoices
+    )
+    paying_fair_share = models.IntegerField(
+        label="Telecom Co. is paying its fair share of taxes.",
         choices=Constants.AgreeChoices
     )
 
@@ -194,6 +198,15 @@ class Player(BasePlayer):
         label="In general, I consider it fair if companies lower taxes by shifting profits to countries with a lower tax rate.",
         choices=Constants.AgreeChoices,
     )
+    aggr_rd = models.IntegerField(
+        label="In general, I consider it aggressive if companies lower taxes by using investment tax credits.",
+        choices=Constants.AgreeChoices,
+    )
+    aggr_ps = models.IntegerField(
+        label="In general, I consider it aggressive if companies lower taxes by shifting profits to countries with a lower tax rate.",
+        choices=Constants.AgreeChoices,
+    )
+
     fair_more = models.IntegerField(
         label="In general, I consider it fairer if companies lower taxes by shifting profits to countries with a lower tax rate than when companies use investment tax credits.",
         choices=Constants.AgreeChoices,
@@ -552,22 +565,25 @@ class Peq1(Page):
         'taxmanagement_check',
         'australia_check',
         'risk_perception',
+        'paying_fair_share',
         'assessments_confident',
         'assessments_random',
         'assessments_no_use',
     ]
 
-    # @staticmethod
-    # def get_form_fields(player: Player):
-    #     fields = [
-    #         'taxmanagement_check',
-    #         'australia_check',
-    #         'assessments_confident',
-    #         'assessments_random',
-    #         'assessments_no_use',
-    #     ]
-    #     random.shuffle(fields)
-    #     return fields
+    @staticmethod
+    def get_form_fields(player: Player):
+        fields = [
+            'taxmanagement_check',
+            'australia_check',
+            'risk_perception',
+            'paying_fair_share',
+            'assessments_confident',
+            'assessments_random',
+            'assessments_no_use',
+        ]
+        random.shuffle(fields)
+        return fields
 
 
 class Peq2(Page):
@@ -575,6 +591,8 @@ class Peq2(Page):
     form_fields = [
         'fair_rd',
         'fair_ps',
+        'aggr_rd',
+        'aggr_ps',
         'fair_more',
         'tax_advisor',
         'fin_exp',
@@ -593,6 +611,8 @@ class Peq2(Page):
         fields = [
             'fair_rd',
             'fair_ps',
+            'aggr_rd',
+            'aggr_ps',
             'fair_more',
             'tax_advisor',
             'fin_exp',
