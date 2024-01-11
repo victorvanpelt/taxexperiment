@@ -7,8 +7,8 @@ from os import environ
 
 mturk_hit_settings = {
     'keywords': ['financial', 'tax', 'study', 'academic', 'research', 'accounting', 'investment'],
-    'title': 'Research study ($1.50 for about 8 min)',
-    'description': 'Research study that pays $1.50 for about 8 minutes.',
+    'title': 'Research study ($1.25 for about 8 min)',
+    'description': 'Research study that pays $1.25 for about 8 minutes.',
     'frame_height': 500,
     #'preview_template': 'global/MTurkPreview.html',
     'template': 'global/mturk_template.html',
@@ -43,7 +43,7 @@ mturk_hit_settings = {
 
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.00,
-    'participation_fee': 1.50,
+    'participation_fee': 1.25,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
