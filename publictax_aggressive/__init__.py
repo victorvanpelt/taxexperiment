@@ -530,7 +530,7 @@ class Important(Page):
 
 class E_judge(Page):
     form_model = 'player'
-    form_fields = ['alotax', 'check_alotax']
+    form_fields = ['timer_id', 'alotax', 'check_alotax']
 
     @staticmethod
     def error_message(player: Player, value):
