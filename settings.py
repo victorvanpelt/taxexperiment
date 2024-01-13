@@ -7,8 +7,8 @@ from os import environ
 
 mturk_hit_settings = {
     'keywords': ['financial', 'tax', 'study', 'academic', 'research', 'accounting', 'investment'],
-    'title': 'Academic study ($1.25 for about 8 min)',
-    'description': 'Academic study that pays $1.25 for about 8 minutes.',
+    'title': 'Research study ($1.25 for about 8 min)',
+    'description': 'Research study that pays $1.25 for about 8 minutes.',
     'frame_height': 500,
     #'preview_template': 'global/MTurkPreview.html',
     'template': 'global/mturk_template.html',
