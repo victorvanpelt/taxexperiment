@@ -683,6 +683,8 @@ class M(Page):
     form_model = 'player'
     form_fields = ['mturk', 'mturk_feedback', 'mturk_motivation']
 
+    def before_next_page(player: Player, timeout_happened):
+        player.participant.finished = True
 
 class Thank(Page):
     form_model = 'player'

@@ -108,12 +108,20 @@ SESSION_CONFIGS = [
 AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
+PARTICIPANT_FIELDS = [
+    'finished'
+]
+
+SESSION_FIELDS = [
+    'prolific_completion_url'
+]
+
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'GBP'
 USE_POINTS = True
 
 ROOMS = []
