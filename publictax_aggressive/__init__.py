@@ -180,7 +180,15 @@ class Player(BasePlayer):
         label="I did not really know how I should use the financial information to make my assessments.",
         choices=Constants.AgreeChoices,
     )
-    risk_perception = models.IntegerField(
+    fin_risk_perception = models.IntegerField(
+        label="Telecom Co.’s tax management strategy is financially risky.",
+        choices=Constants.AgreeChoices
+    )
+    tax_risk_perception2 = models.IntegerField(
+        label="If Telecom Co. would be targeted by Country A’s tax authorities, they are likely to get a fine.",
+        choices=Constants.AgreeChoices
+    )
+    tax_risk_perception1 = models.IntegerField(
         label="Telecom Co.’s tax management strategy is financially risky.",
         choices=Constants.AgreeChoices
     )
@@ -321,9 +329,6 @@ class Player(BasePlayer):
         ],
     )
     # PEQ_3
-    corona = models.IntegerField(
-        label="I am worried about the Corona virus (COVID2019).", choices=Constants.AgreeChoices
-    )
     gender = models.IntegerField(
         label="Please select which gender you identify most with.",
         blank=False,
@@ -564,7 +569,9 @@ class Peq1(Page):
     form_fields = [
         'taxmanagement_check',
         'australia_check',
-        'risk_perception',
+        'fin_risk_perception',
+        'tax_risk_perception2',
+        'tax_risk_perception1',
         'paying_fair_share',
         'assessments_confident',
         'assessments_random',
@@ -576,7 +583,9 @@ class Peq1(Page):
         fields = [
             'taxmanagement_check',
             'australia_check',
-            'risk_perception',
+            'fin_risk_perception',
+            'tax_risk_perception2',
+            'tax_risk_perception1',
             'paying_fair_share',
             'assessments_confident',
             'assessments_random',
@@ -672,8 +681,7 @@ class Peq3(Page):
             'attention_1',
             'norm_1',
             'norm_2',
-            'norm_3',
-            'corona',
+            'norm_3'
         ]
         random.shuffle(fields)
         return fields
