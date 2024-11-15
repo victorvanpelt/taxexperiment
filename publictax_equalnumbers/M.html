@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    What do you think of this study? (Page 12/12)
+{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+    {% for field in form %}
+        <tr>
+            <td>
+                {{ field.label }}
+            </td>
+            <td>
+                {{ field }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    <hr>
+
+    <button class="otree-btn-next btn btn-primary next-button otree-next-button">Complete HIT</button>
+
+{% endblock %}

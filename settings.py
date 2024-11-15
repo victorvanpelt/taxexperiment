@@ -103,6 +103,15 @@ SESSION_CONFIGS = [
         'cbc': 0,
         'disclaim': 0,
     },
+    {
+        'name': 'publictax_equalnumbers',
+        'display_name': "Supplemental Experiment 6 - Australian Setting - Equal Numbers",
+        'num_demo_participants': 25,
+        'app_sequence': ['publictax_equalnumbers'],
+        'etr': 1,
+        'cbc': 0,
+        'disclaim': 0,
+    },
 ]
 
 AWS_ACCESS_KEY_ID = environ.get('AWS_ACCESS_KEY_ID')
