@@ -465,7 +465,6 @@ class Player(BasePlayer):
         ],
     )
 
-
 # FUNCTIONS
 def creating_session(subsession: Subsession):
     # assign etr and cbc
