@@ -312,9 +312,6 @@ class Player(BasePlayer):
         ],
     )
     # PEQ_3
-    corona = models.IntegerField(
-        label="I am worried about the Corona virus (COVID2019).", choices=Constants.AgreeChoices
-    )
     gender = models.IntegerField(
         label="Please select which gender you identify most with.",
         blank=False,
@@ -638,8 +635,7 @@ class Peq3(Page):
         'attention_1',
         'norm_1',
         'norm_2',
-        'norm_3',
-        'corona',
+        'norm_3'
     ]
 
     @staticmethod
@@ -656,8 +652,7 @@ class Peq3(Page):
             'attention_1',
             'norm_1',
             'norm_2',
-            'norm_3',
-            'corona',
+            'norm_3'
         ]
         random.shuffle(fields)
         return fields
