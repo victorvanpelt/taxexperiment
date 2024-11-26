@@ -695,8 +695,7 @@ class M(Page):
         player.participant.finished = True
 
 class Thank(Page):
-    form_model = 'player'
-    form_fields = ['completion_code']
+    pass
 
 
 page_sequence = [

@@ -97,12 +97,6 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
         label='Telecom Co. can pay less tax in Country A by shifting profits from Country A to the other country, which creates a tax difference due to foreign profits.',
     )
-    # Instr6 = models.IntegerField(
-    #     blank=False,
-    #     choices=[[1, 'True'], [2, 'False']],
-    #     widget=widgets.RadioSelect,
-    #     label='The tax rate in Country A and Country B are the same.',
-    # )
 
 
 
@@ -188,6 +182,18 @@ class Player(BasePlayer):
     assessments_no_use = models.IntegerField(
         label="I did not really know how I should use the financial information to make my assessments.",
         choices=Constants.AgreeChoices,
+    )
+    fin_risk_perception = models.IntegerField(
+        label="Telecom Co.’s tax management strategy is financially risky.",
+        choices=Constants.AgreeChoices
+    )
+    tax_risk_perception2 = models.IntegerField(
+        label="If Telecom Co. would be targeted by Country A’s tax authorities, they are likely to get a fine.",
+        choices=Constants.AgreeChoices
+    )
+    tax_risk_perception1 = models.IntegerField(
+        label="Telecom Co.’s tax management strategy is financially risky.",
+        choices=Constants.AgreeChoices
     )
     # PEQ_2
     fair_rd = models.IntegerField(
@@ -553,6 +559,9 @@ class Peq1(Page):
     form_fields = [
         'taxmanagement_check',
         'australia_check',
+        'fin_risk_perception',
+        'tax_risk_perception2',
+        'tax_risk_perception1',
         'assessments_confident',
         'assessments_random',
         'assessments_no_use',
@@ -563,6 +572,9 @@ class Peq1(Page):
         fields = [
             'taxmanagement_check',
             'australia_check',
+            'fin_risk_perception',
+            'tax_risk_perception2',
+            'tax_risk_perception1',
             'assessments_confident',
             'assessments_random',
             'assessments_no_use',
@@ -662,10 +674,11 @@ class M(Page):
     form_model = 'player'
     form_fields = ['mturk', 'mturk_feedback', 'mturk_motivation']
 
+    def before_next_page(player: Player, timeout_happened):
+        player.participant.finished = True
 
 class Thank(Page):
-    form_model = 'player'
-    form_fields = ['completion_code']
+    pass
 
 
 page_sequence = [
