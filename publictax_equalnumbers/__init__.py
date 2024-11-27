@@ -89,13 +89,13 @@ class Player(BasePlayer):
         blank=False,
         choices=[[1, 'True'], [2, 'False']],
         widget=widgets.RadioSelect,
-        label='The tax rate of the other country in the example is higher than Country A.',
+        label='The tax rate of Country C in the example is higher than Country A.',
     )
     Instr5 = models.IntegerField(
         blank=False,
         choices=[[1, 'True'], [2, 'False']],
         widget=widgets.RadioSelect,
-        label='Telecom Co. can pay less tax in Country A by shifting profits from Country A to the other country, which creates a tax difference due to foreign profits.',
+        label='Telecom Co. can pay less tax in Country A by shifting profits from Country A to Country C, which creates a tax difference due to foreign profits.',
     )
 
 
